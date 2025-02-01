@@ -37,13 +37,3 @@ def book():
     flash("Booking Success！")
     return redirect(url_for('index'))
 
-
-@app.route('/dashboard')
-def dashboard():
-    bookings = Booking.query.all()
-    return render_template('dashboard.html', bookings=bookings)
-
-if __name__ == '__main__':
-    db.create_all()  # only create DB 1st.
-    app.run(debug=True)
-
