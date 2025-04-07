@@ -1,7 +1,7 @@
 <?php
 $host = 'localhost';
 $dbname = 'facility_booking';
-$username = 'root';
+$username = 'root';// Use environment variables in production
 $password = '';
 
 try {
