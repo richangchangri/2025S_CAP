@@ -13,11 +13,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($stmt->execute([$booking_id, $_SESSION['user_id']])) {
         echo "The booking has been cancelled!";
     } else {
-        echo "取消失败！";
+        echo "Failed cancellation!";
     }
 }
 ?>
-<form method="POST">
-    <input type="number" name="booking_id" placeholder="预订ID" required><br>
-    <button type="submit">取消预订</button>
-</form>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cancel Booking</title>
+</head>
+<body>
+    <form method="POST">
+        <input type="number" name="booking_id" placeholder="Cancellation ID" required><br>
+        <button type="submit">Cancellation</button>
+    </form>
+</body>
+</html>

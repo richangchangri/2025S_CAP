@@ -22,11 +22,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
-<form method="POST">
-    <input type="number" name="facility_id" placeholder="Facility ID" required><br>
-    <input type="date" name="booking_date" required><br>
-    <input type="time" name="start_time" required><br>
-    <input type="time" name="end_time" required><br>
-    <textarea name="purpose" placeholder="Purpose" required></textarea><br>
-    <button type="submit">submit</button>
-</form>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Facility</title>
+</head>
+<body>
+    <form method="POST">
+        <input type="number" name="facility_id" placeholder="Facility ID" required><br>
+        <input type="date" name="booking_date" required><br>
+        <input type="time" name="start_time" required><br>
+        <input type="time" name="end_time" required><br>
+        <textarea name="purpose" placeholder="Purpose" required></textarea><br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

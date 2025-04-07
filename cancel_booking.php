@@ -17,7 +17,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
-<form method="POST">
-    <input type="number" name="booking_id" placeholder="Cancellation ID" required><br>
-    <button type="submit">Cancellation</button>
-</form>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cancel Booking</title>
+</head>
+<body>
+    <form method="POST">
+        <input type="number" name="booking_id" placeholder="Cancellation ID" required><br>
+        <button type="submit">Cancellation</button>
+    </form>
+</body>
+</html>
