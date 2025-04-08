@@ -27,8 +27,8 @@ class Database extends Config
     public array $default = [
         'DSN'          => '',
         'hostname'     => 'localhost',
-        'username'     => 'root',
-        'password'     => 'Mampang789!@#',
+        'username'     => 'capstone',
+        'password'     => 'Capstone789!@#',
         'database'     => 'office_reservation_system',
         'DBDriver'     => 'MySQLi',
         'DBPrefix'     => '',
