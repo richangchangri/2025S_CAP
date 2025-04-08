@@ -1,0 +1,1880 @@
+ERROR - 2025-04-05 00:06:00 --> Email: Unable to send email using PHP mail(). Your server might not be configured to send mail using this method.
+ERROR - 2025-04-05 00:06:00 --> 
+CRITICAL - 2025-04-05 00:07:45 --> ErrorException: Undefined array key "user_role_id"
+[Method: POST, Route: login/checkOTP]
+in APPPATH/Controllers/Login.php on line 160.
+ 1 APPPATH/Controllers/Login.php(160): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Login->checkOTP()
+ 3 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 00:19:51 --> ErrorException: Undefined array key "username"
+[Method: POST, Route: login/checkOTP]
+in APPPATH/Controllers/Login.php on line 161.
+ 1 APPPATH/Controllers/Login.php(161): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Login->checkOTP()
+ 3 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+DEBUG - 2025-04-05 00:53:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-04-05 01:10:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-04-05 01:13:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-04-05 08:13:10 --> Email: Unable to send email using PHP mail(). Your server might not be configured to send mail using this method.
+ERROR - 2025-04-05 08:13:10 --> 
+DEBUG - 2025-04-05 01:14:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-04-05 08:14:57 --> Email: Unable to send email using PHP mail(). Your server might not be configured to send mail using this method.
+ERROR - 2025-04-05 08:14:57 --> 
+DEBUG - 2025-04-05 01:15:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-04-05 01:15:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-04-05 01:15:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-04-05 01:15:58 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "dashboard.php"
+[Method: GET, Route: dashboard]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Dashboard.php(29): view()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Dashboard->index()
+ 5 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 7 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+DEBUG - 2025-04-05 01:20:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-04-05 01:20:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-04-05 01:29:31 --> ErrorException: Undefined variable $statusFilter
+[Method: GET, Route: data/userManagement/inactive]
+in APPPATH/Controllers/Data.php on line 24.
+ 1 APPPATH/Controllers/Data.php(24): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 3 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 01:29:31 --> Error: Class "Hermawan\DataTables\DataTable" not found
+[Method: GET, Route: data/userManagement/active]
+in APPPATH/Controllers/Data.php on line 29.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 2 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 4 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 01:29:31 --> ErrorException: Undefined variable $statusFilter
+[Method: GET, Route: data/userManagement/pending]
+in APPPATH/Controllers/Data.php on line 24.
+ 1 APPPATH/Controllers/Data.php(24): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 3 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 01:31:11 --> Error: Class "Hermawan\DataTables\DataTable" not found
+[Method: GET, Route: data/userManagement/active]
+in APPPATH/Controllers/Data.php on line 29.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 2 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 4 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 01:36:25 --> Error: Class "Hermawan\DataTables\DataTable" not found
+[Method: GET, Route: data/userManagement/active]
+in APPPATH/Controllers/Data.php on line 29.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 2 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 4 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+DEBUG - 2025-04-05 01:37:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-04-05 01:37:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-04-05 01:37:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-04-05 08:37:35 --> Email: Unable to send email using PHP mail(). Your server might not be configured to send mail using this method.
+ERROR - 2025-04-05 08:37:35 --> 
+DEBUG - 2025-04-05 01:37:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-04-05 01:38:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-04-05 01:38:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-04-05 01:38:34 --> Error: Class "Hermawan\DataTables\DataTable" not found
+[Method: GET, Route: data/userManagement/active]
+in APPPATH/Controllers/Data.php on line 29.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 2 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 4 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 01:38:34 --> ErrorException: Undefined variable $statusFilter
+[Method: GET, Route: data/userManagement/inactive]
+in APPPATH/Controllers/Data.php on line 24.
+ 1 APPPATH/Controllers/Data.php(24): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 3 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 01:38:34 --> ErrorException: Undefined variable $statusFilter
+[Method: GET, Route: data/userManagement/pending]
+in APPPATH/Controllers/Data.php on line 24.
+ 1 APPPATH/Controllers/Data.php(24): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 3 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 01:38:52 --> Error: Class "Hermawan\DataTables\DataTable" not found
+[Method: GET, Route: data/userManagement/active]
+in APPPATH/Controllers/Data.php on line 29.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 2 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 4 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 01:38:52 --> ErrorException: Undefined variable $statusFilter
+[Method: GET, Route: data/userManagement/inactive]
+in APPPATH/Controllers/Data.php on line 24.
+ 1 APPPATH/Controllers/Data.php(24): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 3 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 01:38:52 --> ErrorException: Undefined variable $statusFilter
+[Method: GET, Route: data/userManagement/pending]
+in APPPATH/Controllers/Data.php on line 24.
+ 1 APPPATH/Controllers/Data.php(24): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 3 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 01:39:10 --> Error: Class "Hermawan\DataTables\DataTable" not found
+[Method: GET, Route: data/userManagement/active]
+in APPPATH/Controllers/Data.php on line 29.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 2 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 4 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ERROR - 2025-04-05 02:10:29 --> mysqli_sql_exception: Unknown column 'users.status' in 'WHERE' in /var/www/html/capstone/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /var/www/html/capstone/system/Database/MySQLi/Connection.php(327): mysqli->query()
+#1 /var/www/html/capstone/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /var/www/html/capstone/system/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /var/www/html/capstone/system/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query()
+#4 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTableQuery.php(57): CodeIgniter\Database\BaseBuilder->countAllResults()
+#5 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTable.php(185): Hermawan\DataTables\DataTableQuery->countAll()
+#6 /var/www/html/capstone/app/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+#7 /var/www/html/capstone/system/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+#8 /var/www/html/capstone/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#9 /var/www/html/capstone/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#10 /var/www/html/capstone/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 /var/www/html/capstone/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#12 /var/www/html/capstone/public/index.php(56): CodeIgniter\Boot::bootWeb()
+#13 {main}
+CRITICAL - 2025-04-05 02:10:29 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'users.status' in 'WHERE'
+[Method: GET, Route: data/userManagement/active]
+in SYSTEMPATH/Database/BaseConnection.php on line 692.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query()
+ 2 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(57): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 3 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTable.php(185): Hermawan\DataTables\DataTableQuery->countAll()
+ 4 APPPATH/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 6 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 02:10:29 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'users.status' in 'WHERE'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 332.
+ 1 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query()
+ 4 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(57): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 5 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTable.php(185): Hermawan\DataTables\DataTableQuery->countAll()
+ 6 APPPATH/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 8 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 02:10:29 --> [Caused by] mysqli_sql_exception: Unknown column 'users.status' in 'WHERE'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 327.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(327): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query()
+ 5 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(57): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 6 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTable.php(185): Hermawan\DataTables\DataTableQuery->countAll()
+ 7 APPPATH/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 9 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+11 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ERROR - 2025-04-05 02:10:35 --> mysqli_sql_exception: Unknown column 'users.status' in 'WHERE' in /var/www/html/capstone/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /var/www/html/capstone/system/Database/MySQLi/Connection.php(327): mysqli->query()
+#1 /var/www/html/capstone/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /var/www/html/capstone/system/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /var/www/html/capstone/system/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query()
+#4 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTableQuery.php(57): CodeIgniter\Database\BaseBuilder->countAllResults()
+#5 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTable.php(185): Hermawan\DataTables\DataTableQuery->countAll()
+#6 /var/www/html/capstone/app/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+#7 /var/www/html/capstone/system/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+#8 /var/www/html/capstone/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#9 /var/www/html/capstone/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#10 /var/www/html/capstone/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 /var/www/html/capstone/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#12 /var/www/html/capstone/public/index.php(56): CodeIgniter\Boot::bootWeb()
+#13 {main}
+CRITICAL - 2025-04-05 02:10:35 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'users.status' in 'WHERE'
+[Method: GET, Route: data/userManagement/active]
+in SYSTEMPATH/Database/BaseConnection.php on line 692.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query()
+ 2 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(57): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 3 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTable.php(185): Hermawan\DataTables\DataTableQuery->countAll()
+ 4 APPPATH/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 6 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 02:10:35 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'users.status' in 'WHERE'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 332.
+ 1 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query()
+ 4 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(57): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 5 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTable.php(185): Hermawan\DataTables\DataTableQuery->countAll()
+ 6 APPPATH/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 8 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 02:10:35 --> [Caused by] mysqli_sql_exception: Unknown column 'users.status' in 'WHERE'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 327.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(327): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query()
+ 5 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(57): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 6 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTable.php(185): Hermawan\DataTables\DataTableQuery->countAll()
+ 7 APPPATH/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 9 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+11 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ERROR - 2025-04-05 02:12:19 --> mysqli_sql_exception: Unknown column 'users.status' in 'WHERE' in /var/www/html/capstone/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /var/www/html/capstone/system/Database/MySQLi/Connection.php(327): mysqli->query()
+#1 /var/www/html/capstone/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /var/www/html/capstone/system/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /var/www/html/capstone/system/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query()
+#4 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTableQuery.php(57): CodeIgniter\Database\BaseBuilder->countAllResults()
+#5 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTable.php(185): Hermawan\DataTables\DataTableQuery->countAll()
+#6 /var/www/html/capstone/app/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+#7 /var/www/html/capstone/system/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+#8 /var/www/html/capstone/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#9 /var/www/html/capstone/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#10 /var/www/html/capstone/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 /var/www/html/capstone/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#12 /var/www/html/capstone/public/index.php(56): CodeIgniter\Boot::bootWeb()
+#13 {main}
+CRITICAL - 2025-04-05 02:12:19 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'users.status' in 'WHERE'
+[Method: GET, Route: data/userManagement/active]
+in SYSTEMPATH/Database/BaseConnection.php on line 692.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query()
+ 2 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(57): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 3 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTable.php(185): Hermawan\DataTables\DataTableQuery->countAll()
+ 4 APPPATH/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 6 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 02:12:19 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'users.status' in 'WHERE'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 332.
+ 1 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query()
+ 4 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(57): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 5 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTable.php(185): Hermawan\DataTables\DataTableQuery->countAll()
+ 6 APPPATH/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 8 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 02:12:19 --> [Caused by] mysqli_sql_exception: Unknown column 'users.status' in 'WHERE'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 327.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(327): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query()
+ 5 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(57): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 6 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTable.php(185): Hermawan\DataTables\DataTableQuery->countAll()
+ 7 APPPATH/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 9 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+11 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ERROR - 2025-04-05 02:12:26 --> mysqli_sql_exception: Unknown column 'users.status' in 'WHERE' in /var/www/html/capstone/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /var/www/html/capstone/system/Database/MySQLi/Connection.php(327): mysqli->query()
+#1 /var/www/html/capstone/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /var/www/html/capstone/system/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /var/www/html/capstone/system/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query()
+#4 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTableQuery.php(57): CodeIgniter\Database\BaseBuilder->countAllResults()
+#5 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTable.php(185): Hermawan\DataTables\DataTableQuery->countAll()
+#6 /var/www/html/capstone/app/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+#7 /var/www/html/capstone/system/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+#8 /var/www/html/capstone/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#9 /var/www/html/capstone/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#10 /var/www/html/capstone/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 /var/www/html/capstone/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#12 /var/www/html/capstone/public/index.php(56): CodeIgniter\Boot::bootWeb()
+#13 {main}
+CRITICAL - 2025-04-05 02:12:26 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'users.status' in 'WHERE'
+[Method: GET, Route: data/userManagement/active]
+in SYSTEMPATH/Database/BaseConnection.php on line 692.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query()
+ 2 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(57): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 3 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTable.php(185): Hermawan\DataTables\DataTableQuery->countAll()
+ 4 APPPATH/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 6 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 02:12:26 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'users.status' in 'WHERE'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 332.
+ 1 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query()
+ 4 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(57): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 5 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTable.php(185): Hermawan\DataTables\DataTableQuery->countAll()
+ 6 APPPATH/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 8 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 02:12:26 --> [Caused by] mysqli_sql_exception: Unknown column 'users.status' in 'WHERE'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 327.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(327): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query()
+ 5 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(57): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 6 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTable.php(185): Hermawan\DataTables\DataTableQuery->countAll()
+ 7 APPPATH/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 9 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+11 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 02:13:49 --> ErrorException: Undefined variable $statusFilter
+[Method: GET, Route: data/userManagement/inactive]
+in APPPATH/Controllers/Data.php on line 24.
+ 1 APPPATH/Controllers/Data.php(24): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 3 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 02:13:49 --> ErrorException: Undefined variable $statusFilter
+[Method: GET, Route: data/userManagement/pending]
+in APPPATH/Controllers/Data.php on line 24.
+ 1 APPPATH/Controllers/Data.php(24): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 3 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ERROR - 2025-04-05 02:13:49 --> mysqli_sql_exception: Unknown column 'users.status' in 'WHERE' in /var/www/html/capstone/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /var/www/html/capstone/system/Database/MySQLi/Connection.php(327): mysqli->query()
+#1 /var/www/html/capstone/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /var/www/html/capstone/system/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /var/www/html/capstone/system/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query()
+#4 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTableQuery.php(57): CodeIgniter\Database\BaseBuilder->countAllResults()
+#5 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTable.php(185): Hermawan\DataTables\DataTableQuery->countAll()
+#6 /var/www/html/capstone/app/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+#7 /var/www/html/capstone/system/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+#8 /var/www/html/capstone/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#9 /var/www/html/capstone/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#10 /var/www/html/capstone/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 /var/www/html/capstone/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#12 /var/www/html/capstone/public/index.php(56): CodeIgniter\Boot::bootWeb()
+#13 {main}
+CRITICAL - 2025-04-05 02:13:49 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'users.status' in 'WHERE'
+[Method: GET, Route: data/userManagement/active]
+in SYSTEMPATH/Database/BaseConnection.php on line 692.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query()
+ 2 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(57): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 3 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTable.php(185): Hermawan\DataTables\DataTableQuery->countAll()
+ 4 APPPATH/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 6 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 02:13:49 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'users.status' in 'WHERE'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 332.
+ 1 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query()
+ 4 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(57): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 5 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTable.php(185): Hermawan\DataTables\DataTableQuery->countAll()
+ 6 APPPATH/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 8 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 02:13:49 --> [Caused by] mysqli_sql_exception: Unknown column 'users.status' in 'WHERE'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 327.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(327): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query()
+ 5 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(57): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 6 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTable.php(185): Hermawan\DataTables\DataTableQuery->countAll()
+ 7 APPPATH/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 9 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+11 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ERROR - 2025-04-05 02:14:01 --> mysqli_sql_exception: Unknown column 'users.status' in 'WHERE' in /var/www/html/capstone/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /var/www/html/capstone/system/Database/MySQLi/Connection.php(327): mysqli->query()
+#1 /var/www/html/capstone/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /var/www/html/capstone/system/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /var/www/html/capstone/system/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query()
+#4 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTableQuery.php(57): CodeIgniter\Database\BaseBuilder->countAllResults()
+#5 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTable.php(185): Hermawan\DataTables\DataTableQuery->countAll()
+#6 /var/www/html/capstone/app/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+#7 /var/www/html/capstone/system/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+#8 /var/www/html/capstone/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#9 /var/www/html/capstone/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#10 /var/www/html/capstone/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 /var/www/html/capstone/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#12 /var/www/html/capstone/public/index.php(56): CodeIgniter\Boot::bootWeb()
+#13 {main}
+CRITICAL - 2025-04-05 02:14:01 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'users.status' in 'WHERE'
+[Method: GET, Route: data/userManagement/active]
+in SYSTEMPATH/Database/BaseConnection.php on line 692.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query()
+ 2 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(57): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 3 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTable.php(185): Hermawan\DataTables\DataTableQuery->countAll()
+ 4 APPPATH/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 6 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 02:14:01 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'users.status' in 'WHERE'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 332.
+ 1 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query()
+ 4 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(57): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 5 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTable.php(185): Hermawan\DataTables\DataTableQuery->countAll()
+ 6 APPPATH/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 8 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 02:14:01 --> [Caused by] mysqli_sql_exception: Unknown column 'users.status' in 'WHERE'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 327.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(327): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query()
+ 5 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(57): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 6 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTable.php(185): Hermawan\DataTables\DataTableQuery->countAll()
+ 7 APPPATH/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 9 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+11 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ERROR - 2025-04-05 02:22:22 --> mysqli_sql_exception: Unknown column 'users.status' in 'WHERE' in /var/www/html/capstone/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /var/www/html/capstone/system/Database/MySQLi/Connection.php(327): mysqli->query()
+#1 /var/www/html/capstone/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /var/www/html/capstone/system/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /var/www/html/capstone/system/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query()
+#4 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTableQuery.php(57): CodeIgniter\Database\BaseBuilder->countAllResults()
+#5 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTable.php(185): Hermawan\DataTables\DataTableQuery->countAll()
+#6 /var/www/html/capstone/app/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+#7 /var/www/html/capstone/system/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+#8 /var/www/html/capstone/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#9 /var/www/html/capstone/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#10 /var/www/html/capstone/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 /var/www/html/capstone/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#12 /var/www/html/capstone/public/index.php(56): CodeIgniter\Boot::bootWeb()
+#13 {main}
+CRITICAL - 2025-04-05 02:22:22 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'users.status' in 'WHERE'
+[Method: GET, Route: data/userManagement/active]
+in SYSTEMPATH/Database/BaseConnection.php on line 692.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query()
+ 2 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(57): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 3 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTable.php(185): Hermawan\DataTables\DataTableQuery->countAll()
+ 4 APPPATH/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 6 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 02:22:22 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'users.status' in 'WHERE'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 332.
+ 1 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query()
+ 4 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(57): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 5 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTable.php(185): Hermawan\DataTables\DataTableQuery->countAll()
+ 6 APPPATH/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 8 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 02:22:22 --> [Caused by] mysqli_sql_exception: Unknown column 'users.status' in 'WHERE'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 327.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(327): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query()
+ 5 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(57): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 6 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTable.php(185): Hermawan\DataTables\DataTableQuery->countAll()
+ 7 APPPATH/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 9 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+11 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ERROR - 2025-04-05 02:22:28 --> mysqli_sql_exception: Unknown column 'users.status' in 'WHERE' in /var/www/html/capstone/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /var/www/html/capstone/system/Database/MySQLi/Connection.php(327): mysqli->query()
+#1 /var/www/html/capstone/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /var/www/html/capstone/system/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /var/www/html/capstone/system/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query()
+#4 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTableQuery.php(57): CodeIgniter\Database\BaseBuilder->countAllResults()
+#5 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTable.php(185): Hermawan\DataTables\DataTableQuery->countAll()
+#6 /var/www/html/capstone/app/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+#7 /var/www/html/capstone/system/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+#8 /var/www/html/capstone/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#9 /var/www/html/capstone/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#10 /var/www/html/capstone/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 /var/www/html/capstone/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#12 /var/www/html/capstone/public/index.php(56): CodeIgniter\Boot::bootWeb()
+#13 {main}
+CRITICAL - 2025-04-05 02:22:28 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'users.status' in 'WHERE'
+[Method: GET, Route: data/userManagement/active]
+in SYSTEMPATH/Database/BaseConnection.php on line 692.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query()
+ 2 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(57): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 3 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTable.php(185): Hermawan\DataTables\DataTableQuery->countAll()
+ 4 APPPATH/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 6 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 02:22:28 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'users.status' in 'WHERE'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 332.
+ 1 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query()
+ 4 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(57): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 5 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTable.php(185): Hermawan\DataTables\DataTableQuery->countAll()
+ 6 APPPATH/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 8 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 02:22:28 --> [Caused by] mysqli_sql_exception: Unknown column 'users.status' in 'WHERE'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 327.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(327): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query()
+ 5 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(57): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 6 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTable.php(185): Hermawan\DataTables\DataTableQuery->countAll()
+ 7 APPPATH/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 9 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+11 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ERROR - 2025-04-05 02:23:50 --> mysqli_sql_exception: Unknown column 'users.status' in 'WHERE' in /var/www/html/capstone/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /var/www/html/capstone/system/Database/MySQLi/Connection.php(327): mysqli->query()
+#1 /var/www/html/capstone/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /var/www/html/capstone/system/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /var/www/html/capstone/system/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query()
+#4 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTableQuery.php(57): CodeIgniter\Database\BaseBuilder->countAllResults()
+#5 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTable.php(185): Hermawan\DataTables\DataTableQuery->countAll()
+#6 /var/www/html/capstone/app/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+#7 /var/www/html/capstone/system/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+#8 /var/www/html/capstone/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#9 /var/www/html/capstone/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#10 /var/www/html/capstone/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 /var/www/html/capstone/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#12 /var/www/html/capstone/public/index.php(56): CodeIgniter\Boot::bootWeb()
+#13 {main}
+CRITICAL - 2025-04-05 02:23:50 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'users.status' in 'WHERE'
+[Method: GET, Route: data/userManagement/active]
+in SYSTEMPATH/Database/BaseConnection.php on line 692.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query()
+ 2 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(57): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 3 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTable.php(185): Hermawan\DataTables\DataTableQuery->countAll()
+ 4 APPPATH/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 6 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 02:23:50 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'users.status' in 'WHERE'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 332.
+ 1 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query()
+ 4 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(57): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 5 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTable.php(185): Hermawan\DataTables\DataTableQuery->countAll()
+ 6 APPPATH/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 8 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 02:23:50 --> [Caused by] mysqli_sql_exception: Unknown column 'users.status' in 'WHERE'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 327.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(327): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query()
+ 5 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(57): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 6 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTable.php(185): Hermawan\DataTables\DataTableQuery->countAll()
+ 7 APPPATH/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 9 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+11 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ERROR - 2025-04-05 02:25:37 --> mysqli_sql_exception: Unknown column 'users.status' in 'WHERE' in /var/www/html/capstone/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /var/www/html/capstone/system/Database/MySQLi/Connection.php(327): mysqli->query()
+#1 /var/www/html/capstone/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /var/www/html/capstone/system/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /var/www/html/capstone/system/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query()
+#4 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTableQuery.php(57): CodeIgniter\Database\BaseBuilder->countAllResults()
+#5 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTable.php(185): Hermawan\DataTables\DataTableQuery->countAll()
+#6 /var/www/html/capstone/app/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+#7 /var/www/html/capstone/system/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+#8 /var/www/html/capstone/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#9 /var/www/html/capstone/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#10 /var/www/html/capstone/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 /var/www/html/capstone/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#12 /var/www/html/capstone/public/index.php(56): CodeIgniter\Boot::bootWeb()
+#13 {main}
+CRITICAL - 2025-04-05 02:25:37 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'users.status' in 'WHERE'
+[Method: GET, Route: data/userManagement/active]
+in SYSTEMPATH/Database/BaseConnection.php on line 692.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query()
+ 2 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(57): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 3 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTable.php(185): Hermawan\DataTables\DataTableQuery->countAll()
+ 4 APPPATH/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 6 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 02:25:37 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'users.status' in 'WHERE'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 332.
+ 1 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query()
+ 4 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(57): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 5 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTable.php(185): Hermawan\DataTables\DataTableQuery->countAll()
+ 6 APPPATH/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 8 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 02:25:37 --> [Caused by] mysqli_sql_exception: Unknown column 'users.status' in 'WHERE'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 327.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(327): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query()
+ 5 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(57): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 6 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTable.php(185): Hermawan\DataTables\DataTableQuery->countAll()
+ 7 APPPATH/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 9 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+11 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ERROR - 2025-04-05 02:25:58 --> mysqli_sql_exception: Unknown column 'users.status' in 'WHERE' in /var/www/html/capstone/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /var/www/html/capstone/system/Database/MySQLi/Connection.php(327): mysqli->query()
+#1 /var/www/html/capstone/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /var/www/html/capstone/system/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /var/www/html/capstone/system/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query()
+#4 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTableQuery.php(57): CodeIgniter\Database\BaseBuilder->countAllResults()
+#5 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTable.php(185): Hermawan\DataTables\DataTableQuery->countAll()
+#6 /var/www/html/capstone/app/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+#7 /var/www/html/capstone/system/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+#8 /var/www/html/capstone/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#9 /var/www/html/capstone/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#10 /var/www/html/capstone/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 /var/www/html/capstone/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#12 /var/www/html/capstone/public/index.php(56): CodeIgniter\Boot::bootWeb()
+#13 {main}
+CRITICAL - 2025-04-05 02:25:58 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'users.status' in 'WHERE'
+[Method: GET, Route: data/userManagement/active]
+in SYSTEMPATH/Database/BaseConnection.php on line 692.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query()
+ 2 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(57): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 3 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTable.php(185): Hermawan\DataTables\DataTableQuery->countAll()
+ 4 APPPATH/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 6 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 02:25:58 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'users.status' in 'WHERE'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 332.
+ 1 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query()
+ 4 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(57): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 5 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTable.php(185): Hermawan\DataTables\DataTableQuery->countAll()
+ 6 APPPATH/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 8 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 02:25:58 --> [Caused by] mysqli_sql_exception: Unknown column 'users.status' in 'WHERE'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 327.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(327): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query()
+ 5 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(57): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 6 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTable.php(185): Hermawan\DataTables\DataTableQuery->countAll()
+ 7 APPPATH/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 9 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+11 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ERROR - 2025-04-05 02:28:18 --> mysqli_sql_exception: Unknown column 'users.status' in 'WHERE' in /var/www/html/capstone/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /var/www/html/capstone/system/Database/MySQLi/Connection.php(327): mysqli->query()
+#1 /var/www/html/capstone/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /var/www/html/capstone/system/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /var/www/html/capstone/system/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query()
+#4 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTableQuery.php(57): CodeIgniter\Database\BaseBuilder->countAllResults()
+#5 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTable.php(185): Hermawan\DataTables\DataTableQuery->countAll()
+#6 /var/www/html/capstone/app/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+#7 /var/www/html/capstone/system/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+#8 /var/www/html/capstone/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#9 /var/www/html/capstone/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#10 /var/www/html/capstone/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 /var/www/html/capstone/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#12 /var/www/html/capstone/public/index.php(56): CodeIgniter\Boot::bootWeb()
+#13 {main}
+CRITICAL - 2025-04-05 02:28:18 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'users.status' in 'WHERE'
+[Method: GET, Route: data/userManagement/active]
+in SYSTEMPATH/Database/BaseConnection.php on line 692.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query()
+ 2 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(57): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 3 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTable.php(185): Hermawan\DataTables\DataTableQuery->countAll()
+ 4 APPPATH/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 6 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 02:28:18 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'users.status' in 'WHERE'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 332.
+ 1 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query()
+ 4 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(57): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 5 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTable.php(185): Hermawan\DataTables\DataTableQuery->countAll()
+ 6 APPPATH/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 8 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 02:28:18 --> [Caused by] mysqli_sql_exception: Unknown column 'users.status' in 'WHERE'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 327.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(327): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query()
+ 5 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(57): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 6 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTable.php(185): Hermawan\DataTables\DataTableQuery->countAll()
+ 7 APPPATH/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 9 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+11 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ERROR - 2025-04-05 02:36:07 --> mysqli_sql_exception: Unknown column 'users.status' in 'WHERE' in /var/www/html/capstone/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /var/www/html/capstone/system/Database/MySQLi/Connection.php(327): mysqli->query()
+#1 /var/www/html/capstone/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /var/www/html/capstone/system/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /var/www/html/capstone/system/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query()
+#4 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTableQuery.php(57): CodeIgniter\Database\BaseBuilder->countAllResults()
+#5 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTable.php(185): Hermawan\DataTables\DataTableQuery->countAll()
+#6 /var/www/html/capstone/app/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+#7 /var/www/html/capstone/system/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+#8 /var/www/html/capstone/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#9 /var/www/html/capstone/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#10 /var/www/html/capstone/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 /var/www/html/capstone/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#12 /var/www/html/capstone/public/index.php(56): CodeIgniter\Boot::bootWeb()
+#13 {main}
+CRITICAL - 2025-04-05 02:36:07 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'users.status' in 'WHERE'
+[Method: GET, Route: data/userManagement/active]
+in SYSTEMPATH/Database/BaseConnection.php on line 692.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query()
+ 2 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(57): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 3 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTable.php(185): Hermawan\DataTables\DataTableQuery->countAll()
+ 4 APPPATH/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 6 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 02:36:07 --> ErrorException: Undefined variable $statusFilter
+[Method: GET, Route: data/userManagement/inactive]
+in APPPATH/Controllers/Data.php on line 24.
+ 1 APPPATH/Controllers/Data.php(24): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 3 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 02:36:07 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'users.status' in 'WHERE'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 332.
+ 1 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query()
+ 4 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(57): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 5 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTable.php(185): Hermawan\DataTables\DataTableQuery->countAll()
+ 6 APPPATH/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 8 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 02:36:07 --> [Caused by] mysqli_sql_exception: Unknown column 'users.status' in 'WHERE'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 327.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(327): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query()
+ 5 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(57): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 6 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTable.php(185): Hermawan\DataTables\DataTableQuery->countAll()
+ 7 APPPATH/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 9 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+11 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 02:36:07 --> ErrorException: Undefined variable $statusFilter
+[Method: GET, Route: data/userManagement/pending]
+in APPPATH/Controllers/Data.php on line 24.
+ 1 APPPATH/Controllers/Data.php(24): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 3 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ERROR - 2025-04-05 02:38:01 --> mysqli_sql_exception: Unknown column 'users.status' in 'WHERE' in /var/www/html/capstone/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /var/www/html/capstone/system/Database/MySQLi/Connection.php(327): mysqli->query()
+#1 /var/www/html/capstone/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /var/www/html/capstone/system/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /var/www/html/capstone/system/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query()
+#4 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTableQuery.php(57): CodeIgniter\Database\BaseBuilder->countAllResults()
+#5 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTable.php(185): Hermawan\DataTables\DataTableQuery->countAll()
+#6 /var/www/html/capstone/app/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+#7 /var/www/html/capstone/system/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+#8 /var/www/html/capstone/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#9 /var/www/html/capstone/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#10 /var/www/html/capstone/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 /var/www/html/capstone/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#12 /var/www/html/capstone/public/index.php(56): CodeIgniter\Boot::bootWeb()
+#13 {main}
+CRITICAL - 2025-04-05 02:38:01 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'users.status' in 'WHERE'
+[Method: GET, Route: data/userManagement/active]
+in SYSTEMPATH/Database/BaseConnection.php on line 692.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query()
+ 2 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(57): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 3 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTable.php(185): Hermawan\DataTables\DataTableQuery->countAll()
+ 4 APPPATH/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 6 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 02:38:01 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'users.status' in 'WHERE'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 332.
+ 1 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query()
+ 4 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(57): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 5 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTable.php(185): Hermawan\DataTables\DataTableQuery->countAll()
+ 6 APPPATH/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 8 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 02:38:01 --> [Caused by] mysqli_sql_exception: Unknown column 'users.status' in 'WHERE'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 327.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(327): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query()
+ 5 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(57): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 6 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTable.php(185): Hermawan\DataTables\DataTableQuery->countAll()
+ 7 APPPATH/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 9 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+11 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 02:40:08 --> ErrorException: Undefined variable $statusFilter
+[Method: GET, Route: data/userManagement/inactive]
+in APPPATH/Controllers/Data.php on line 24.
+ 1 APPPATH/Controllers/Data.php(24): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 3 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 02:40:08 --> ErrorException: Undefined variable $statusFilter
+[Method: GET, Route: data/userManagement/pending]
+in APPPATH/Controllers/Data.php on line 24.
+ 1 APPPATH/Controllers/Data.php(24): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 3 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ERROR - 2025-04-05 02:40:08 --> mysqli_sql_exception: Unknown column 'Users.username' in 'SELECT' in /var/www/html/capstone/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /var/www/html/capstone/system/Database/MySQLi/Connection.php(327): mysqli->query()
+#1 /var/www/html/capstone/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /var/www/html/capstone/system/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /var/www/html/capstone/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#4 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTableQuery.php(234): CodeIgniter\Database\BaseBuilder->get()
+#5 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTableQuery.php(74): Hermawan\DataTables\DataTableQuery->queryResult()
+#6 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTable.php(187): Hermawan\DataTables\DataTableQuery->getDataResult()
+#7 /var/www/html/capstone/app/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+#8 /var/www/html/capstone/system/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+#9 /var/www/html/capstone/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#10 /var/www/html/capstone/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#11 /var/www/html/capstone/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 /var/www/html/capstone/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#13 /var/www/html/capstone/public/index.php(56): CodeIgniter\Boot::bootWeb()
+#14 {main}
+CRITICAL - 2025-04-05 02:40:08 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'Users.username' in 'SELECT'
+[Method: GET, Route: data/userManagement/active]
+in SYSTEMPATH/Database/BaseConnection.php on line 692.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 2 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(234): CodeIgniter\Database\BaseBuilder->get()
+ 3 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(74): Hermawan\DataTables\DataTableQuery->queryResult()
+ 4 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTable.php(187): Hermawan\DataTables\DataTableQuery->getDataResult()
+ 5 APPPATH/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 02:40:08 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'Users.username' in 'SELECT'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 332.
+ 1 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 4 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(234): CodeIgniter\Database\BaseBuilder->get()
+ 5 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(74): Hermawan\DataTables\DataTableQuery->queryResult()
+ 6 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTable.php(187): Hermawan\DataTables\DataTableQuery->getDataResult()
+ 7 APPPATH/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 9 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+11 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 02:40:08 --> [Caused by] mysqli_sql_exception: Unknown column 'Users.username' in 'SELECT'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 327.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(327): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 5 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(234): CodeIgniter\Database\BaseBuilder->get()
+ 6 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(74): Hermawan\DataTables\DataTableQuery->queryResult()
+ 7 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTable.php(187): Hermawan\DataTables\DataTableQuery->getDataResult()
+ 8 APPPATH/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+ 9 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+10 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+11 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+12 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+14 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ERROR - 2025-04-05 02:40:19 --> mysqli_sql_exception: Unknown column 'Users.username' in 'SELECT' in /var/www/html/capstone/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /var/www/html/capstone/system/Database/MySQLi/Connection.php(327): mysqli->query()
+#1 /var/www/html/capstone/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /var/www/html/capstone/system/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /var/www/html/capstone/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#4 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTableQuery.php(234): CodeIgniter\Database\BaseBuilder->get()
+#5 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTableQuery.php(74): Hermawan\DataTables\DataTableQuery->queryResult()
+#6 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTable.php(187): Hermawan\DataTables\DataTableQuery->getDataResult()
+#7 /var/www/html/capstone/app/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+#8 /var/www/html/capstone/system/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+#9 /var/www/html/capstone/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#10 /var/www/html/capstone/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#11 /var/www/html/capstone/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 /var/www/html/capstone/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#13 /var/www/html/capstone/public/index.php(56): CodeIgniter\Boot::bootWeb()
+#14 {main}
+CRITICAL - 2025-04-05 02:40:19 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'Users.username' in 'SELECT'
+[Method: GET, Route: data/userManagement/active]
+in SYSTEMPATH/Database/BaseConnection.php on line 692.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 2 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(234): CodeIgniter\Database\BaseBuilder->get()
+ 3 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(74): Hermawan\DataTables\DataTableQuery->queryResult()
+ 4 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTable.php(187): Hermawan\DataTables\DataTableQuery->getDataResult()
+ 5 APPPATH/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 02:40:19 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'Users.username' in 'SELECT'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 332.
+ 1 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 4 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(234): CodeIgniter\Database\BaseBuilder->get()
+ 5 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(74): Hermawan\DataTables\DataTableQuery->queryResult()
+ 6 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTable.php(187): Hermawan\DataTables\DataTableQuery->getDataResult()
+ 7 APPPATH/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 9 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+11 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 02:40:19 --> [Caused by] mysqli_sql_exception: Unknown column 'Users.username' in 'SELECT'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 327.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(327): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 5 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(234): CodeIgniter\Database\BaseBuilder->get()
+ 6 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(74): Hermawan\DataTables\DataTableQuery->queryResult()
+ 7 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTable.php(187): Hermawan\DataTables\DataTableQuery->getDataResult()
+ 8 APPPATH/Controllers/Data.php(29): Hermawan\DataTables\DataTable->toJson()
+ 9 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+10 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+11 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+12 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+14 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 02:42:22 --> ErrorException: Undefined variable $statusFilter
+[Method: GET, Route: data/userManagement/inactive]
+in APPPATH/Controllers/Data.php on line 24.
+ 1 APPPATH/Controllers/Data.php(24): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 3 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 02:42:29 --> ErrorException: Undefined variable $statusFilter
+[Method: GET, Route: data/userManagement/inactive]
+in APPPATH/Controllers/Data.php on line 24.
+ 1 APPPATH/Controllers/Data.php(24): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 3 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 02:42:50 --> ErrorException: Undefined variable $statusFilter
+[Method: GET, Route: data/userManagement/pending]
+in APPPATH/Controllers/Data.php on line 24.
+ 1 APPPATH/Controllers/Data.php(24): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 3 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ERROR - 2025-04-05 02:52:39 --> mysqli_sql_exception: Unknown column 'users.status' in 'WHERE' in /var/www/html/capstone/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /var/www/html/capstone/system/Database/MySQLi/Connection.php(327): mysqli->query()
+#1 /var/www/html/capstone/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /var/www/html/capstone/system/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /var/www/html/capstone/system/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query()
+#4 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTableQuery.php(57): CodeIgniter\Database\BaseBuilder->countAllResults()
+#5 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTable.php(185): Hermawan\DataTables\DataTableQuery->countAll()
+#6 /var/www/html/capstone/app/Controllers/Data.php(37): Hermawan\DataTables\DataTable->toJson()
+#7 /var/www/html/capstone/system/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+#8 /var/www/html/capstone/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#9 /var/www/html/capstone/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#10 /var/www/html/capstone/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 /var/www/html/capstone/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#12 /var/www/html/capstone/public/index.php(56): CodeIgniter\Boot::bootWeb()
+#13 {main}
+CRITICAL - 2025-04-05 02:52:39 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'users.status' in 'WHERE'
+[Method: GET, Route: data/userManagement/active]
+in SYSTEMPATH/Database/BaseConnection.php on line 692.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query()
+ 2 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(57): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 3 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTable.php(185): Hermawan\DataTables\DataTableQuery->countAll()
+ 4 APPPATH/Controllers/Data.php(37): Hermawan\DataTables\DataTable->toJson()
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 6 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 02:52:39 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'users.status' in 'WHERE'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 332.
+ 1 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query()
+ 4 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(57): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 5 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTable.php(185): Hermawan\DataTables\DataTableQuery->countAll()
+ 6 APPPATH/Controllers/Data.php(37): Hermawan\DataTables\DataTable->toJson()
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 8 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 02:52:39 --> [Caused by] mysqli_sql_exception: Unknown column 'users.status' in 'WHERE'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 327.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(327): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query()
+ 5 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(57): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 6 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTable.php(185): Hermawan\DataTables\DataTableQuery->countAll()
+ 7 APPPATH/Controllers/Data.php(37): Hermawan\DataTables\DataTable->toJson()
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+ 9 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+11 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ERROR - 2025-04-05 02:55:01 --> mysqli_sql_exception: Table 'office_reservation_system.user_role' doesn't exist in /var/www/html/capstone/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /var/www/html/capstone/system/Database/MySQLi/Connection.php(327): mysqli->query()
+#1 /var/www/html/capstone/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /var/www/html/capstone/system/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /var/www/html/capstone/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#4 /var/www/html/capstone/system/Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 /var/www/html/capstone/system/BaseModel.php(713): CodeIgniter\Model->doFirst()
+#6 /var/www/html/capstone/app/Controllers/UserManagement.php(26): CodeIgniter\BaseModel->first()
+#7 /var/www/html/capstone/system/CodeIgniter.php(933): App\Controllers\UserManagement->profile()
+#8 /var/www/html/capstone/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#9 /var/www/html/capstone/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#10 /var/www/html/capstone/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 /var/www/html/capstone/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#12 /var/www/html/capstone/public/index.php(56): CodeIgniter\Boot::bootWeb()
+#13 {main}
+CRITICAL - 2025-04-05 02:55:01 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'office_reservation_system.user_role' doesn't exist
+[Method: GET, Route: user_management/profile/3]
+in SYSTEMPATH/Database/BaseConnection.php on line 692.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 2 SYSTEMPATH/Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 4 APPPATH/Controllers/UserManagement.php(26): CodeIgniter\BaseModel->first()
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\UserManagement->profile()
+ 6 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 02:55:01 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'office_reservation_system.user_role' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 332.
+ 1 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 4 SYSTEMPATH/Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 6 APPPATH/Controllers/UserManagement.php(26): CodeIgniter\BaseModel->first()
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\UserManagement->profile()
+ 8 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 02:55:01 --> [Caused by] mysqli_sql_exception: Table 'office_reservation_system.user_role' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 327.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(327): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH/Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 7 APPPATH/Controllers/UserManagement.php(26): CodeIgniter\BaseModel->first()
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\UserManagement->profile()
+ 9 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+11 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ERROR - 2025-04-05 02:56:29 --> mysqli_sql_exception: Unknown column 'user_role.user_role_name' in 'SELECT' in /var/www/html/capstone/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /var/www/html/capstone/system/Database/MySQLi/Connection.php(327): mysqli->query()
+#1 /var/www/html/capstone/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /var/www/html/capstone/system/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /var/www/html/capstone/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#4 /var/www/html/capstone/system/Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 /var/www/html/capstone/system/BaseModel.php(713): CodeIgniter\Model->doFirst()
+#6 /var/www/html/capstone/app/Controllers/UserManagement.php(25): CodeIgniter\BaseModel->first()
+#7 /var/www/html/capstone/system/CodeIgniter.php(933): App\Controllers\UserManagement->profile()
+#8 /var/www/html/capstone/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#9 /var/www/html/capstone/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#10 /var/www/html/capstone/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 /var/www/html/capstone/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#12 /var/www/html/capstone/public/index.php(56): CodeIgniter\Boot::bootWeb()
+#13 {main}
+CRITICAL - 2025-04-05 02:56:29 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'user_role.user_role_name' in 'SELECT'
+[Method: GET, Route: user_management/profile/3]
+in SYSTEMPATH/Database/BaseConnection.php on line 692.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 2 SYSTEMPATH/Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 4 APPPATH/Controllers/UserManagement.php(25): CodeIgniter\BaseModel->first()
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\UserManagement->profile()
+ 6 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 02:56:29 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'user_role.user_role_name' in 'SELECT'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 332.
+ 1 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 4 SYSTEMPATH/Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 6 APPPATH/Controllers/UserManagement.php(25): CodeIgniter\BaseModel->first()
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\UserManagement->profile()
+ 8 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 02:56:29 --> [Caused by] mysqli_sql_exception: Unknown column 'user_role.user_role_name' in 'SELECT'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 327.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(327): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH/Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 7 APPPATH/Controllers/UserManagement.php(25): CodeIgniter\BaseModel->first()
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\UserManagement->profile()
+ 9 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+11 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 02:57:12 --> ErrorException: Undefined array key "username"
+[Method: GET, Route: user_management/profile/3]
+in APPPATH/Views/user_profile.php on line 106.
+ 1 APPPATH/Views/user_profile.php(106): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/var/www/html/capstone/app/Views/user_profile.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/UserManagement.php(34): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\UserManagement->profile()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 02:59:00 --> ErrorException: Undefined array key "user_role_name"
+[Method: GET, Route: user_management/profile/3]
+in APPPATH/Views/user_profile.php on line 121.
+ 1 APPPATH/Views/user_profile.php(121): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/var/www/html/capstone/app/Views/user_profile.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/UserManagement.php(34): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\UserManagement->profile()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ERROR - 2025-04-05 03:00:04 --> mysqli_sql_exception: Table 'office_reservation_system.user_role' doesn't exist in /var/www/html/capstone/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /var/www/html/capstone/system/Database/MySQLi/Connection.php(327): mysqli->query()
+#1 /var/www/html/capstone/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /var/www/html/capstone/system/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /var/www/html/capstone/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#4 /var/www/html/capstone/system/Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 /var/www/html/capstone/system/BaseModel.php(713): CodeIgniter\Model->doFirst()
+#6 /var/www/html/capstone/app/Controllers/UserManagement.php(45): CodeIgniter\BaseModel->first()
+#7 /var/www/html/capstone/system/CodeIgniter.php(933): App\Controllers\UserManagement->edit()
+#8 /var/www/html/capstone/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#9 /var/www/html/capstone/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#10 /var/www/html/capstone/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 /var/www/html/capstone/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#12 /var/www/html/capstone/public/index.php(56): CodeIgniter\Boot::bootWeb()
+#13 {main}
+CRITICAL - 2025-04-05 03:00:04 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'office_reservation_system.user_role' doesn't exist
+[Method: GET, Route: user_management/edit/6]
+in SYSTEMPATH/Database/BaseConnection.php on line 692.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 2 SYSTEMPATH/Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 4 APPPATH/Controllers/UserManagement.php(45): CodeIgniter\BaseModel->first()
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\UserManagement->edit()
+ 6 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 03:00:04 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'office_reservation_system.user_role' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 332.
+ 1 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 4 SYSTEMPATH/Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 6 APPPATH/Controllers/UserManagement.php(45): CodeIgniter\BaseModel->first()
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\UserManagement->edit()
+ 8 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 03:00:04 --> [Caused by] mysqli_sql_exception: Table 'office_reservation_system.user_role' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 327.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(327): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH/Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 7 APPPATH/Controllers/UserManagement.php(45): CodeIgniter\BaseModel->first()
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\UserManagement->edit()
+ 9 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+11 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ERROR - 2025-04-05 03:18:28 --> mysqli_sql_exception: Table 'office_reservation_system.user_role' doesn't exist in /var/www/html/capstone/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /var/www/html/capstone/system/Database/MySQLi/Connection.php(327): mysqli->query()
+#1 /var/www/html/capstone/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /var/www/html/capstone/system/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /var/www/html/capstone/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#4 /var/www/html/capstone/system/Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 /var/www/html/capstone/system/BaseModel.php(713): CodeIgniter\Model->doFirst()
+#6 /var/www/html/capstone/app/Controllers/UserManagement.php(45): CodeIgniter\BaseModel->first()
+#7 /var/www/html/capstone/system/CodeIgniter.php(933): App\Controllers\UserManagement->edit()
+#8 /var/www/html/capstone/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#9 /var/www/html/capstone/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#10 /var/www/html/capstone/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 /var/www/html/capstone/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#12 /var/www/html/capstone/public/index.php(56): CodeIgniter\Boot::bootWeb()
+#13 {main}
+CRITICAL - 2025-04-05 03:18:28 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'office_reservation_system.user_role' doesn't exist
+[Method: GET, Route: user_management/edit/6]
+in SYSTEMPATH/Database/BaseConnection.php on line 692.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 2 SYSTEMPATH/Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 4 APPPATH/Controllers/UserManagement.php(45): CodeIgniter\BaseModel->first()
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\UserManagement->edit()
+ 6 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 03:18:28 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'office_reservation_system.user_role' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 332.
+ 1 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 4 SYSTEMPATH/Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 6 APPPATH/Controllers/UserManagement.php(45): CodeIgniter\BaseModel->first()
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\UserManagement->edit()
+ 8 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 03:18:28 --> [Caused by] mysqli_sql_exception: Table 'office_reservation_system.user_role' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 327.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(327): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH/Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 7 APPPATH/Controllers/UserManagement.php(45): CodeIgniter\BaseModel->first()
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\UserManagement->edit()
+ 9 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+11 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ERROR - 2025-04-05 03:21:12 --> mysqli_sql_exception: Table 'office_reservation_system.user_role' doesn't exist in /var/www/html/capstone/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /var/www/html/capstone/system/Database/MySQLi/Connection.php(327): mysqli->query()
+#1 /var/www/html/capstone/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /var/www/html/capstone/system/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /var/www/html/capstone/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#4 /var/www/html/capstone/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 /var/www/html/capstone/system/BaseModel.php(675): CodeIgniter\Model->doFindAll()
+#6 /var/www/html/capstone/app/Controllers/UserManagement.php(53): CodeIgniter\BaseModel->findAll()
+#7 /var/www/html/capstone/system/CodeIgniter.php(933): App\Controllers\UserManagement->edit()
+#8 /var/www/html/capstone/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#9 /var/www/html/capstone/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#10 /var/www/html/capstone/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 /var/www/html/capstone/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#12 /var/www/html/capstone/public/index.php(56): CodeIgniter\Boot::bootWeb()
+#13 {main}
+CRITICAL - 2025-04-05 03:21:12 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'office_reservation_system.user_role' doesn't exist
+[Method: GET, Route: user_management/edit/6]
+in SYSTEMPATH/Database/BaseConnection.php on line 692.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 2 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(675): CodeIgniter\Model->doFindAll()
+ 4 APPPATH/Controllers/UserManagement.php(53): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\UserManagement->edit()
+ 6 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 03:21:12 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'office_reservation_system.user_role' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 332.
+ 1 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 4 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(675): CodeIgniter\Model->doFindAll()
+ 6 APPPATH/Controllers/UserManagement.php(53): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\UserManagement->edit()
+ 8 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 03:21:12 --> [Caused by] mysqli_sql_exception: Table 'office_reservation_system.user_role' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 327.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(327): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(675): CodeIgniter\Model->doFindAll()
+ 7 APPPATH/Controllers/UserManagement.php(53): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\UserManagement->edit()
+ 9 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+11 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 03:22:21 --> ErrorException: Undefined variable $userRole
+[Method: GET, Route: user_management/edit/6]
+in APPPATH/Controllers/UserManagement.php on line 54.
+ 1 APPPATH/Controllers/UserManagement.php(54): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\UserManagement->edit()
+ 3 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 03:26:06 --> ErrorException: Undefined array key "username"
+[Method: GET, Route: user_management/edit/6]
+in APPPATH/Views/user_edit.php on line 26.
+ 1 APPPATH/Views/user_edit.php(26): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/var/www/html/capstone/app/Views/user_edit.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/UserManagement.php(56): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\UserManagement->edit()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ERROR - 2025-04-05 03:58:24 --> mysqli_sql_exception: Unknown column 'Facilities.created_at' in 'SELECT' in /var/www/html/capstone/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /var/www/html/capstone/system/Database/MySQLi/Connection.php(327): mysqli->query()
+#1 /var/www/html/capstone/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /var/www/html/capstone/system/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /var/www/html/capstone/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#4 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTableQuery.php(234): CodeIgniter\Database\BaseBuilder->get()
+#5 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTableQuery.php(74): Hermawan\DataTables\DataTableQuery->queryResult()
+#6 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTable.php(187): Hermawan\DataTables\DataTableQuery->getDataResult()
+#7 /var/www/html/capstone/app/Controllers/Data.php(62): Hermawan\DataTables\DataTable->toJson()
+#8 /var/www/html/capstone/system/CodeIgniter.php(933): App\Controllers\Data->facility()
+#9 /var/www/html/capstone/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#10 /var/www/html/capstone/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#11 /var/www/html/capstone/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 /var/www/html/capstone/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#13 /var/www/html/capstone/public/index.php(56): CodeIgniter\Boot::bootWeb()
+#14 {main}
+CRITICAL - 2025-04-05 03:58:24 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'Facilities.created_at' in 'SELECT'
+[Method: GET, Route: data/facility/active]
+in SYSTEMPATH/Database/BaseConnection.php on line 692.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 2 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(234): CodeIgniter\Database\BaseBuilder->get()
+ 3 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(74): Hermawan\DataTables\DataTableQuery->queryResult()
+ 4 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTable.php(187): Hermawan\DataTables\DataTableQuery->getDataResult()
+ 5 APPPATH/Controllers/Data.php(62): Hermawan\DataTables\DataTable->toJson()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->facility()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 03:58:24 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'Facilities.created_at' in 'SELECT'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 332.
+ 1 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 4 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(234): CodeIgniter\Database\BaseBuilder->get()
+ 5 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(74): Hermawan\DataTables\DataTableQuery->queryResult()
+ 6 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTable.php(187): Hermawan\DataTables\DataTableQuery->getDataResult()
+ 7 APPPATH/Controllers/Data.php(62): Hermawan\DataTables\DataTable->toJson()
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->facility()
+ 9 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+11 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 03:58:24 --> [Caused by] mysqli_sql_exception: Unknown column 'Facilities.created_at' in 'SELECT'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 327.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(327): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 5 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(234): CodeIgniter\Database\BaseBuilder->get()
+ 6 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableQuery.php(74): Hermawan\DataTables\DataTableQuery->queryResult()
+ 7 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTable.php(187): Hermawan\DataTables\DataTableQuery->getDataResult()
+ 8 APPPATH/Controllers/Data.php(62): Hermawan\DataTables\DataTable->toJson()
+ 9 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->facility()
+10 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+11 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+12 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+14 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+DEBUG - 2025-04-05 04:42:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-04-05 05:06:38 --> Error: Call to undefined method CodeIgniter\Database\MySQLi\Result::getQuery()
+[Method: GET, Route: data/facility/available]
+in APPPATH/Controllers/Data.php on line 61.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->facility()
+ 2 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 4 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 05:06:47 --> Error: Call to undefined method CodeIgniter\Database\MySQLi\Result::getQuery()
+[Method: GET, Route: data/facility/available]
+in APPPATH/Controllers/Data.php on line 61.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->facility()
+ 2 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 4 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 05:34:46 --> ErrorException: Undefined variable $user
+[Method: GET, Route: facility/detail/1]
+in APPPATH/Controllers/Facility.php on line 31.
+ 1 APPPATH/Controllers/Facility.php(31): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Facility->detail()
+ 3 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 05:36:59 --> ErrorException: Undefined variable $user
+[Method: GET, Route: facility/detail/1]
+in APPPATH/Views/user_profile.php on line 37.
+ 1 APPPATH/Views/user_profile.php(37): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/var/www/html/capstone/app/Views/user_profile.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Facility.php(33): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Facility->detail()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 05:40:05 --> ErrorException: Undefined variable $user
+[Method: GET, Route: facility/detail/1]
+in APPPATH/Views/facility_detail.php on line 26.
+ 1 APPPATH/Views/facility_detail.php(26): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/var/www/html/capstone/app/Views/facility_detail.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Facility.php(33): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Facility->detail()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 05:45:14 --> ErrorException: Undefined array key "user_id"
+[Method: GET, Route: facility/detail/1]
+in APPPATH/Views/facility_detail.php on line 39.
+ 1 APPPATH/Views/facility_detail.php(39): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/var/www/html/capstone/app/Views/facility_detail.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Facility.php(33): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Facility->detail()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 05:49:10 --> ErrorException: Undefined array key "email"
+[Method: GET, Route: facility/detail/1]
+in APPPATH/Views/facility_detail.php on line 48.
+ 1 APPPATH/Views/facility_detail.php(48): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/var/www/html/capstone/app/Views/facility_detail.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Facility.php(33): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Facility->detail()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 05:51:42 --> ErrorException: Undefined variable $department
+[Method: GET, Route: facility/detail/1]
+in APPPATH/Views/facility_detail.php on line 58.
+ 1 APPPATH/Views/facility_detail.php(58): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/var/www/html/capstone/app/Views/facility_detail.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Facility.php(33): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Facility->detail()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 05:55:34 --> ErrorException: Undefined variable $department
+[Method: GET, Route: facility/detail/1]
+in APPPATH/Views/facility_detail.php on line 60.
+ 1 APPPATH/Views/facility_detail.php(60): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/var/www/html/capstone/app/Views/facility_detail.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Facility.php(33): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Facility->detail()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ERROR - 2025-04-05 06:01:09 --> mysqli_sql_exception: Unknown column 'Building.name' in 'SELECT' in /var/www/html/capstone/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /var/www/html/capstone/system/Database/MySQLi/Connection.php(327): mysqli->query()
+#1 /var/www/html/capstone/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /var/www/html/capstone/system/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /var/www/html/capstone/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#4 /var/www/html/capstone/system/Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 /var/www/html/capstone/system/BaseModel.php(713): CodeIgniter\Model->doFirst()
+#6 /var/www/html/capstone/app/Controllers/Facility.php(25): CodeIgniter\BaseModel->first()
+#7 /var/www/html/capstone/system/CodeIgniter.php(933): App\Controllers\Facility->detail()
+#8 /var/www/html/capstone/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#9 /var/www/html/capstone/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#10 /var/www/html/capstone/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 /var/www/html/capstone/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#12 /var/www/html/capstone/public/index.php(56): CodeIgniter\Boot::bootWeb()
+#13 {main}
+CRITICAL - 2025-04-05 06:01:09 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'Building.name' in 'SELECT'
+[Method: GET, Route: facility/detail/1]
+in SYSTEMPATH/Database/BaseConnection.php on line 692.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 2 SYSTEMPATH/Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 4 APPPATH/Controllers/Facility.php(25): CodeIgniter\BaseModel->first()
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Facility->detail()
+ 6 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 06:01:09 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'Building.name' in 'SELECT'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 332.
+ 1 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 4 SYSTEMPATH/Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 6 APPPATH/Controllers/Facility.php(25): CodeIgniter\BaseModel->first()
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Facility->detail()
+ 8 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 06:01:09 --> [Caused by] mysqli_sql_exception: Unknown column 'Building.name' in 'SELECT'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 327.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(327): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH/Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 7 APPPATH/Controllers/Facility.php(25): CodeIgniter\BaseModel->first()
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Facility->detail()
+ 9 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+11 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 06:01:37 --> ErrorException: Undefined variable $department
+[Method: GET, Route: facility/detail/1]
+in APPPATH/Views/facility_detail.php on line 60.
+ 1 APPPATH/Views/facility_detail.php(60): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/var/www/html/capstone/app/Views/facility_detail.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Facility.php(34): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Facility->detail()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 06:03:50 --> ErrorException: Undefined array key "role"
+[Method: GET, Route: facility/detail/1]
+in APPPATH/Views/facility_detail.php on line 71.
+ 1 APPPATH/Views/facility_detail.php(71): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/var/www/html/capstone/app/Views/facility_detail.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Facility.php(34): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Facility->detail()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-05 06:03:54 --> ErrorException: Undefined array key "role"
+[Method: GET, Route: facility/detail/1]
+in APPPATH/Views/facility_detail.php on line 71.
+ 1 APPPATH/Views/facility_detail.php(71): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/var/www/html/capstone/app/Views/facility_detail.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Facility.php(34): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Facility->detail()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+DEBUG - 2025-04-05 12:36:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-04-05 13:26:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-04-05 13:26:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-04-05 13:27:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-04-05 13:27:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-04-05 14:58:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-04-05 15:14:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-04-05 15:28:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-04-05 15:29:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-04-05 16:38:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
