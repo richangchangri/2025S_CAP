@@ -74,6 +74,7 @@
                                 </ul>
                                 <div class="tab-content">
                                     <div id="available" class="tab-pane active">
+                                        <div class="pull-right tableTools-container-available"></div><br />
                                         <table id="availableBuilding" class="table table-striped table-bordered" style="width:100%">
                                             <thead>
                                                 <tr>
@@ -99,6 +100,7 @@
                                     </div>
 
                                     <div id="maintenance" class="tab-pane">
+                                        <div class="pull-right tableTools-container-maintenance"></div><br />
                                         <table id="maintenanceBuilding" class="table table-striped table-bordered" style="width:100%">
                                             <thead>
                                                 <tr>
@@ -124,6 +126,7 @@
                                     </div>
 
                                     <div id="all" class="tab-pane">
+                                        <div class="pull-right tableTools-container-allbuilding"></div><br />
                                         <table id="allBuilding" class="table table-striped table-bordered" style="width:100%">
                                             <thead>
                                                 <tr>
@@ -158,46 +161,115 @@
     <script type="text/javascript">
         $(document).ready(function() {
             function initializeTable(tableId, status) {
-        return $('#' + tableId).DataTable({
-            bAutoWidth: false,
-            "aoColumns": [
-                { "bSortable": false },
-                { "bSortable": false },
-                { "bSortable": false },
-                { "bSortable": false },
-                { "bSortable": false }
-            ],
-            "aaSorting": [],
-            columnDefs: [
-                {
-                    targets: 0,
-                    data: "building_id",
-                    render: function (data, type, row, meta) {
-                        return `<div class="text-center">
-                            <a href="<?= base_url(); ?>building/edit/${row[0]}" class="btn btn-xs btn-warning">
-                                <i class="fa fa-edit"></i>
-                            </a>
-                            <a href="#" class="btn btn-xs btn-danger delete-user" data-id="${row[0]}">
-                                <i class="fa fa-trash"></i>
-                            </a>
-                        </div>`;
-                    }
-                }
-            ],
-            select: {
-                style: 'multi'
-            },
-            processing: true,
-            serverSide: true,
-            ajax: '<?= base_url("data/building/") ?>' + status,
-            type: 'GET'
-        });
-    }
+                    var myTable = $('#' + tableId).DataTable({
+                    bAutoWidth: false,
+                    "aoColumns": [
+                        { "bSortable": false },
+                        { "bSortable": false },
+                        { "bSortable": false },
+                        { "bSortable": false },
+                        { "bSortable": false }
+                    ],
+                    "aaSorting": [],
+                    columnDefs: [
+                        {
+                            targets: 0,
+                            data: "building_id",
+                            render: function (data, type, row, meta) {
+                                return `<div class="text-center">
+                                    <a href="<?= base_url(); ?>building/detail/${row[0]}" class="btn btn-xs btn-default">
+                                        <i class="fa fa-eye"></i>
+                                    </a>
+                                    <a href="<?= base_url(); ?>building/edit/${row[0]}" class="btn btn-xs btn-warning">
+                                        <i class="fa fa-edit"></i>
+                                    </a>
+                                    <a href="#" class="btn btn-xs btn-danger delete-user" data-id="${row[0]}">
+                                        <i class="fa fa-trash"></i>
+                                    </a>
+                                </div>`;
+                            }
+                        }
+                    ],
+                    select: {
+                        style: 'multi'
+                    },
+                    processing: true,
+                    serverSide: true,
+                    ajax: '<?= base_url("data/building/") ?>' + status,
+                    type: 'GET',
+                    dom: 'Bfrtip',
+                    buttons: [
+                        {
+                            text: '<i class="fa fa-plus bigger-110 orange"></i> <span class="hidden">Add</span>',
+                            className: 'btn btn-white btn-primary btn-bold addbtn'
+                        },
+                        {
+                            extend: 'colvis',
+                            text: '<i class="fa fa-search bigger-110 blue"></i> <span class="hidden">Show/hide columns</span>',
+                            className: 'btn btn-white btn-primary btn-bold',
+                            columns: ':not(:first):not(:last)'
+                        },
+                        {
+                            extend: 'copy',
+                            text: '<i class="fa fa-copy bigger-110 pink"></i> <span class="hidden">Copy to clipboard</span>',
+                            className: 'btn btn-white btn-primary btn-bold'
+                        },                       
+                        {
+                            extend: 'excel',
+                            text: '<i class="fa fa-file-excel-o bigger-110 green"></i> <span class="hidden">Export to Excel</span>',
+                            className: 'btn btn-white btn-primary btn-bold'
+                        },
+                        {
+                            extend: 'pdf',
+                            text: '<i class="fa fa-file-pdf-o bigger-110 red"></i> <span class="hidden">Export to PDF</span>',
+                            className: 'btn btn-white btn-primary btn-bold'
+                        },
+                        {
+                            extend: 'print',
+                            text: '<i class="fa fa-print bigger-110 grey"></i> <span class="hidden">Print</span>',
+                            className: 'btn btn-white btn-primary btn-bold',
+                            autoPrint: false,
+                            message: 'This print was produced using the Print button for DataTables'
+                        }
+                    ]
+                });
 
-    // Initialize DataTables
-    var availableTable = initializeTable('availableBuilding', 'available');
-    var maintenanceTable = initializeTable('maintenanceBuilding', 'maintenance');
-    var allTable = initializeTable('allBuilding', 'all');
+                // Style the message box
+                myTable.on('buttons-action', function(e, buttonApi, dataTable, node, config) {
+                    if (buttonApi.index() === 1) { // Copy button
+                        $('.dt-button-info').addClass('gritter-item-wrapper gritter-info gritter-center white');
+                    }
+                });
+
+                // Style column visibility dropdown
+                myTable.on('column-visibility', function(e, settings, column, state) {
+                    if ($('.dt-button-collection > .dropdown-menu').length === 0) {
+                        $('.dt-button-collection')
+                            .wrapInner('<ul class="dropdown-menu dropdown-light dropdown-caret dropdown-caret" />')
+                            .find('a').attr('href', '#').wrap("<li />");
+                    }
+                    $('.dt-button-collection').appendTo('.tableTools-container .dt-buttons');
+                });
+
+                // Add tooltips
+                setTimeout(function() {
+                    $('.tableTools-container').find('a.dt-button').each(function() {
+                        var div = $(this).find(' > div').first();
+                        if(div.length === 1) {
+                            div.tooltip({container: 'body', title: div.parent().text()});
+                        } else {
+                            $(this).tooltip({container: 'body', title: $(this).text()});
+                        }
+                    });
+                }, 500);
+
+                return myTable;
+         }
+
+            // Initialize DataTables
+            var availableTable = initializeTable('availableBuilding', 'available');
+            var maintenanceTable = initializeTable('maintenanceBuilding', 'maintenance');
+            var allTable = initializeTable('allBuilding', 'allbuilding');
 
             $('.delete-user').on('click',  function(e) {
             e.preventDefault();
@@ -219,7 +291,13 @@
                     }
                 });
             }
+
         });
+
+        $('.addbtn').on('click', function() {
+            let url = "<?= base_url(); ?>building/add";
+            window.location.href = url;
         });
+    });
     </script>
 <?= $this->endSection() ?>

@@ -17,20 +17,33 @@ class Building extends Controller
         $id = $this->request->getUri()->getSegment(3);
         // echo $userid;
         $buildingModel = new BuildingModel();
-        $building = $buildingModel->select('Buildings.*, FacilityTypes.name as facilities_type_name, Buildings.name as building_name')
-                        ->join('FacilityTypes', 'FacilityTypes.building_type_id = Facilities.building_type_id', 'left')
-                        ->join('Buildings', 'Buildings.building_id = Facilities.building_id', 'left')
+        $building = $buildingModel->select('Buildings.*, Buildings.name as building_name,FacilitiesType.name as facilities_type_name')
+                        ->join('Facilities', 'Facilities.building_id = Buildings.building_id', 'left')
+                        ->join('FacilitiesType', 'FacilitiesType.facility_type_id = Facilities.facility_type_id', 'left')
                         ->where('Facilities.building_id', $id)
                         ->first();
 
-        echo $buildingModel->db->getLastQuery();
+        // echo $buildingModel->db->getLastQuery();
         if(!$building){
-            // throw new PageNotFoundException("Page not found");
+            throw new PageNotFoundException("Page not found");
         } 
         $data = [
             'building' => $building
         ];
         return view('building_detail', $data);
+    }
+
+    public function add(){
+        $buildingId = $this->request->getUri()->getSegment(3);
+        // echo $userid;
+        $buildingModel = new BuildingModel(); 
+        $building = $buildingModel->select('Buildings.*')
+                        ->first();
+        
+        $data = [
+            'building' => $building,
+        ];
+        return view('building_add', $data);
     }
 
     public function edit(){
@@ -54,33 +67,26 @@ class Building extends Controller
     public function save()
     {
         $model = new BuildingModel(); 
-        $user_id = $this->request->getVar('user_id');
-        $username = $this->request->getVar('username');
+        $building_id = $this->request->getVar('building_id');
         $name = $this->request->getVar('name');
-        $email = $this->request->getVar('email');
-        $department = $this->request->getVar('department');
-        $userRole = $this->request->getVar('userRole');
+        $address = $this->request->getVar('address');
+        $floors = $this->request->getVar('floors');
+        $contactPerson = $this->request->getVar('contact_person');
         $status = $this->request->getVar('status');
-        $password = $this->request->getVar('password');
 
-        $user = $model->where('user_id', $user_id)->first();
-        $userData = [
-            'email' => $email,
-            'department_id' => $department,
-            'user_role_id' => $userRole,
-            'username' => $username,
+        $building = $model->where('building_id', $building_id)->first();
+        $buildingData = [
             'name' => $name,
-            'status' => !empty($status) ? $status : 'active'
+            'address' => $address,
+            'floors' => $floors,
+            'contact_person' => $contactPerson,
+            'status' => !empty($status) ? $status : 'available'
         ];
 
-        if (!empty($password)) {
-            $userData['password'] = password_hash($password, PASSWORD_DEFAULT);
-        }
-
-        if ($user) {
-            // Update user
-            $userData['updated_at'] = date('Y-m-d H:i:s');  
-            $submit = $model->update($user['user_id'], $userData);
+        if ($building) {
+            // Update building
+            $buildingData['updated_at'] = date('Y-m-d H:i:s');  
+            $submit = $model->update($building['building_id'], $buildingData);
             if (!$submit) {
                 return $this->response->setJSON([
                     "status" => "error", 
@@ -89,12 +95,12 @@ class Building extends Controller
             } 
             return $this->response->setJSON([
                 "status" => "success", 
-                "message" => '<div class="alert alert-success"><strong>Success!</strong> User updated successfully.</div>'
+                "message" => '<div class="alert alert-success"><strong>Success!</strong> Builidng updated successfully.</div>'
             ]);
         } else {
-            // Insert new user
-            $userData['created_at'] = date('Y-m-d H:i:s');
-            $submit = $model->insert($userData);
+            // Insert new building
+            $buildingData['created_at'] = date('Y-m-d H:i:s');
+            $submit = $model->insert($buildingData);
             if (!$submit) {
                 return $this->response->setJSON([
                     "status" => "error", 
@@ -103,37 +109,37 @@ class Building extends Controller
             } 
             return $this->response->setJSON([
                 "status" => "success", 
-                "message" => '<div class="alert alert-success"><strong>Success!</strong> User created successfully.</div>'
+                "message" => '<div class="alert alert-success"><strong>Success!</strong> Building created successfully.</div>'
             ]);
         }
     }
 
 
-    public function delete($user_id)
+    public function delete($building_id)
     {
         $model = new BuildingModel();
 
-        // Check if user exists
-        $user = $model->where('user_id', $user_id)->first();
-        if (!$user) {
+        // Check if building exists
+        $building = $model->where('building_id', $building_id)->first();
+        if (!$building) {
             return $this->response->setJSON([
                 "status" => "error",
-                "message" => '<div class="alert alert-danger"><strong>Error!</strong> User not found.</div>'
+                "message" => '<div class="alert alert-danger"><strong>Error!</strong> Building not found.</div>'
             ]);
         }
 
-        // Delete user
-        $deleted = $model->where('user_id', $user_id)->delete();
+        // Delete Building
+        $deleted = $model->where('building_id', $building_id)->delete();
         if (!$deleted) {
             return $this->response->setJSON([
                 "status" => "error",
-                "message" => '<div class="alert alert-danger"><strong>Error!</strong> Failed to delete user.</div>'
+                "message" => '<div class="alert alert-danger"><strong>Error!</strong> Failed to delete building.</div>'
             ]);
         }
 
         return $this->response->setJSON([
             "status" => "success",
-            "message" => '<div class="alert alert-success"><strong>Success!</strong> User deleted successfully.</div>'
+            "message" => '<div class="alert alert-success"><strong>Success!</strong> Building deleted successfully.</div>'
         ]);
     }
 }

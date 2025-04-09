@@ -42,7 +42,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="col-sm-3 control-label no-padding-right" for="email"> Description </label>
+                            <label class="col-sm-3 control-label no-padding-right" for="email"> Adress </label>
 
                             <div class="col-sm-9">
                                 <input type="text" id="address" name="address" placeholder="Text Field" class="form-control" value="<?= esc($building['address']); ?>">
@@ -50,7 +50,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="col-sm-3 control-label no-padding-right" for="department"> Capacity </label>
+                            <label class="col-sm-3 control-label no-padding-right" for="department"> Floors </label>
 
                             <div class="col-sm-9">
                                  <input type="text" id="floors" name="floors" placeholder="Text Field" class="form-control" value="<?= esc($building['floors']); ?>">
@@ -71,7 +71,7 @@
 
                             <div class="col-sm-9">
                                 <label>
-                                    <input name="status" class="ace ace-switch ace-switch-5" <?php if($building['status'] == "available")  echo "checked"; ?> type="checkbox" value="active">
+                                    <input name="status" class="ace ace-switch ace-switch-5" <?php if($building['status'] == "available")  echo "checked"; ?> type="checkbox" value="available">
                                     <span class="lbl"></span>
                                 </label>          
                             </div>

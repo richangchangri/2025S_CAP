@@ -36,6 +36,9 @@ class Login extends Controller
             // $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
             // echo "Hash dari password '1234567890': " . $hashedPassword . "<br>";
             if($verify_pass){
+                if($data['status'] == "inactive"){
+                    return $this->response->setJSON(["status" => "error", "message" => "We apologize, your account is currently suspended. Please contact the administrator"]);
+                }
                  // Generate OTP code (6-digit)                 
                 $otp_code = rand(100000, 999999);
                 date_default_timezone_set('Asia/Jakarta');
@@ -54,35 +57,35 @@ class Login extends Controller
                     // Insert OTP baru
                     $otpModel->insert($otpData);
                 }
-                
+                // $ses_data = [
+                //     'user_id'  => $data['user_id'],
+                //     'department_id'  => $data['department_id'],
+                //     'role'  => $data['role'],
+                //     'name'      => $data['user_id'],
+                //     'email'     => $data['email'],
+                //     'login'     => TRUE
+                // ];
                 $ses_data = [
-                    'user_id'  => $data['user_id'],
-                    'department_id'  => $data['department_id'],
-                    'role'  => $data['role'],
-                    'name'      => $data['name'],
-                    'email'     => $data['email'],
-                    'login'     => TRUE
+                    'email'     => $data['email']
                 ];
                 $session->set($ses_data);
-                // $ses_data = [
-                //     'email'    => $data['email']
-                // ];
+
                  // Send OTP to email
-                //  $emailService = \Config\Services::email();
-                //  $emailService->setFrom('michaelnaibahocapstone@gmail.com', 'Booking ROOM Apps');
-                //  $emailService->setTo($data['email']);
-                //  $emailService->setSubject('Your OTP Code');
-                //  $emailService->setMessage('Your OTP code is: ' . $otp_code);
-                //  if (!$emailService->send()) {
-                //     // Cetak debugging email jika terjadi error
-                //     return $this->response->setJSON([
-                //         "status" => "error",
-                //         "message" => "Failed to send OTP email",
-                //         "debug" => $emailService->printDebugger(['headers', 'subject', 'body'])
-                //     ]);
-                // }
+                 $emailService = \Config\Services::email();
+                 $emailService->setFrom('hello@demomailtrap.co', 'Booking ROOM Apps');
+                 $emailService->setTo($data['email']);
+                 $emailService->setSubject('Your OTP Code');
+                 $emailService->setMessage('Your OTP code is: ' . $otp_code);
+                 if (!$emailService->send()) {
+                    // Cetak debugging email jika terjadi error
+                    return $this->response->setJSON([
+                        "status" => "error",
+                        "message" => "Failed to send OTP email",
+                        "debug" => $emailService->printDebugger(['headers', 'subject', 'body'])
+                    ]);
+                }
                 
-                return $this->response->setJSON(["status" => "success", "message" => "Login successful"]);
+                return $this->response->setJSON(["status" => "success", "email" => $email, "message" => "Login successful"]);
             }else{
                 return $this->response->setJSON(["status" => "error", "message" => "Wrong Password"]);
             }
@@ -134,7 +137,11 @@ class Login extends Controller
         if ($session->get('login')) {
             return redirect()->to('/dashboard');
         }
-        return view('login_verify', ['title' => 'Login Page']);
+        $email = $this->request->getGet('email');
+        $data = [
+            'email' => $email, 
+        ];
+        return view('login_verify', $data);
     }
 
     public function checkOTP()
@@ -142,11 +149,14 @@ class Login extends Controller
         $session = session();              
         date_default_timezone_set('Asia/Jakarta');
         $db = \Config\Database::connect(); 
+        $emailInput = $this->request->getPost('email');   
         $otpInput = $this->request->getPost('otp-code');      
-            date_default_timezone_set('Asia/Jakarta');
-        $email = $session->get('email'); // Ambil email pengguna dari sesi
-
-        if (!$email) {            
+         
+        if($this->request->getPost('email')){
+           $email = $this->request->getPost('email');      
+        } else if ($session->get('email')) {     
+            $email = $session->get('email'); // Ambil email pengguna dari sesi              
+        } else {            
             return $this->response->setJSON(["status" => "error", "message" => "Session expired, please login again."]);
         }
         $model = new UserModel();
@@ -161,10 +171,13 @@ class Login extends Controller
             $otpModel->update($otp['id'], ['otp_code' => null]);
             
             $data = $model->where('email', $email)->first();
+            if($data['status'] == "pending"){
+                $model->update($data['user_id'], ['status' => 'active']);
+            }
             $ses_data = [
                 'user_id'  => $data['user_id'],
                 'department_id'  => $data['department_id'],
-                'role'  => $data['role'],
+                'role'      => $data['role'],
                 'name'      => $data['user_id'],
                 'email'     => $data['email'],
                 'login'     => TRUE
@@ -180,7 +193,7 @@ class Login extends Controller
     public function resendOTP(){
         
         $session = session();
-        
+        date_default_timezone_set('Asia/Jakarta');
         $db = \Config\Database::connect(); 
         $email = $session->get('email'); // Ambil email pengguna dari sesi        
         $otpModel = new OtpModel(); 
@@ -204,7 +217,7 @@ class Login extends Controller
 
         // Send OTP to email
         $emailService = \Config\Services::email();
-        $emailService->setFrom('noreply@cni.net.id', 'Booking ROOM Apps');
+        $emailService->setFrom('hello@demomailtrap.co', 'Booking ROOM Apps');
         $emailService->setTo($otp['email']);
         $emailService->setSubject('Your OTP Code');
         $emailService->setMessage('Your OTP code is: ' . $otp_code);
@@ -218,6 +231,80 @@ class Login extends Controller
         } else {            
             return $this->response->setJSON(["status" => "success", "message" => "OTP already sent to Email."]);
         }
+    }
+
+    public function register(){
+        $session = session();
+        date_default_timezone_set('Asia/Jakarta');
+        $model = new UserModel();
+        $db = \Config\Database::connect(); 
+        $email = $this->request->getVar('email');        
+        $fullname = $this->request->getVar('fullname');   
+        $password = $this->request->getVar('password');   
+        $repassword = $this->request->getVar('repassword');  
+        $cekEmail = $model->where('email', $email)->first();
+        if ($cekEmail) {
+            return $this->response->setJSON(["status" => "error", "message" => "Email already registered."]);
+        }
+        if ($password != $repassword) {
+            return $this->response->setJSON(["status" => "error", "message" => "Repeat password is not the same as the password."]);
+        }
+
+        $userData = [
+            'email' => $email,
+            'name' => $fullname,
+            'role' => 'Regular User',
+            'password' => password_hash($password, PASSWORD_DEFAULT),
+            'status' => 'Pending',            
+            'created_at' => date('Y-m-d H:i:s')
+        ];
+        $submit = $model->insert($userData);
+        if (!$submit) {
+            return $this->response->setJSON([
+                "status" => "error", 
+                "message" => '<div class="alert alert-danger"><strong>Insert Failed!</strong> Please try again.</div>'
+            ]);
+        } 
+        $ses_data = [
+            'email'     => $email
+        ];
+        $session->set($ses_data);
+        $otpModel = new OtpModel(); 
+        $otp_code = rand(100000, 999999);
+        $expired_at = date('Y-m-d H:i:s', strtotime('+30 minutes')); // OTP valid for 5 minutes                 
+        $otp = $otpModel->where('email', $email)->first();
+        if($otp){
+            $otpModel->update($otp['id'], [
+                'otp_code'  => $otp_code,
+                'expired_at'=> $expired_at,
+            ]);
+        } else {
+            // Insert OTP code into database
+            $otpData = [
+                'email'     => $otp['email'],
+                'otp_code'  => $otp_code,
+                'expired_at'=> $expired_at,
+            ];
+            $otpModel->save($otpData);
+        }
+
+        // Send OTP to email
+        $emailService = \Config\Services::email();        
+        $emailService->setFrom('hello@demomailtrap.co', 'Booking ROOM Apps');
+        $emailService->setTo($otp['email']);
+        $emailService->setSubject('Your OTP Code');
+        $emailService->setMessage('Your OTP code is: ' . $otp_code);
+        if (!$emailService->send()) {
+        // Cetak debugging email jika terjadi error
+            return $this->response->setJSON([
+                "status" => "error",
+                "message" => "Failed to send OTP email",
+                "debug" => $emailService->printDebugger(['headers', 'subject', 'body'])
+            ]);
+        } else {            
+            return $this->response->setJSON(["status" => "success","email" => $email, "message" => "User created successfully, Please check your email for verfication."]);
+        }
+        
     }
 }
 

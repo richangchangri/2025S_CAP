@@ -164,42 +164,42 @@
 												<i class="ace-icon fa fa-users blue"></i>
 												New User Registration
 											</h4>
-
+											<span id="alert_signup"></span>
 											<div class="space-6"></div>
 											<p> Enter your details to begin: </p>
 
-											<form>
+											<form name="registerForm" id="registerForm">
 												<fieldset>
 													<label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="email" class="form-control" placeholder="Email" />
+															<input type="email" class="form-control" id="email" name="email"  placeholder="Email" autocomplete="off" required />
 															<i class="ace-icon fa fa-envelope"></i>
 														</span>
 													</label>
 
 													<label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="text" class="form-control" placeholder="Username" />
+															<input type="text" id="fullname" name="fullname" class="form-control" placeholder="Full Name" />
 															<i class="ace-icon fa fa-user"></i>
 														</span>
 													</label>
 
 													<label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="password" class="form-control" placeholder="Password" />
+															<input type="password" id="password" name="password" class="form-control" placeholder="Password" autocomplete="off" required />
 															<i class="ace-icon fa fa-lock"></i>
 														</span>
 													</label>
 
 													<label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="password" class="form-control" placeholder="Repeat password" />
+															<input type="password" class="form-control" id="repassword" name="repassword" placeholder="Repeat password" autocomplete="off" required />
 															<i class="ace-icon fa fa-retweet"></i>
 														</span>
 													</label>
 
 													<label class="block">
-														<input type="checkbox" class="ace" />
+														<input type="checkbox" id="tos" name="tos" class="ace" required />
 														<span class="lbl">
 															I accept the
 															<a href="#">User Agreement</a>
@@ -214,7 +214,7 @@
 															<span class="bigger-110">Reset</span>
 														</button>
 
-														<button type="button" class="width-65 pull-right btn btn-sm btn-success">
+														<button type="button" name="btnRegister" id="btnRegister" class="width-65 pull-right btn btn-sm btn-success">
 															<span class="bigger-110">Register</span>
 
 															<i class="ace-icon fa fa-arrow-right icon-on-right"></i>
@@ -279,7 +279,8 @@
 							dataType: "JSON",
 							success: function(data) {
 								if(data.status == "success"){									
-									window.location.href = '<?= base_url('login/verify'); ?>'; 
+									let emailEncoded = encodeURIComponent(data.email);
+									window.location.href = "<?= base_url('login/verify'); ?>" + "?email=" + emailEncoded;
 								} else {
 									$('#alert').html('<div class="alert alert-danger">' +
 												'<button type="button" class="close" data-dismiss="alert">' +
@@ -348,7 +349,8 @@
 							dataType: "JSON",
 							success: function(data) {
 								if(data.status == "success"){									
-									window.location.href = '<?= base_url('login/verify'); ?>'; 
+									let emailEncoded = encodeURIComponent(data.email);
+									window.location.href = "<?= base_url('login/verify'); ?>" + "?email=" + emailEncoded;
 								} else {
 									$('#alert').html('<div class="alert alert-danger">' +
 												'<button type="button" class="close" data-dismiss="alert">' +
@@ -381,6 +383,91 @@
 					ignore: "",
 					rules: {
 						user_id: {
+							required: true
+						}
+					},
+					errorPlacement: function(error, element) {
+						error.addClass("help-block");
+						if (element.prop("type") === "checkbox" || element.prop("type") === "radio") {
+							error.insertAfter(element.parent("label"));
+						} else {
+							error.insertAfter(element);
+						}
+					},
+					highlight: function(element, errorClass, validClass) {
+						$(element).parents('.form-group').addClass('has-error').removeClass('has-success');
+					},
+					unhighlight: function(element, errorClass, validClass) {
+							$(element).parents('.form-group').addClass('has-success').removeClass('has-error');
+						}
+						/*submitHandler: function(form) {},
+						invalidHandler: function(form) {}*/
+				});
+
+
+				//Register users
+				$('#btnRegister').on('click', function(e) {
+					if ($('#registerForm').valid()) {
+						$('#btnRegister').text('wait...'); //change button text
+						$('#btnRegister').attr('disabled', true); //set button disable 
+						// ajax adding data to database
+						$.ajax({
+							url: "<?= base_url('register'); ?>",
+							type: "POST",
+							data: $('#registerForm').serialize(),
+							dataType: "JSON",
+							success: function(data) {
+								if(data.status == "success"){									
+									let emailEncoded = encodeURIComponent(data.email);
+									window.location.href = "<?= base_url('login/verify'); ?>" + "?email=" + emailEncoded;
+								} else {
+									$('#alert_signup').html('<div class="alert alert-danger">' +
+												'<button type="button" class="close" data-dismiss="alert">' +
+												'<i class="ace-icon fa fa-times"></i>' +
+												'</button>' +
+												'<strong>' +
+												'Oh Sorry! ' +
+												'</strong>' + data.message + '.' + '<br>' +
+												'</div>');
+								}
+								$('#btnRegister').html('<span class="bigger-110">Register</span><i class="ace-icon fa fa-arrow-right icon-on-right"></i>'); //change button text
+								$('#btnRegister').attr('disabled', false); //set button enable 
+							},
+							error: function(jqXHR, textStatus, errorThrown) {
+								alert('Error adding / update data');
+								$('#btnRegister').html('<span class="bigger-110">Register</span><i class="ace-icon fa fa-arrow-right icon-on-right"></i>'); //change button text
+								$('#btnRegister').attr('disabled', false); //set button enable 
+							}
+						});
+					} else {
+						e.preventDefault();
+					}
+				});
+				/********************************/
+
+				$('#registerForm').validate({
+					errorElement: 'div',
+					errorClass: 'middle',
+					focusInvalid: false,
+					ignore: "",
+					rules: {
+						email: {
+							required: true,
+							email: true
+						},
+						fullname:{
+							required: true
+						},
+						password: {
+							required: true,
+							minlength: 8
+						},
+						repassword: {
+							required: true,
+							minlength: 8,
+							// equalTo: '[name="password"]' // <- Make sure #password exists
+						},
+						tos: {
 							required: true
 						}
 					},

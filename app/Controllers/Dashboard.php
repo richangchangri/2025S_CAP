@@ -3,6 +3,11 @@
 namespace App\Controllers; 
 
 use CodeIgniter\Controller; 
+use App\Models\FacilityModel;
+use App\Models\UserModel;
+use App\Models\FeedbackModel;
+use App\Models\UserApprovalModel;
+use App\Models\ActivityModel;
 
 class Dashboard extends Controller 
 {
@@ -12,6 +17,7 @@ class Dashboard extends Controller
         if (!$session->get('login')) {
             return redirect()->to('/login');
         }
+        
         $data = [
             'title' => 'Dashboard',
             'styles' => [

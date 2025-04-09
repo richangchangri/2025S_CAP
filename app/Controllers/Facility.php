@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use CodeIgniter\Controller;
 use App\Models\FacilityModel;
-use App\Models\FacilityTypesModel;
+use App\Models\FacilitiesTypeModel;
 use App\Models\BuildingModel;
 use CodeIgniter\Exceptions\PageNotFoundException;
 
@@ -29,8 +29,8 @@ class Facility extends Controller
         $id = $this->request->getUri()->getSegment(3);
         // echo $userid;
         $facilityModel = new FacilityModel();
-        $facility = $facilityModel->select('Facilities.*, FacilityTypes.name as facilities_type_name, Buildings.name as building_name')
-                        ->join('FacilityTypes', 'FacilityTypes.facility_type_id = Facilities.facility_type_id', 'left')
+        $facility = $facilityModel->select('Facilities.*, FacilitiesType.name as facilities_type_name, Buildings.name as building_name')
+                        ->join('FacilitiesType', 'FacilitiesType.facility_type_id = Facilities.facility_type_id', 'left')
                         ->join('Buildings', 'Buildings.building_id = Facilities.building_id', 'left')
                         ->where('Facilities.facility_id', $id)
                         ->first();
@@ -45,11 +45,30 @@ class Facility extends Controller
         return view('facility_detail', $data);
     }
 
+    public function add(){
+        $facilityModel = new FacilityModel();
+        $facility = $facilityModel->select('Facilities.*, FacilitiesType.name as facilities_type_name, Buildings.name as building_name')
+                        ->join('FacilitiesType', 'FacilitiesType.facility_type_id = Facilities.facility_type_id', 'left')
+                        ->join('Buildings', 'Buildings.building_id = Facilities.building_id', 'left')
+                        ->first();
+
+        $facilitiesTypeModel = new FacilitiesTypeModel();
+        $facilitiesType = $facilitiesTypeModel->findAll();
+        $buildingModel = new BuildingModel();        
+        $building = $buildingModel->findAll();
+        $data = [
+            'facility' => $facility,
+            'facilitiesType' => $facilitiesType,            
+            'buildings' => $building
+        ];
+        return view('facility_add', $data);
+    }
+
     public function edit(){
         $id = $this->request->getUri()->getSegment(3);
         $facilityModel = new FacilityModel(); 
-        $facility = $facilityModel->select('Facilities.*, FacilityTypes.name as facilities_type_name, Buildings.name as building_name')
-                        ->join('FacilityTypes', 'FacilityTypes.facility_type_id = Facilities.facility_type_id', 'left')
+        $facility = $facilityModel->select('Facilities.*, FacilitiesType.name as facilities_type_name, Buildings.name as building_name')
+                        ->join('FacilitiesType', 'FacilitiesType.facility_type_id = Facilities.facility_type_id', 'left')
                         ->join('Buildings', 'Buildings.building_id = Facilities.building_id', 'left')
                         ->where('Facilities.facility_id', $id)
                         ->first();
@@ -58,13 +77,13 @@ class Facility extends Controller
             throw new PageNotFoundException("Page not found");
         } 
         
-        $facilityTypeModel = new FacilityTypesModel();
-        $facilityType = $facilityTypeModel->findAll();
+        $facilitiesTypeModel = new FacilitiesTypeModel();
+        $facilitiesType = $facilitiesTypeModel->findAll();
         $buildingModel = new BuildingModel();        
         $building = $buildingModel->findAll();
         $data = [
             'facility' => $facility,
-            'facilityType' => $facilityType,            
+            'facilitiesType' => $facilitiesType,            
             'buildings' => $building
         ];
         return view('facility_edit', $data);

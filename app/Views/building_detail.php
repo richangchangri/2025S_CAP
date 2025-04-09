@@ -11,19 +11,19 @@
                 </li>
 
                 <li>
-                    <a href="#">Facility</a>
+                    <a href="#">Building</a>
                 </li>
-                <li class="active">Detail Facility</li>
+                <li class="active">Detail Building</li>
             </ul><!-- /.breadcrumb -->
         </div>
 
         <div class="page-content">
             <div class="page-header">
                 <h1>
-                    Detail Facility
+                    Detail Building
                     <small>
                         <i class="ace-icon fa fa-angle-double-right"></i>
-                        <?= esc($facility['name']); ?>
+                        <?= esc($building['building_name']); ?>
                     </small>
                 </h1>
             </div><!-- /.page-header -->
@@ -34,48 +34,34 @@
                      <span id="alert"></span>
                     <form class="form-horizontal" role="form" name="formSubmit" id="formSubmit">
                         <div class="form-group">
-                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Name</label>
+                            <label class="col-sm-3 control-label no-padding-right" for="name"> Name</label>
                             <div class="col-sm-9">
-                                <input type="hidden" id="facility_id" name="facility_id" placeholder="Username" value="<?= esc($facility['facility_id']); ?>" class="form-control">
-                                <input type="text" id="name" name="name" placeholder="fullname" value="<?= esc($facility['name']); ?>" class="form-control">
+                                <input type="hidden" id="building_id" name="building_id" placeholder="Username" value="<?= esc($building['building_id']); ?>" class="form-control">
+                                <input type="text" id="name" name="name" placeholder="name" value="<?= esc($building['building_name']); ?>" class="form-control">
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="col-sm-3 control-label no-padding-right" for="email"> Description </label>
+                            <label class="col-sm-3 control-label no-padding-right" for="address"> Adress </label>
 
                             <div class="col-sm-9">
-                                <input type="text" id="email" name="email" placeholder="Text Field" class="form-control" value="<?= esc($facility['description']); ?>">
+                                <input type="text" id="address" name="address" placeholder="address" class="form-control" value="<?= esc($building['address']); ?>">
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="col-sm-3 control-label no-padding-right" for="department"> Capacity </label>
+                            <label class="col-sm-3 control-label no-padding-right" for="floors"> Floors </label>
 
                             <div class="col-sm-9">
-                                 <input type="text" id="capacity" name="capacity" placeholder="Text Field" class="form-control" value="<?= esc($facility['capacity']); ?>">
+                                 <input type="text" id="floors" name="floors" placeholder="floors" class="form-control" value="<?= esc($building['floors']); ?>">
                           
                             </div>
                         </div> 
                         <div class="form-group">
-                            <label class="col-sm-3 control-label no-padding-right" for="level"> Facilities Type </label>
+                            <label class="col-sm-3 control-label no-padding-right" for="contact_person"> Contact Person</label>
 
                             <div class="col-sm-9">
-                                <input type="text" id="facilities_type" name="facilities_type" placeholder="Facilities Type" class="form-control" value="<?= esc($facility['facilities_type_name']); ?>">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label no-padding-right" for="level"> Location </label>
-
-                            <div class="col-sm-9">
-                                <input type="text" id="location" name="location" placeholder="Location" class="form-control" value="<?= esc($facility['location']); ?>">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label no-padding-right" for="level"> Building </label>
-
-                            <div class="col-sm-9">
-                                <input type="text" id="building" name="building" placeholder="building" class="form-control" value="<?= esc($facility['building_name']); ?>">
+                                <input type="text" id="contact_person" name="contact_person" placeholder="contact person" class="form-control" value="<?= esc($building['contact_person']); ?>">
                             </div>
                         </div>
                        
@@ -84,7 +70,7 @@
 
                             <div class="col-sm-9">
                                 <label>
-                                    <input name="status" class="ace ace-switch ace-switch-5" <?php if($facility['status'] == "available")  echo "checked"; ?> type="checkbox" value="active">
+                                    <input name="status" class="ace ace-switch ace-switch-5" <?php if($building['status'] == "available")  echo "checked"; ?> type="checkbox" value="available">
                                     <span class="lbl"></span>
                                 </label>          
                             </div>
@@ -95,7 +81,7 @@
                                 
 
                                 &nbsp; &nbsp; &nbsp;
-                                <a class="btn" href="<?= base_url('facility'); ?>">
+                                <a class="btn" href="<?= base_url('building'); ?>">
                                     <i class="ace-icon fa fa-undo bigger-110"></i>
                                     Back
                                 </a>

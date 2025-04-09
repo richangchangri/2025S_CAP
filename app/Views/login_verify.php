@@ -59,6 +59,7 @@
         <p id="alert"></p>
         <form id="otp-form">
             <div class="form-group">
+                <input type="hidden" id="email" name="email" class="form-control" value="<?= $email; ?>">
                 <input type="text" id="otp-code" name="otp-code" class="form-control otp-input" maxlength="6" placeholder="______" required>
             </div>
 

@@ -40,17 +40,17 @@
                     <div class="col-md-3">
                         <h4 class="widget-title lighter">Facilities</h4>
                         <span class="btn btn-app btn-sm btn-light no-hover">
-                            <span class="line-height-1 bigger-170 blue"> 4 </span>
+                            <span class="line-height-1 bigger-170 blue" id="usedFacilities"> - </span>
                             <br>
                             <span class="line-height-1 smaller-90"> Used </span>
                         </span>
                         <span class="btn btn-app btn-sm btn-light no-hover">
-                            <span class="line-height-1 bigger-170 blue"> 6 </span>
+                            <span class="line-height-1 bigger-170 blue" id="availableFacilities"> - </span>
                             <br>
-                            <span class="line-height-1 smaller-90"> Available </span>
+                            <span class="line-height-1 smaller-90" id="availableFacilities"> Available </span>
                         </span>
                         <span class="btn btn-app btn-sm btn-light no-hover">
-                            <span class="line-height-1 bigger-170 blue"> 10 </span>
+                            <span class="line-height-1 bigger-170 blue" id="totalFacilities"> - </span>
                             <br>
                             <span class="line-height-1 smaller-90"> Total </span>
                         </span>
@@ -58,17 +58,17 @@
                     <div class="col-md-3">
                         <h4 class="widget-title lighter">New User Approvals</h4>
                         <span class="btn btn-app btn-sm btn-yellow no-hover">
-                            <span class="line-height-1 bigger-170"> 10 </span>
+                            <span class="line-height-1 bigger-170" id="pendingApprovals"> - </span>
                             <br>
                             <span class="line-height-1 smaller-90"> Pending </span>
                         </span>
                         <span class="btn btn-app btn-sm btn-yellow no-hover">
-                            <span class="line-height-1 bigger-170"> 3 </span>
+                            <span class="line-height-1 bigger-170" id="approvedApprovals"> - </span>
                             <br>
                             <span class="line-height-1 smaller-90"> Approved </span>
                         </span>
                         <span class="btn btn-app btn-sm btn-yellow no-hover">
-                            <span class="line-height-1 bigger-170"> 5 </span>
+                            <span class="line-height-1 bigger-170" id="rejectedApprovals"> - </span>
                             <br>
                             <span class="line-height-1 smaller-90"> Rejected </span>
                         </span>
@@ -76,12 +76,12 @@
                     <div class="col-md-3">
                         <h4 class="widget-title lighter">Feedbacks</h4>
                         <span class="btn btn-app btn-sm btn-pink no-hover">
-                            <span class="line-height-1 bigger-170"> 4 </span>
+                            <span class="line-height-1 bigger-170" id="feedbackWeek"> - </span>
                             <br>
                             <span class="line-height-1 smaller-90"> This Weeks </span>
                         </span>
                         <span class="btn btn-app btn-sm btn-pink no-hover">
-                            <span class="line-height-1 bigger-170"> 22 </span>
+                            <span class="line-height-1 bigger-170" id="feedbackTotal"> - </span>
                             <br>
                             <span class="line-height-1 smaller-90"> Total </span>
                         </span>
@@ -89,24 +89,70 @@
                     <div class="col-md-3">
                         <h4 class="widget-title lighter">Users</h4>
                         <span class="btn btn-app btn-sm btn-primary no-hover">
-                            <span class="line-height-1 bigger-170"> 10 </span>
+                            <span class="line-height-1 bigger-170" id="activeUsers"> - </span>
                             <br>
                             <span class="line-height-1 smaller-90"> Active </span>
                         </span>
                         <span class="btn btn-app btn-sm btn-primary no-hover">
-                            <span class="line-height-1 bigger-170"> 29 </span>
+                            <span class="line-height-1 bigger-170" id="inactiveUsers"> - </span>
                             <br>
                             <span class="line-height-1 smaller-90"> Inactive </span>
                         </span>
                         <span class="btn btn-app btn-sm btn-primary no-hover">
-                            <span class="line-height-1 bigger-170"> 39 </span>
+                            <span class="line-height-1 bigger-170" id="totalUsers"> - </span>
                             <br>
                             <span class="line-height-1 smaller-90"> Total </span>
                         </span>
                     </div>
                 </div>
-
+                <div class="hr hr32 hr-dotted"></div>
                 <div class="row">
+                    <div class="col-sm-6">
+                        <div class="widget-box transparent" id="recent-box">
+                            <div class="widget-header">
+                                <h4 class="widget-title lighter smaller">
+                                    <i class="ace-icon fa fa-rss orange"></i>RECENT ACTIVITY
+                                </h4>
+                            </div>
+
+                            <div class="widget-body">
+                                <div class="widget-main padding-4">
+                                     <div class="comments ace-scroll"style="position: relative;">
+                                                <div class="scroll-track" style="display: none;">
+                                                    <div class="scroll-bar"></div>
+                                                </div>
+                                                <div class="scroll-content" id="recentActivities" style="">
+                                                   ...
+                                                </div>
+                                            </div>
+                                            <div class="hr hr-double hr8"></div>
+                                </div><!-- /.widget-main -->
+                            </div><!-- /.widget-body -->
+                        </div><!-- /.widget-box -->
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="widget-box transparent" id="recent-box">
+                            <div class="widget-header">
+                                <h4 class="widget-title lighter smaller">
+                                    <i class="ace-icon fa fa-rss orange"></i>RECENT USERS
+                                </h4>
+                            </div>
+
+                            <div class="widget-body">
+                                <div class="widget-main padding-4">
+                                     <div class="comments ace-scroll" style="position: relative;">
+                                                <div class="scroll-track" style="display: none;">
+                                                    <div class="scroll-bar"></div>
+                                                </div>
+                                                <div class="scroll-content" id="recentUsers" style="">
+                                                   ...
+                                                </div>
+                                            </div>
+                                            <div class="hr hr-double hr8"></div>
+                                </div><!-- /.widget-main -->
+                            </div><!-- /.widget-body -->
+                        </div><!-- /.widget-box -->
+                    </div>
                     <div class="col-md-12">
                         <h3 class="header smaller lighter green">Facilities</h3>
                     </div>
@@ -114,5 +160,172 @@
             </div>
         </div>
     </div>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            function loadDashboardData() {
+                $.ajax({
+                    url: '/data/dashboardSummary', // pastikan ini sesuai dengan route di Routes.php
+                    method: 'GET',
+                    dataType: 'json',
+                    success: function (res) {
+                        // Facilities
+                        $('#usedFacilities').text(res.facilities.used);
+                        $('#availableFacilities').text(res.facilities.available);
+                        $('#totalFacilities').text(res.facilities.total);
+
+                        // Users
+                        $('#activeUsers').text(res.users.active);
+                        $('#inactiveUsers').text(res.users.inactive);
+                        $('#totalUsers').text(res.users.total);
+
+                        // Feedbacks
+                        $('#feedbackWeek').text(res.feedback.this_week);
+                        $('#feedbackTotal').text(res.feedback.total);
+
+                        // Approvals
+                        $('#pendingApprovals').text(res.approvals.pending);
+                        $('#approvedApprovals').text(res.approvals.approved);
+                        $('#rejectedApprovals').text(res.approvals.rejected);
+
+                        // Activities
+                        $('#recentActivities').empty();
+                        res.activities.forEach(function (act) {
+                            $('#recentActivities').append(`
+                                <div class="itemdiv commentdiv">
+                                    <div class="user">
+                                        <img alt="${act.name}'s Avatar" src="${act.gravatar_url}">
+                                    </div>
+                                    <div class="body">
+                                        <div class="name">
+                                            <a href="#">${act.name}</a>
+                                        </div>
+                                        <div class="time">
+                                            <i class="ace-icon fa fa-clock-o"></i>
+                                            <span class="green">${timeAgo(act.sent_at)}</span>
+                                        </div>
+                                        <div class="text">
+                                            <i class="ace-icon fa fa-quote-left"></i>
+                                            ${act.message} …
+                                        </div>
+                                    </div>
+                                    <div class="tools">
+                                        <div class="inline position-relative">
+                                            <button class="btn btn-minier bigger btn-yellow dropdown-toggle" data-toggle="dropdown">
+                                                <i class="ace-icon fa fa-angle-down icon-only bigger-120"></i>
+                                            </button>
+                                            <ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
+                                                <li>
+                                                    <a href="#" class="tooltip-success" data-rel="tooltip" title="Approve">
+                                                        <span class="green">
+                                                            <i class="ace-icon fa fa-check bigger-110"></i>
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="tooltip-warning" data-rel="tooltip" title="Reject">
+                                                        <span class="orange">
+                                                            <i class="ace-icon fa fa-times bigger-110"></i>
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
+                                                        <span class="red">
+                                                            <i class="ace-icon fa fa-trash-o bigger-110"></i>
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>`);
+                        });
+
+                        // Recent Users
+                        $('#recentUsers').empty();
+                        res.lastUsers.forEach(function (act) {
+                            $('#recentUsers').append(`
+                                <div class="itemdiv commentdiv">
+                                    <div class="user">
+                                        <img alt="${act.name}'s Avatar" src="${act.gravatar_url}">
+                                    </div>
+                                    <div class="body">
+                                        <div class="name">
+                                            <a href="#">${act.name}</a>
+                                        </div>
+                                        <div class="time">
+                                            <i class="ace-icon fa fa-clock-o"></i>
+                                            <span class="green">${timeAgo(act.created_at)}</span>
+                                        </div>
+                                        <div class="text">
+                                            <i class="ace-icon fa fa-quote-left"></i>
+                                            ${act.name} just joined …
+                                        </div>
+                                    </div>
+                                    <div class="tools">
+                                        <div class="inline position-relative">
+                                            <button class="btn btn-minier bigger btn-yellow dropdown-toggle" data-toggle="dropdown">
+                                                <i class="ace-icon fa fa-angle-down icon-only bigger-120"></i>
+                                            </button>
+                                            <ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
+                                                <li>
+                                                    <a href="#" class="tooltip-success" data-rel="tooltip" title="Approve">
+                                                        <span class="green">
+                                                            <i class="ace-icon fa fa-check bigger-110"></i>
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="tooltip-warning" data-rel="tooltip" title="Reject">
+                                                        <span class="orange">
+                                                            <i class="ace-icon fa fa-times bigger-110"></i>
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
+                                                        <span class="red">
+                                                            <i class="ace-icon fa fa-trash-o bigger-110"></i>
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>`);
+                        });
+                    }
+                });
+            }
+
+            // Panggil pertama kali saat halaman dimuat
+            loadDashboardData();
+
+            // Set auto refresh tiap 5 menit (300000 ms)
+            setInterval(loadDashboardData, 300000); // 5 menit
+
+
+            function timeAgo(dateTimeStr) {
+                const now = new Date();
+                const past = new Date(dateTimeStr);
+                const diffMs = now - past;
+
+                const seconds = Math.floor(diffMs / 1000);
+                const minutes = Math.floor(diffMs / (1000 * 60));
+                const hours = Math.floor(diffMs / (1000 * 60 * 60));
+                const days = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+                const months = Math.floor(days / 30); // approx
+                const years = Math.floor(days / 365); // approx
+
+                if (seconds < 5) return "just now";
+                if (seconds < 60) return `${seconds} sec ago`;
+                if (minutes < 60) return `${minutes} min ago`;
+                if (hours < 24) return `${hours} hr${hours > 1 ? 's' : ''} ago`;
+                if (days < 30) return `${days} day${days > 1 ? 's' : ''} ago`;
+                if (months < 12) return `${months} mon${months > 1 ? 's' : ''} ago`;
+                return `${years} yr${years > 1 ? 's' : ''} ago`;
+            }
+        });
+    </script>
 <?= $this->endSection() ?>
 

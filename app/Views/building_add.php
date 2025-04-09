@@ -11,19 +11,18 @@
                 </li>
 
                 <li>
-                    <a href="#">Users Management</a>
+                    <a href="#">Building</a>
                 </li>
-                <li class="active">Edit profile</li>
+                <li class="active">Add Building</li>
             </ul><!-- /.breadcrumb -->
         </div>
 
         <div class="page-content">
             <div class="page-header">
                 <h1>
-                    Edit Profile
+                    Add Building
                     <small>
                         <i class="ace-icon fa fa-angle-double-right"></i>
-                        <?= esc($user['name']); ?>
                     </small>
                 </h1>
             </div><!-- /.page-header -->
@@ -36,86 +35,44 @@
                         <div class="form-group">
                             <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Name</label>
                             <div class="col-sm-9">
-                                <input type="hidden" id="user_id" name="user_id" placeholder="Username" value="<?= esc($user['user_id']); ?>" class="form-control">
-                                <input type="text" id="name" name="name" placeholder="fullname" value="<?= esc($user['name']); ?>" class="form-control">
+                                <input type="hidden" id="building_id" name="building_id" placeholder="Username" value="" class="form-control">
+                                <input type="text" id="name" name="name" placeholder="building name" value="" class="form-control">
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="col-sm-3 control-label no-padding-right" for="email"> Email </label>
+                            <label class="col-sm-3 control-label no-padding-right" for="address"> Adress </label>
 
                             <div class="col-sm-9">
-                                <input type="text" id="email" name="email" placeholder="Text Field" class="form-control" value="<?= esc($user['email']); ?>">
+                                <input type="text" id="address" name="address" placeholder="address" class="form-control" value="">
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="col-sm-3 control-label no-padding-right" for="department"> Department </label>
+                            <label class="col-sm-3 control-label no-padding-right" for="floors"> Floors </label>
 
                             <div class="col-sm-9">
-                                <select class="form-control" id="department" name="department" class="form-control">
-                                    <option value="">- Choose -</option>
-                                    <?php foreach($department as $row){
-                                        if($row['department_id'] == $user['department_id']){
-                                            echo '<option value="'. $row['department_id'].'" selected>'. $row['department_name'].'</option>';
-                                        } else {                                                        
-                                            echo '<option value="'. $row['department_id'].'">'. $row['department_name'].'</option>';
-                                        }
-                                    }  ?>
-                                </select>
+                                 <input type="text" id="floors" name="floors" placeholder="floors" class="form-control" value="">
+                          
                             </div>
                         </div>
-
+                        
                         <div class="form-group">
-                            <label class="col-sm-3 control-label no-padding-right" for="phone_number"> Phone Number </label>
+                            <label class="col-sm-3 control-label no-padding-right" for="contact_person"> Contact Person </label>
 
                             <div class="col-sm-9">
-                                <input type="text" id="phone_number" name="phone_number" placeholder="Text Field" class="form-control" value="<?= esc($user['phone_number']); ?>">
+                                <input type="text" id="contact_person" name="contact_person" placeholder="contact person" class="form-control" value="">
                             </div>
                         </div>
-
+                       
                         <div class="form-group">
-                            <label class="col-sm-3 control-label no-padding-right" for="level"> Level </label>
-
-                            <div class="col-sm-9">
-                            <select class="form-control" id="userRole" name="userRole" class="form-control">
-                                                    <option value="">- Choose -</option>
-                                                    <?php 
-                                                        $roles = array('Admin','Facility Manager','Regular User');
-                                                        foreach($roles as $role){    
-                                                            if($role == $user['role']){
-                                                                echo '<option value="'. $role .'" selected>'. $role.'</option>';
-                                                            }  else {
-                                                                echo '<option value="'. $role .'">'. $role.'</option>';
-                                                            }                                                  
-                                                        }                                                    
-                                                    ?>
-                                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label no-padding-right" for="status"> Active ? </label>
+                            <label class="col-sm-3 control-label no-padding-right" for="status"> Available ? </label>
 
                             <div class="col-sm-9">
                                 <label>
-                                    <input name="status" class="ace ace-switch ace-switch-5" <?php if($user['status'] == "active")  echo "checked"; ?> type="checkbox" value="active">
+                                    <input name="status" class="ace ace-switch ace-switch-5" <?php if($building['status'] == "available")  echo "checked"; ?> type="checkbox" value="available">
                                     <span class="lbl"></span>
                                 </label>          
-                            </div>
-                        </div>
-
-                        <div class="space-4"></div>
-
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label no-padding-right" for="form-field-2"> Password
-                            </label>
-
-                            <div class="col-sm-9">
-                                <input type="password" id="form-field-2" placeholder="Password"
-                                    class="col-xs-10 col-sm-5">
-                                <span class="help-inline col-xs-12 col-sm-7">
-                                    <span class="middle">Leave blank if you not changing the password. </span>
-                                </span>
                             </div>
                         </div>
 
@@ -128,7 +85,7 @@
                                 </button>
 
                                 &nbsp; &nbsp; &nbsp;
-                                <a class="btn" type="reset" href="<?= base_url('user_management'); ?>">
+                                <a class="btn" type="reset" href="<?= base_url('building'); ?>">
                                     <i class="ace-icon fa fa-undo bigger-110"></i>
                                     Cancel
                                 </a>
@@ -153,7 +110,7 @@
                 $('#btnSubmit').attr('disabled', true); //set button disable 
                 // ajax adding data to database
                 $.ajax({
-                    url: "<?= base_url('user_management/save'); ?>",
+                    url: "<?= base_url('building/save'); ?>",
                     type: "POST",
                     data: $('#formSubmit').serialize(),
                     dataType: "JSON",
@@ -180,10 +137,16 @@
             focusInvalid: false,
             ignore: "",
             rules: {
-                username: {
+                name: {
                     required: true
                 },
-                name: {
+                address: {
+                    required: true
+                },
+                floors: {
+                    required: true
+                },
+                contact_person: {
                     required: true
                 }
             },

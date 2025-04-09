@@ -61,30 +61,56 @@
             </li>
 
             <li class="">
-                <a href="<?= base_url('building');?>">
+                <a href="#" class="dropdown-toggle">
                     <i class="menu-icon fa fa-home"></i>
-                    <span class="menu-text"> Building</span>
+                    <span class="menu-text"> Fac. Management </span>
+
+                    <b class="arrow fa fa-angle-down"></b>
                 </a>
 
                 <b class="arrow"></b>
+
+                <ul class="submenu nav-hide" style="display: none;">
+                    <li class="">
+                        <a href="<?= base_url('building');?>">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            Building
+                        </a>
+
+                        <b class="arrow"></b>
+                    </li>
+
+                    <li class="">
+                        <a href="<?= base_url('facility');?>">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            Facility
+                        </a>
+
+                        <b class="arrow"></b>
+                    </li>
+                </ul>
             </li>
 
             <li class="">
-                <a href="<?= base_url('facility');?>">
-                    <i class="menu-icon fa fa-home"></i>
-                    <span class="menu-text"> Facility</span>
+                <a href="#" class="dropdown-toggle">
+                    <i class="menu-icon fa fa-cog"></i>
+                    <span class="menu-text"> Settings </span>
+
+                    <b class="arrow fa fa-angle-down"></b>
                 </a>
 
                 <b class="arrow"></b>
-            </li>
 
-            <li class="">
-                <a href="<?= base_url('facilities_type');?>">
-                    <i class="menu-icon fa fa-home"></i>
-                    <span class="menu-text"> Facilities Type</span>
-                </a>
+                <ul class="submenu nav-hide" style="display: none;">
+                    <li class="">
+                        <a href="<?= base_url('facilities_type');?>">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            Facilities Type
+                        </a>
 
-                <b class="arrow"></b>
+                        <b class="arrow"></b>
+                    </li>
+                </ul>
             </li>
 
             <li class="">

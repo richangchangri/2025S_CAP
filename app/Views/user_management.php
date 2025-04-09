@@ -74,17 +74,19 @@
                                 </ul>
                                 <div class="tab-content">
                                     <div id="activeusers" class="tab-pane active">
+                                        <div class="pull-right tableTools-container-activeusers"></div><br />
                                         <table id="active-table" class="table table-striped table-bordered table-hover">
                                             <thead>
                                                 <tr>
+                                                    <th>Action</th>
                                                     <th>Name</th>
                                                     <th>Email</th>
-                                                    <th class="hidden-480">Department</th>
+                                                    <th>Department</th>
+                                                    <th class="hidden-480">Phone Number</th>
                                                     <th>
                                                         <i class="ace-icon fa fa-clock-o bigger-110 hidden-480"></i>
                                                         Registered Since
                                                     </th>
-                                                    <th class="hidden-480">Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -93,14 +95,16 @@
                                     </div>
 
                                     <div id="inactiveusers" class="tab-pane">
+                                        <div class="pull-right tableTools-container-inactiveusers"></div><br />
                                         <table id="inactive-table" class="table table-striped table-bordered" style="width:100%">
                                             <thead>
                                                 <tr>
-                                                    <th>Name</th>
-                                                    <th>Username</th>
-                                                    <th>Department</th>
-                                                    <th>Registered Since</th>
                                                     <th>Action</th>
+                                                    <th>Name</th>
+                                                    <th>Email</th>
+                                                    <th>Department</th>
+                                                    <th>Phone Number</th>
+                                                    <th>Registered Since</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -109,14 +113,16 @@
                                     </div>
 
                                     <div id="pendingusers" class="tab-pane">
+                                        <div class="pull-right tableTools-container-pendingusers"></div><br />
                                         <table id="pending-table" class="table table-striped table-bordered" style="width:100%">
                                             <thead>
                                                 <tr>
-                                                    <th>Name</th>
-                                                    <th>Username</th>
-                                                    <th>Department</th>
-                                                    <th>Registered Since</th>
                                                     <th>Action</th>
+                                                    <th>Name</th>
+                                                    <th>Email</th>
+                                                    <th>Department</th>
+                                                    <th>Phone Number</th>
+                                                    <th>Registered Since</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -135,49 +141,112 @@
     <script type="text/javascript">
         $(document).ready(function() {
             function initializeTable(tableId, status) {
-        return $('#' + tableId).DataTable({
-            bAutoWidth: false,
-            "aoColumns": [
-                { "bSortable": false },
-                { "bSortable": false },
-                { "bSortable": false },
-                { "bSortable": false },
-                { "bSortable": false }
-            ],
-            "aaSorting": [],
-            columnDefs: [
-                {
-                    targets: 4,
-                    data: "user_id",
-                    render: function (data, type, row, meta) {
-                        return `<div class="text-center">
-                            <a href="<?= base_url(); ?>user_management/profile/${row[4]}" class="btn btn-xs btn-default">
-                                <i class="fa fa-eye"></i>
-                            </a>
-                            <a href="<?= base_url(); ?>user_management/edit/${row[4]}" class="btn btn-xs btn-warning">
-                                <i class="fa fa-edit"></i>
-                            </a>
-                            <a href="#" class="btn btn-xs btn-danger delete-user" data-id="${row[4]}">
-                                <i class="fa fa-trash"></i>
-                            </a>
-                        </div>`;
-                    }
-                }
-            ],
-            select: {
-                style: 'multi'
-            },
-            processing: true,
-            serverSide: true,
-            ajax: '<?= base_url("data/userManagement/") ?>' + status,
-            type: 'GET'
-        });
-    }
+                var myTable = $('#' + tableId).DataTable({
+                    autoWidth: false,
+                    columns: [
+                        { sortable: false },
+                        { sortable: false },
+                        { sortable: false },
+                        { sortable: false },
+                        { sortable: false },
+                        { sortable: false }
+                    ],
+                    order: [],
+                    columnDefs: [
+                        {
+                            targets: 0,
+                            data: "user_id",
+                            render: function (data, type, row, meta) {
+                                return `<div class="text-center">
+                                    <a href="<?= base_url(); ?>user_management/profile/${data}" class="btn btn-xs btn-default">
+                                        <i class="fa fa-eye"></i>
+                                    </a>
+                                    <a href="<?= base_url(); ?>user_management/edit/${data}" class="btn btn-xs btn-warning">
+                                        <i class="fa fa-edit"></i>
+                                    </a>
+                                    <a href="#" class="btn btn-xs btn-danger delete-user" data-id="${data}">
+                                        <i class="fa fa-trash"></i>
+                                    </a>
+                                </div>`;
+                            }
+                        }
+                    ],
+                    select: {
+                        style: 'multi'
+                    },
+                    processing: true,
+                    serverSide: true,
+                    ajax: {
+                        url: '<?= base_url("data/userManagement/") ?>' + status,
+                        type: 'GET'
+                    },
+                    dom: 'Bfrtip',
+                    buttons: [
+                        {
+                            text: '<i class="fa fa-plus bigger-110 orange"></i> <span class="hidden">Add</span>',
+                            className: 'btn btn-white btn-primary btn-bold addbtn'
+                        },
+                        {
+                            extend: 'copy',
+                            text: '<i class="fa fa-copy bigger-110 pink"></i> <span class="hidden">Copy to clipboard</span>',
+                            className: 'btn btn-white btn-primary btn-bold'
+                        },                       
+                        {
+                            extend: 'csv',
+                            text: '<i class="fa fa-file-excel-o bigger-110 green"></i> <span class="hidden">Export to Excel</span>',
+                            className: 'btn btn-white btn-primary btn-bold'
+                        },
+                        {
+                            extend: 'pdf',
+                            text: '<i class="fa fa-file-pdf-o bigger-110 red"></i> <span class="hidden">Export to PDF</span>',
+                            className: 'btn btn-white btn-primary btn-bold'
+                        },
+                        {
+                            extend: 'print',
+                            text: '<i class="fa fa-print bigger-110 grey"></i> <span class="hidden">Print</span>',
+                            className: 'btn btn-white btn-primary btn-bold',
+                            autoPrint: false,
+                            message: 'This print was produced using the Print button for DataTables'
+                        }
+                    ]
+                });
 
-    // Initialize DataTables
-    var activeTable = initializeTable('active-table', 'active');
-    var inactiveTable = initializeTable('inactive-table', 'inactive');
-    var pendingTable = initializeTable('pending-table', 'pending');
+                // Style the message box
+                // myTable.on('buttons-action', function(e, buttonApi, dataTable, node, config) {
+                //     if (buttonApi.index() === 1) { // Copy button
+                //         $('.dt-button-info').addClass('gritter-item-wrapper gritter-info gritter-center white');
+                //     }
+                // });
+
+                // Style column visibility dropdown
+                myTable.on('column-visibility', function(e, settings, column, state) {
+                    if ($('.dt-button-collection > .dropdown-menu').length === 0) {
+                        $('.dt-button-collection')
+                            .wrapInner('<ul class="dropdown-menu dropdown-light dropdown-caret dropdown-caret" />')
+                            .find('a').attr('href', '#').wrap("<li />");
+                    }
+                    $('.dt-button-collection').appendTo('.tableTools-container-'+ tableId +' .dt-buttons');
+                });
+
+                // Add tooltips
+                setTimeout(function() {
+                    $('.tableTools-container-'+ tableId).find('a.dt-button').each(function() {
+                        var div = $(this).find(' > div').first();
+                        if(div.length === 1) {
+                            div.tooltip({container: 'body', title: div.parent().text()});
+                        } else {
+                            $(this).tooltip({container: 'body', title: $(this).text()});
+                        }
+                    });
+                }, 500);
+
+                return myTable;
+            }
+
+            // Initialize DataTables
+            var activeTable = initializeTable('active-table', 'active');
+            var inactiveTable = initializeTable('inactive-table', 'inactive');
+            var pendingTable = initializeTable('pending-table', 'pending');
 
             $('.delete-user').on('click',  function(e) {
             e.preventDefault();
@@ -200,7 +269,8 @@
                 });
             }
         });
-        });
+    });
+
     </script>
 
 <?= $this->endSection() ?>

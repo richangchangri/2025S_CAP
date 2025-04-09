@@ -64,7 +64,7 @@
                                 <select class="form-control" id="facilitiesType" name="facilitiesType" class="form-control">
                                     <option value="">- Choose -</option>
                                     <?php 
-                                        foreach($facilityType as $facilities){    
+                                        foreach($facilitiesType as $facilities){    
                                             if($facilities['facility_type_id'] == $facility['facility_type_id']){
                                                 echo '<option value="'. $facilities['facility_type_id'] .'" selected>'. $facilities['name'].'</option>';
                                             }  else {
@@ -121,7 +121,7 @@
                                 </button>
 
                                 &nbsp; &nbsp; &nbsp;
-                                <a class="btn" type="reset" href="<?= base_url('user_management'); ?>">
+                                <a class="btn" type="reset" href="<?= base_url('facility'); ?>">
                                     <i class="ace-icon fa fa-undo bigger-110"></i>
                                     Cancel
                                 </a>

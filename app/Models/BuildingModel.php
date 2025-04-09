@@ -8,5 +8,5 @@ class BuildingModel extends Model
 {
     protected $table = 'Buildings';
     protected $primaryKey = 'building_id';
-    protected $allowedFields = ['building_id','name','address','floors','contact_person','building_id','status'];
+    protected $allowedFields = ['name','address','floors','contact_person','building_id','status'];
 }

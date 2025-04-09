@@ -137,3 +137,224 @@ DEBUG - 2025-04-08 03:27:29 --> Session: Class initialized using 'CodeIgniter\Se
 DEBUG - 2025-04-08 03:27:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2025-04-08 03:27:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2025-04-08 03:27:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-04-08 03:48:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-04-08 03:48:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-04-08 03:48:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-04-08 03:50:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-04-08 03:50:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-04-08 03:50:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-04-08 03:50:10 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'capstonexx'@'localhost' in /var/www/html/capstone/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /var/www/html/capstone/system/Database/MySQLi/Connection.php(201): mysqli->real_connect()
+#1 /var/www/html/capstone/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /var/www/html/capstone/system/Database/MySQLi/Connection.php(367): CodeIgniter\Database\BaseConnection->initialize()
+#3 /var/www/html/capstone/system/Database/BaseConnection.php(1412): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#4 /var/www/html/capstone/system/Database/BaseConnection.php(1376): CodeIgniter\Database\BaseConnection->escapeString()
+#5 /var/www/html/capstone/system/Database/Query.php(325): CodeIgniter\Database\BaseConnection->escape()
+#6 /var/www/html/capstone/system/Database/Query.php(312): CodeIgniter\Database\Query->matchNamedBinds()
+#7 /var/www/html/capstone/system/Database/Query.php(163): CodeIgniter\Database\Query->compileBinds()
+#8 /var/www/html/capstone/system/Database/BaseBuilder.php(1627): CodeIgniter\Database\Query->getQuery()
+#9 /var/www/html/capstone/system/Database/BaseBuilder.php(1611): CodeIgniter\Database\BaseBuilder->compileFinalQuery()
+#10 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTableColumnDefs.php(261): CodeIgniter\Database\BaseBuilder->getCompiledSelect()
+#11 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTableColumnDefs.php(17): Hermawan\DataTables\DataTableColumnDefs->initFromBuilder()
+#12 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTable.php(35): Hermawan\DataTables\DataTableColumnDefs->__construct()
+#13 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTable.php(46): Hermawan\DataTables\DataTable->__construct()
+#14 /var/www/html/capstone/app/Controllers/Data.php(38): Hermawan\DataTables\DataTable::of()
+#15 /var/www/html/capstone/system/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+#16 /var/www/html/capstone/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#17 /var/www/html/capstone/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#18 /var/www/html/capstone/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#19 /var/www/html/capstone/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#20 /var/www/html/capstone/public/index.php(56): CodeIgniter\Boot::bootWeb()
+#21 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' in /var/www/html/capstone/system/Database/MySQLi/Connection.php:246
+Stack trace:
+#0 /var/www/html/capstone/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /var/www/html/capstone/system/Database/MySQLi/Connection.php(367): CodeIgniter\Database\BaseConnection->initialize()
+#2 /var/www/html/capstone/system/Database/BaseConnection.php(1412): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#3 /var/www/html/capstone/system/Database/BaseConnection.php(1376): CodeIgniter\Database\BaseConnection->escapeString()
+#4 /var/www/html/capstone/system/Database/Query.php(325): CodeIgniter\Database\BaseConnection->escape()
+#5 /var/www/html/capstone/system/Database/Query.php(312): CodeIgniter\Database\Query->matchNamedBinds()
+#6 /var/www/html/capstone/system/Database/Query.php(163): CodeIgniter\Database\Query->compileBinds()
+#7 /var/www/html/capstone/system/Database/BaseBuilder.php(1627): CodeIgniter\Database\Query->getQuery()
+#8 /var/www/html/capstone/system/Database/BaseBuilder.php(1611): CodeIgniter\Database\BaseBuilder->compileFinalQuery()
+#9 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTableColumnDefs.php(261): CodeIgniter\Database\BaseBuilder->getCompiledSelect()
+#10 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTableColumnDefs.php(17): Hermawan\DataTables\DataTableColumnDefs->initFromBuilder()
+#11 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTable.php(35): Hermawan\DataTables\DataTableColumnDefs->__construct()
+#12 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTable.php(46): Hermawan\DataTables\DataTable->__construct()
+#13 /var/www/html/capstone/app/Controllers/Data.php(38): Hermawan\DataTables\DataTable::of()
+#14 /var/www/html/capstone/system/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+#15 /var/www/html/capstone/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#16 /var/www/html/capstone/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#17 /var/www/html/capstone/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#18 /var/www/html/capstone/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#19 /var/www/html/capstone/public/index.php(56): CodeIgniter\Boot::bootWeb()
+#20 {main}
+ERROR - 2025-04-08 03:50:10 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'capstonexx'@'localhost' in /var/www/html/capstone/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /var/www/html/capstone/system/Database/MySQLi/Connection.php(201): mysqli->real_connect()
+#1 /var/www/html/capstone/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /var/www/html/capstone/system/Database/MySQLi/Connection.php(367): CodeIgniter\Database\BaseConnection->initialize()
+#3 /var/www/html/capstone/system/Database/BaseConnection.php(1412): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#4 /var/www/html/capstone/system/Database/BaseConnection.php(1376): CodeIgniter\Database\BaseConnection->escapeString()
+#5 /var/www/html/capstone/system/Database/Query.php(325): CodeIgniter\Database\BaseConnection->escape()
+#6 /var/www/html/capstone/system/Database/Query.php(312): CodeIgniter\Database\Query->matchNamedBinds()
+#7 /var/www/html/capstone/system/Database/Query.php(163): CodeIgniter\Database\Query->compileBinds()
+#8 /var/www/html/capstone/system/Database/BaseBuilder.php(1627): CodeIgniter\Database\Query->getQuery()
+#9 /var/www/html/capstone/system/Database/BaseBuilder.php(1611): CodeIgniter\Database\BaseBuilder->compileFinalQuery()
+#10 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTableColumnDefs.php(261): CodeIgniter\Database\BaseBuilder->getCompiledSelect()
+#11 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTableColumnDefs.php(17): Hermawan\DataTables\DataTableColumnDefs->initFromBuilder()
+#12 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTable.php(35): Hermawan\DataTables\DataTableColumnDefs->__construct()
+#13 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTable.php(46): Hermawan\DataTables\DataTable->__construct()
+#14 /var/www/html/capstone/app/Controllers/Data.php(38): Hermawan\DataTables\DataTable::of()
+#15 /var/www/html/capstone/system/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+#16 /var/www/html/capstone/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#17 /var/www/html/capstone/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#18 /var/www/html/capstone/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#19 /var/www/html/capstone/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#20 /var/www/html/capstone/public/index.php(56): CodeIgniter\Boot::bootWeb()
+#21 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' in /var/www/html/capstone/system/Database/MySQLi/Connection.php:246
+Stack trace:
+#0 /var/www/html/capstone/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /var/www/html/capstone/system/Database/MySQLi/Connection.php(367): CodeIgniter\Database\BaseConnection->initialize()
+#2 /var/www/html/capstone/system/Database/BaseConnection.php(1412): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#3 /var/www/html/capstone/system/Database/BaseConnection.php(1376): CodeIgniter\Database\BaseConnection->escapeString()
+#4 /var/www/html/capstone/system/Database/Query.php(325): CodeIgniter\Database\BaseConnection->escape()
+#5 /var/www/html/capstone/system/Database/Query.php(312): CodeIgniter\Database\Query->matchNamedBinds()
+#6 /var/www/html/capstone/system/Database/Query.php(163): CodeIgniter\Database\Query->compileBinds()
+#7 /var/www/html/capstone/system/Database/BaseBuilder.php(1627): CodeIgniter\Database\Query->getQuery()
+#8 /var/www/html/capstone/system/Database/BaseBuilder.php(1611): CodeIgniter\Database\BaseBuilder->compileFinalQuery()
+#9 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTableColumnDefs.php(261): CodeIgniter\Database\BaseBuilder->getCompiledSelect()
+#10 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTableColumnDefs.php(17): Hermawan\DataTables\DataTableColumnDefs->initFromBuilder()
+#11 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTable.php(35): Hermawan\DataTables\DataTableColumnDefs->__construct()
+#12 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTable.php(46): Hermawan\DataTables\DataTable->__construct()
+#13 /var/www/html/capstone/app/Controllers/Data.php(38): Hermawan\DataTables\DataTable::of()
+#14 /var/www/html/capstone/system/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+#15 /var/www/html/capstone/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#16 /var/www/html/capstone/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#17 /var/www/html/capstone/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#18 /var/www/html/capstone/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#19 /var/www/html/capstone/public/index.php(56): CodeIgniter\Boot::bootWeb()
+#20 {main}
+CRITICAL - 2025-04-08 03:50:10 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost'
+[Method: GET, Route: data/userManagement/inactive]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(367): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseConnection.php(1412): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+ 3 SYSTEMPATH/Database/BaseConnection.php(1376): CodeIgniter\Database\BaseConnection->escapeString()
+ 4 SYSTEMPATH/Database/Query.php(325): CodeIgniter\Database\BaseConnection->escape()
+ 5 SYSTEMPATH/Database/Query.php(312): CodeIgniter\Database\Query->matchNamedBinds()
+ 6 SYSTEMPATH/Database/Query.php(163): CodeIgniter\Database\Query->compileBinds()
+ 7 SYSTEMPATH/Database/BaseBuilder.php(1627): CodeIgniter\Database\Query->getQuery()
+ 8 SYSTEMPATH/Database/BaseBuilder.php(1611): CodeIgniter\Database\BaseBuilder->compileFinalQuery()
+ 9 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableColumnDefs.php(261): CodeIgniter\Database\BaseBuilder->getCompiledSelect()
+10 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableColumnDefs.php(17): Hermawan\DataTables\DataTableColumnDefs->initFromBuilder()
+11 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTable.php(35): Hermawan\DataTables\DataTableColumnDefs->__construct()
+12 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTable.php(46): Hermawan\DataTables\DataTable->__construct()
+13 APPPATH/Controllers/Data.php(38): Hermawan\DataTables\DataTable::of()
+14 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+15 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+16 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+17 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+18 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+19 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-04-08 03:50:10 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost'
+[Method: GET, Route: data/userManagement/active]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(367): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseConnection.php(1412): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+ 3 SYSTEMPATH/Database/BaseConnection.php(1376): CodeIgniter\Database\BaseConnection->escapeString()
+ 4 SYSTEMPATH/Database/Query.php(325): CodeIgniter\Database\BaseConnection->escape()
+ 5 SYSTEMPATH/Database/Query.php(312): CodeIgniter\Database\Query->matchNamedBinds()
+ 6 SYSTEMPATH/Database/Query.php(163): CodeIgniter\Database\Query->compileBinds()
+ 7 SYSTEMPATH/Database/BaseBuilder.php(1627): CodeIgniter\Database\Query->getQuery()
+ 8 SYSTEMPATH/Database/BaseBuilder.php(1611): CodeIgniter\Database\BaseBuilder->compileFinalQuery()
+ 9 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableColumnDefs.php(261): CodeIgniter\Database\BaseBuilder->getCompiledSelect()
+10 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableColumnDefs.php(17): Hermawan\DataTables\DataTableColumnDefs->initFromBuilder()
+11 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTable.php(35): Hermawan\DataTables\DataTableColumnDefs->__construct()
+12 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTable.php(46): Hermawan\DataTables\DataTable->__construct()
+13 APPPATH/Controllers/Data.php(38): Hermawan\DataTables\DataTable::of()
+14 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+15 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+16 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+17 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+18 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+19 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ERROR - 2025-04-08 03:50:10 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'capstonexx'@'localhost' in /var/www/html/capstone/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /var/www/html/capstone/system/Database/MySQLi/Connection.php(201): mysqli->real_connect()
+#1 /var/www/html/capstone/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /var/www/html/capstone/system/Database/MySQLi/Connection.php(367): CodeIgniter\Database\BaseConnection->initialize()
+#3 /var/www/html/capstone/system/Database/BaseConnection.php(1412): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#4 /var/www/html/capstone/system/Database/BaseConnection.php(1376): CodeIgniter\Database\BaseConnection->escapeString()
+#5 /var/www/html/capstone/system/Database/Query.php(325): CodeIgniter\Database\BaseConnection->escape()
+#6 /var/www/html/capstone/system/Database/Query.php(312): CodeIgniter\Database\Query->matchNamedBinds()
+#7 /var/www/html/capstone/system/Database/Query.php(163): CodeIgniter\Database\Query->compileBinds()
+#8 /var/www/html/capstone/system/Database/BaseBuilder.php(1627): CodeIgniter\Database\Query->getQuery()
+#9 /var/www/html/capstone/system/Database/BaseBuilder.php(1611): CodeIgniter\Database\BaseBuilder->compileFinalQuery()
+#10 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTableColumnDefs.php(261): CodeIgniter\Database\BaseBuilder->getCompiledSelect()
+#11 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTableColumnDefs.php(17): Hermawan\DataTables\DataTableColumnDefs->initFromBuilder()
+#12 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTable.php(35): Hermawan\DataTables\DataTableColumnDefs->__construct()
+#13 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTable.php(46): Hermawan\DataTables\DataTable->__construct()
+#14 /var/www/html/capstone/app/Controllers/Data.php(38): Hermawan\DataTables\DataTable::of()
+#15 /var/www/html/capstone/system/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+#16 /var/www/html/capstone/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#17 /var/www/html/capstone/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#18 /var/www/html/capstone/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#19 /var/www/html/capstone/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#20 /var/www/html/capstone/public/index.php(56): CodeIgniter\Boot::bootWeb()
+#21 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' in /var/www/html/capstone/system/Database/MySQLi/Connection.php:246
+Stack trace:
+#0 /var/www/html/capstone/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /var/www/html/capstone/system/Database/MySQLi/Connection.php(367): CodeIgniter\Database\BaseConnection->initialize()
+#2 /var/www/html/capstone/system/Database/BaseConnection.php(1412): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+#3 /var/www/html/capstone/system/Database/BaseConnection.php(1376): CodeIgniter\Database\BaseConnection->escapeString()
+#4 /var/www/html/capstone/system/Database/Query.php(325): CodeIgniter\Database\BaseConnection->escape()
+#5 /var/www/html/capstone/system/Database/Query.php(312): CodeIgniter\Database\Query->matchNamedBinds()
+#6 /var/www/html/capstone/system/Database/Query.php(163): CodeIgniter\Database\Query->compileBinds()
+#7 /var/www/html/capstone/system/Database/BaseBuilder.php(1627): CodeIgniter\Database\Query->getQuery()
+#8 /var/www/html/capstone/system/Database/BaseBuilder.php(1611): CodeIgniter\Database\BaseBuilder->compileFinalQuery()
+#9 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTableColumnDefs.php(261): CodeIgniter\Database\BaseBuilder->getCompiledSelect()
+#10 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTableColumnDefs.php(17): Hermawan\DataTables\DataTableColumnDefs->initFromBuilder()
+#11 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTable.php(35): Hermawan\DataTables\DataTableColumnDefs->__construct()
+#12 /var/www/html/capstone/vendor/hermawan/codeigniter4-datatables/src/DataTable.php(46): Hermawan\DataTables\DataTable->__construct()
+#13 /var/www/html/capstone/app/Controllers/Data.php(38): Hermawan\DataTables\DataTable::of()
+#14 /var/www/html/capstone/system/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+#15 /var/www/html/capstone/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#16 /var/www/html/capstone/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#17 /var/www/html/capstone/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#18 /var/www/html/capstone/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#19 /var/www/html/capstone/public/index.php(56): CodeIgniter\Boot::bootWeb()
+#20 {main}
+CRITICAL - 2025-04-08 03:50:10 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost'
+[Method: GET, Route: data/userManagement/pending]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(367): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseConnection.php(1412): CodeIgniter\Database\MySQLi\Connection->_escapeString()
+ 3 SYSTEMPATH/Database/BaseConnection.php(1376): CodeIgniter\Database\BaseConnection->escapeString()
+ 4 SYSTEMPATH/Database/Query.php(325): CodeIgniter\Database\BaseConnection->escape()
+ 5 SYSTEMPATH/Database/Query.php(312): CodeIgniter\Database\Query->matchNamedBinds()
+ 6 SYSTEMPATH/Database/Query.php(163): CodeIgniter\Database\Query->compileBinds()
+ 7 SYSTEMPATH/Database/BaseBuilder.php(1627): CodeIgniter\Database\Query->getQuery()
+ 8 SYSTEMPATH/Database/BaseBuilder.php(1611): CodeIgniter\Database\BaseBuilder->compileFinalQuery()
+ 9 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableColumnDefs.php(261): CodeIgniter\Database\BaseBuilder->getCompiledSelect()
+10 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTableColumnDefs.php(17): Hermawan\DataTables\DataTableColumnDefs->initFromBuilder()
+11 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTable.php(35): Hermawan\DataTables\DataTableColumnDefs->__construct()
+12 VENDORPATH/hermawan/codeigniter4-datatables/src/DataTable.php(46): Hermawan\DataTables\DataTable->__construct()
+13 APPPATH/Controllers/Data.php(38): Hermawan\DataTables\DataTable::of()
+14 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Data->userManagement()
+15 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+16 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+17 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+18 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+19 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+DEBUG - 2025-04-08 04:40:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-04-08 10:40:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
