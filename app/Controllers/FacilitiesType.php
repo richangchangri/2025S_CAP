@@ -12,7 +12,10 @@ class FacilitiesType extends Controller
 {
     public function index()
     {
-        
+        $session = session();
+        if (!$session->get('login')) {
+            return redirect()->to('/login');
+        }
         $facilitiesTypeModel = new FacilitiesTypeModel();
         $availableCount = $facilitiesTypeModel->where('status', 'available')->countAllResults();
         $maintenanceCount = $facilitiesTypeModel->where('status', 'maintenance')->countAllResults();
@@ -25,7 +28,29 @@ class FacilitiesType extends Controller
         return view('facilities_type', $data);
     }
 
+    public function add(){
+        $session = session();
+        if (!$session->get('login')) {
+            return redirect()->to('/login');
+        }
+        $facilitiesTypeModel = new FacilitiesTypeModel(); 
+        $facilitiesType = $facilitiesTypeModel->select('FacilitiesType.*')
+                        ->join('Facilities', 'FacilitiesType.facility_type_id = Facilities.facility_type_id', 'left')
+                        ->join('Buildings', 'Buildings.building_id = Facilities.building_id', 'left')
+                        ->first();
+
+        $data = [
+            'facilitiesType' => $facilitiesType
+        ];
+
+        return view('facilities_type_add', $data);
+    }
+
     public function edit(){
+        $session = session();
+        if (!$session->get('login')) {
+            return redirect()->to('/login');
+        }
         $id = $this->request->getUri()->getSegment(3);
         $facilitiesTypeModel = new FacilitiesTypeModel(); 
         $facilitiesType = $facilitiesTypeModel->select('FacilitiesType.*')
@@ -78,7 +103,7 @@ class FacilitiesType extends Controller
             } 
             return $this->response->setJSON([
                 "status" => "success", 
-                "message" => '<div class="alert alert-success"><strong>Success!</strong> User updated successfully.</div>'
+                "message" => '<div class="alert alert-success"><strong>Success!</strong> Facilities Type updated successfully.</div>'
             ]);
         } else {
             // Insert new facilities type
@@ -92,7 +117,7 @@ class FacilitiesType extends Controller
             } 
             return $this->response->setJSON([
                 "status" => "success", 
-                "message" => '<div class="alert alert-success"><strong>Success!</strong> User created successfully.</div>'
+                "message" => '<div class="alert alert-success"><strong>Success!</strong> Facilities Type created successfully.</div>'
             ]);
         }
          echo $model->db->getLastQuery();
@@ -108,22 +133,22 @@ class FacilitiesType extends Controller
         if (!$facilitiesType) {
             return $this->response->setJSON([
                 "status" => "error",
-                "message" => '<div class="alert alert-danger"><strong>Error!</strong> Facility not found.</div>'
+                "message" => 'Error! Facilities Type not found.'
             ]);
         }
 
         // Delete facilities type
-        $deleted = $model->where('facility_id', $facility_type_id)->delete();
+        $deleted = $model->where('facility_type_id', $facility_type_id)->delete();
         if (!$deleted) {
             return $this->response->setJSON([
                 "status" => "error",
-                "message" => '<div class="alert alert-danger"><strong>Error!</strong> Failed to delete facility.</div>'
+                "message" => 'Error! Failed to delete facilities type.'
             ]);
         }
 
         return $this->response->setJSON([
             "status" => "success",
-            "message" => '<div class="alert alert-success"><strong>Success!</strong> User deleted successfully.</div>'
+            "message" => 'Success! Facilities Type deleted successfully.'
         ]);
     }
 }

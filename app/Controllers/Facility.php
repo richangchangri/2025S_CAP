@@ -12,7 +12,10 @@ class Facility extends Controller
 {
     public function index()
     {
-        
+        $session = session();
+        if (!$session->get('login')) {
+            return redirect()->to('/login');
+        }
         $facilityModel = new FacilityModel();
         $availableCount = $facilityModel->where('status', 'available')->countAllResults();
         $maintenanceCount = $facilityModel->where('status', 'maintenance')->countAllResults();
@@ -26,8 +29,11 @@ class Facility extends Controller
     }
 
     public function detail(){
+        $session = session();
+        if (!$session->get('login')) {
+            return redirect()->to('/login');
+        }
         $id = $this->request->getUri()->getSegment(3);
-        // echo $userid;
         $facilityModel = new FacilityModel();
         $facility = $facilityModel->select('Facilities.*, FacilitiesType.name as facilities_type_name, Buildings.name as building_name')
                         ->join('FacilitiesType', 'FacilitiesType.facility_type_id = Facilities.facility_type_id', 'left')
@@ -35,9 +41,8 @@ class Facility extends Controller
                         ->where('Facilities.facility_id', $id)
                         ->first();
 
-        // echo $facilityModel->db->getLastQuery();
         if(!$facility){
-            // throw new PageNotFoundException("Page not found");
+            throw new PageNotFoundException("Page not found");
         } 
         $data = [
             'facility' => $facility
@@ -46,6 +51,10 @@ class Facility extends Controller
     }
 
     public function add(){
+        $session = session();
+        if (!$session->get('login')) {
+            return redirect()->to('/login');
+        }
         $facilityModel = new FacilityModel();
         $facility = $facilityModel->select('Facilities.*, FacilitiesType.name as facilities_type_name, Buildings.name as building_name')
                         ->join('FacilitiesType', 'FacilitiesType.facility_type_id = Facilities.facility_type_id', 'left')
@@ -65,6 +74,10 @@ class Facility extends Controller
     }
 
     public function edit(){
+        $session = session();
+        if (!$session->get('login')) {
+            return redirect()->to('/login');
+        }
         $id = $this->request->getUri()->getSegment(3);
         $facilityModel = new FacilityModel(); 
         $facility = $facilityModel->select('Facilities.*, FacilitiesType.name as facilities_type_name, Buildings.name as building_name')
@@ -124,7 +137,7 @@ class Facility extends Controller
             } 
             return $this->response->setJSON([
                 "status" => "success", 
-                "message" => '<div class="alert alert-success"><strong>Success!</strong> User updated successfully.</div>'
+                "message" => '<div class="alert alert-success"><strong>Success!</strong> Facility updated successfully.</div>'
             ]);
         } else {
             // Insert new facility
@@ -138,7 +151,7 @@ class Facility extends Controller
             } 
             return $this->response->setJSON([
                 "status" => "success", 
-                "message" => '<div class="alert alert-success"><strong>Success!</strong> User created successfully.</div>'
+                "message" => '<div class="alert alert-success"><strong>Success!</strong> Facility created successfully.</div>'
             ]);
         }
     }
@@ -147,28 +160,27 @@ class Facility extends Controller
     public function delete($facility_id)
     {
         $model = new FacilityModel();
-
-        // Check if user exists
+        // Check if facility exists
         $facility = $model->where('facility_id', $facility_id)->first();
         if (!$facility) {
             return $this->response->setJSON([
                 "status" => "error",
-                "message" => '<div class="alert alert-danger"><strong>Error!</strong> Facility not found.</div>'
+                "message" => 'Error! Facility not found.'
             ]);
         }
 
-        // Delete user
+        // Delete facility
         $deleted = $model->where('facility_id', $facility_id)->delete();
         if (!$deleted) {
             return $this->response->setJSON([
                 "status" => "error",
-                "message" => '<div class="alert alert-danger"><strong>Error!</strong> Failed to delete facility.</div>'
+                "message" => 'Error! Failed to delete facility.'
             ]);
         }
 
         return $this->response->setJSON([
             "status" => "success",
-            "message" => '<div class="alert alert-success"><strong>Success!</strong> User deleted successfully.</div>'
+            "message" => 'Success! Facility deleted successfully.'
         ]);
     }
 }

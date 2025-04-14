@@ -12,16 +12,6 @@
                     </li>
                     <li class="active">User Management</li>
                 </ul><!-- /.breadcrumb -->
-
-                <div class="nav-search" id="nav-search">
-                    <form class="form-search">
-                        <span class="input-icon">
-                            <input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input"
-                                autocomplete="off" />
-                            <i class="ace-icon fa fa-search nav-search-icon"></i>
-                        </span>
-                    </form>
-                </div><!-- /.nav-search -->
             </div>
 
             <div class="page-content">
@@ -37,19 +27,24 @@
                 </div><!-- /.page-header -->
                 <div class="row">
                     <div class="col-md-12">
-                        <h4 class="widget-title lighter">USERS</h4>
+                        <h4 class="widget-title lighter">SUMMARY</h4>
                         <span class="btn btn-app btn-sm btn-primary no-hover">
-                            <span class="line-height-1 bigger-170"> 10 </span>
+                            <span class="line-height-1 bigger-170" id="activeQty"> - </span>
                             <br>
                             <span class="line-height-1 smaller-90"> Active </span>
                         </span>
                         <span class="btn btn-app btn-sm btn-primary no-hover">
-                            <span class="line-height-1 bigger-170"> 29 </span>
+                            <span class="line-height-1 bigger-170" id="inactiveQty"> - </span>
                             <br>
                             <span class="line-height-1 smaller-90"> Inactive </span>
                         </span>
                         <span class="btn btn-app btn-sm btn-primary no-hover">
-                            <span class="line-height-1 bigger-170"> 39 </span>
+                            <span class="line-height-1 bigger-170" id="pendingQty"> - </span>
+                            <br>
+                            <span class="line-height-1 smaller-90"> Pending </span>
+                        </span>
+                        <span class="btn btn-app btn-sm btn-primary no-hover">
+                            <span class="line-height-1 bigger-170" id="totalQty"> - </span>
                             <br>
                             <span class="line-height-1 smaller-90"> Total </span>
                         </span>
@@ -139,7 +134,29 @@
     </div>
 
     <script type="text/javascript">
-        $(document).ready(function() {
+        $(document).ready(function () {
+
+            function loadDashboardData() {
+                $.ajax({
+                    url: '/data/userSummary', // make sure this matches the route in Routes.php
+                    method: 'GET',
+                    dataType: 'json',
+                    success: function (res) {
+                        // Facilities
+                        $('#activeQty').text(res.active);
+                        $('#inactiveQty').text(res.inactive);
+                        $('#pendingQty').text(res.pending);
+                        $('#totalQty').text(res.total);
+                    }
+                });
+            }
+
+            // First call when page loads
+            loadDashboardData();
+
+            // Set auto refresh every 5 minutes (300000 ms)
+            setInterval(loadDashboardData, 300000); // 5 minutes
+
             function initializeTable(tableId, status) {
                 var myTable = $('#' + tableId).DataTable({
                     autoWidth: false,
@@ -158,13 +175,13 @@
                             data: "user_id",
                             render: function (data, type, row, meta) {
                                 return `<div class="text-center">
-                                    <a href="<?= base_url(); ?>user_management/profile/${data}" class="btn btn-xs btn-default">
+                                    <a href="<?= base_url(); ?>user_management/profile/${row[0]}" class="btn btn-xs btn-default">
                                         <i class="fa fa-eye"></i>
                                     </a>
-                                    <a href="<?= base_url(); ?>user_management/edit/${data}" class="btn btn-xs btn-warning">
+                                    <a href="<?= base_url(); ?>user_management/edit/${row[0]}" class="btn btn-xs btn-warning">
                                         <i class="fa fa-edit"></i>
                                     </a>
-                                    <a href="#" class="btn btn-xs btn-danger delete-user" data-id="${data}">
+                                    <a href="#" class="btn btn-xs btn-danger delete-user" data-id="${row[0]}">
                                         <i class="fa fa-trash"></i>
                                     </a>
                                 </div>`;
@@ -185,57 +202,24 @@
                         {
                             text: '<i class="fa fa-plus bigger-110 orange"></i> <span class="hidden">Add</span>',
                             className: 'btn btn-white btn-primary btn-bold addbtn'
-                        },
+                        }, 
                         {
-                            extend: 'copy',
-                            text: '<i class="fa fa-copy bigger-110 pink"></i> <span class="hidden">Copy to clipboard</span>',
-                            className: 'btn btn-white btn-primary btn-bold'
-                        },                       
-                        {
-                            extend: 'csv',
-                            text: '<i class="fa fa-file-excel-o bigger-110 green"></i> <span class="hidden">Export to Excel</span>',
-                            className: 'btn btn-white btn-primary btn-bold'
-                        },
-                        {
-                            extend: 'pdf',
-                            text: '<i class="fa fa-file-pdf-o bigger-110 red"></i> <span class="hidden">Export to PDF</span>',
-                            className: 'btn btn-white btn-primary btn-bold'
-                        },
-                        {
-                            extend: 'print',
-                            text: '<i class="fa fa-print bigger-110 grey"></i> <span class="hidden">Print</span>',
-                            className: 'btn btn-white btn-primary btn-bold',
-                            autoPrint: false,
-                            message: 'This print was produced using the Print button for DataTables'
+                            text: '<i class="fa fa-refresh bigger-110 pink"></i> <span class="hidden">Copy to clipboard</span>',
+                            className: 'btn btn-white btn-primary btn-bold btnRefresh',
+                            action: function (e, dt, node, config) {
+                                dt.ajax.reload(null, false);
+                            }
                         }
                     ]
                 });
 
-                // Style the message box
-                // myTable.on('buttons-action', function(e, buttonApi, dataTable, node, config) {
-                //     if (buttonApi.index() === 1) { // Copy button
-                //         $('.dt-button-info').addClass('gritter-item-wrapper gritter-info gritter-center white');
-                //     }
-                // });
-
-                // Style column visibility dropdown
-                myTable.on('column-visibility', function(e, settings, column, state) {
-                    if ($('.dt-button-collection > .dropdown-menu').length === 0) {
-                        $('.dt-button-collection')
-                            .wrapInner('<ul class="dropdown-menu dropdown-light dropdown-caret dropdown-caret" />')
-                            .find('a').attr('href', '#').wrap("<li />");
-                    }
-                    $('.dt-button-collection').appendTo('.tableTools-container-'+ tableId +' .dt-buttons');
-                });
-
-                // Add tooltips
-                setTimeout(function() {
-                    $('.tableTools-container-'+ tableId).find('a.dt-button').each(function() {
+                setTimeout(function () {
+                    $('.tableTools-container-' + tableId).find('a.dt-button').each(function () {
                         var div = $(this).find(' > div').first();
-                        if(div.length === 1) {
-                            div.tooltip({container: 'body', title: div.parent().text()});
+                        if (div.length === 1) {
+                            div.tooltip({ container: 'body', title: div.parent().text() });
                         } else {
-                            $(this).tooltip({container: 'body', title: $(this).text()});
+                            $(this).tooltip({ container: 'body', title: $(this).text() });
                         }
                     });
                 }, 500);
@@ -243,34 +227,43 @@
                 return myTable;
             }
 
-            // Initialize DataTables
+            // Initialize all tables
             var activeTable = initializeTable('active-table', 'active');
             var inactiveTable = initializeTable('inactive-table', 'inactive');
             var pendingTable = initializeTable('pending-table', 'pending');
 
-            $('.delete-user').on('click',  function(e) {
-            e.preventDefault();
+            // Delete user with confirmation using Bootbox
+            $(document).on('click', '.delete-user', function (e) {
+                e.preventDefault();
+                let userId = $(this).data('id');
+                let url = "<?= base_url(); ?>/user_management/delete/" + userId;
 
-            let userId = $(this).data('id');
-            let url = "<?= base_url(); ?>/user_management/delete/" + userId;
-
-            if (confirm("Are you sure you want to delete this user?")) {
-                $.ajax({
-                    url: url,
-                    type: "DELETE",
-                    dataType: "json",
-                    success: function(response) {
-                        alert(response.message); // Show success/error message
-                        location.reload(); // Refresh table after delete
-                    },
-                    error: function() {
-                        alert("Error deleting user. Please try again.");
+                bootbox.confirm("Are you sure you want to delete this user?", function (result) {
+                    if (result === true) {
+                        $.ajax({
+                            url: url,
+                            type: "DELETE",
+                            dataType: "JSON",
+                            success: function (data) {
+                                bootbox.alert(data.message || "User deleted successfully!", function () {
+                                    location.reload();
+                                });
+                            },
+                            error: function () {
+                                bootbox.alert("Error deleting user. Please try again.");
+                            }
+                        });
                     }
                 });
-            }
-        });
-    });
+            });
 
-    </script>
+            // Redirect to add user page
+            $('.addbtn').on('click', function () {
+                let url = "<?= base_url(); ?>user_management/add";
+                window.location.href = url;
+            });
+        });
+        </script>
+
 
 <?= $this->endSection() ?>

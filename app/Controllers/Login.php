@@ -28,13 +28,11 @@ class Login extends Controller
         $email = $this->request->getVar('username');
         $password = $this->request->getVar('password');
         $data = $model->where('email', $email)->first();
-        // echo $db->getLastQuery();
         if($data){
             $pass = $data['password'];
             $verify_pass = password_verify($password, $pass);
 
             // $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-            // echo "Hash dari password '1234567890': " . $hashedPassword . "<br>";
             if($verify_pass){
                 if($data['status'] == "inactive"){
                     return $this->response->setJSON(["status" => "error", "message" => "We apologize, your account is currently suspended. Please contact the administrator"]);
@@ -57,14 +55,7 @@ class Login extends Controller
                     // Insert OTP baru
                     $otpModel->insert($otpData);
                 }
-                // $ses_data = [
-                //     'user_id'  => $data['user_id'],
-                //     'department_id'  => $data['department_id'],
-                //     'role'  => $data['role'],
-                //     'name'      => $data['user_id'],
-                //     'email'     => $data['email'],
-                //     'login'     => TRUE
-                // ];
+                
                 $ses_data = [
                     'email'     => $data['email']
                 ];
@@ -77,7 +68,7 @@ class Login extends Controller
                  $emailService->setSubject('Your OTP Code');
                  $emailService->setMessage('Your OTP code is: ' . $otp_code);
                  if (!$emailService->send()) {
-                    // Cetak debugging email jika terjadi error
+                    // debugging email
                     return $this->response->setJSON([
                         "status" => "error",
                         "message" => "Failed to send OTP email",
@@ -101,26 +92,21 @@ class Login extends Controller
         $email = $this->request->getVar('email');        
         $cekEmail = $model->where('email', $email)->first();
         if ($cekEmail) {
-            if($otp['expired_at'] > date('Y-m-d H:i:s')){                
-                return $this->response->setJSON(["status" => "error", "message" => "OTP Expired, Please request again!"]);
+            $words = generate_string("", 10);
+            $newPassword = password_hash($words, PASSWORD_DEFAULT);
+            $submit = $model->update($cekEmail['user_id'], ['password' => $newPassword]);
+            $emailService = \Config\Services::email();
+                 $emailService->setFrom('hello@demomailtrap.co', 'Booking ROOM Apps');
+                 $emailService->setTo($cekEmail['email']);
+                 $emailService->setSubject('Reset Password');
+                 $emailService->setMessage('Please use this word for login: ' . $words);
+            if(!$submit){
+                return $this->response->setJSON(["status" => "error", "message" => '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert"><i class="ace-icon fa fa-times"></i></button><strong>Oh Sorry!</strong><br>Failed to reset password, Please contact our administrator for help!</div>']);
             }
-            // OTP benar, hapus OTP dari database dan tandai user sebagai terverifikasi
-            $otpModel->update($otp['id'], ['otp_code' => null, 'is_verified' => 1]);
-            
-            $data = $model->where('email', $email)->first();
-            $ses_data = [
-                'user_id'  => $data['user_id'],
-                'department_id'  => $data['department_id'],
-                'role'  => $data['role'],
-                'name'      => $data['user_id'],
-                'email'     => $data['email'],
-                'login'     => TRUE
-            ];
-            $session->set($ses_data);
-            return $this->response->setJSON(["status" => "success", "message" => "OTP verified successfully."]);
-      
+            return $this->response->setJSON(["status" => "success", "message" => '<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert"><i class="ace-icon fa fa-times"></i></button><strong>Success!</strong><br>Password reset successfully, please check your email to get new password!</div>']);
         } else {
-            return $this->response->setJSON(["status" => "error", "message" => "Invalid OTP. Please try again."]);
+            return $this->response->setJSON(["status" => "error", "message" => '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert"><i class="ace-icon fa fa-times"></i></button><strong>Oh Sorry!</strong><br>Account not found. Please cbeck again!</div>']);
+          
         }
     }
  
@@ -155,19 +141,18 @@ class Login extends Controller
         if($this->request->getPost('email')){
            $email = $this->request->getPost('email');      
         } else if ($session->get('email')) {     
-            $email = $session->get('email'); // Ambil email pengguna dari sesi              
+            $email = $session->get('email'); // Retrieve user email from session             
         } else {            
             return $this->response->setJSON(["status" => "error", "message" => "Session expired, please login again."]);
         }
         $model = new UserModel();
         $otpModel = new OtpModel(); 
         $otp = $otpModel->where('email', $email)->first();
-        //echo $db->getLastQuery();
         if ($otp && $otp['otp_code'] == $otpInput) {      
             if($otp['expired_at'] <= date('Y-m-d H:i:s')){                
                 return $this->response->setJSON(["status" => "error", "message" => "OTP Expired, Please request again!"]);
             }
-            // OTP benar, hapus OTP dari database dan tandai user sebagai terverifikasi
+            // OTP is correct, delete OTP from database and mark user as verified
             $otpModel->update($otp['id'], ['otp_code' => null]);
             
             $data = $model->where('email', $email)->first();
@@ -178,7 +163,7 @@ class Login extends Controller
                 'user_id'  => $data['user_id'],
                 'department_id'  => $data['department_id'],
                 'role'      => $data['role'],
-                'name'      => $data['user_id'],
+                'name'      => $data['name'],
                 'email'     => $data['email'],
                 'login'     => TRUE
             ];
@@ -195,7 +180,7 @@ class Login extends Controller
         $session = session();
         date_default_timezone_set('Asia/Jakarta');
         $db = \Config\Database::connect(); 
-        $email = $session->get('email'); // Ambil email pengguna dari sesi        
+        $email = $session->get('email'); // Retrieve user email from session        
         $otpModel = new OtpModel(); 
         $otp_code = rand(100000, 999999);
         $expired_at = date('Y-m-d H:i:s', strtotime('+5 minutes')); // OTP valid for 5 minutes                 
@@ -222,7 +207,7 @@ class Login extends Controller
         $emailService->setSubject('Your OTP Code');
         $emailService->setMessage('Your OTP code is: ' . $otp_code);
         if (!$emailService->send()) {
-        // Cetak debugging email jika terjadi error
+        // Print debugging email if error occurs
             return $this->response->setJSON([
                 "status" => "error",
                 "message" => "Failed to send OTP email",
@@ -295,7 +280,7 @@ class Login extends Controller
         $emailService->setSubject('Your OTP Code');
         $emailService->setMessage('Your OTP code is: ' . $otp_code);
         if (!$emailService->send()) {
-        // Cetak debugging email jika terjadi error
+        // Print debugging email if error occurs
             return $this->response->setJSON([
                 "status" => "error",
                 "message" => "Failed to send OTP email",

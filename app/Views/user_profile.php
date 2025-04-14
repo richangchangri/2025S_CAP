@@ -2,7 +2,7 @@
 
 <?= $this->section('content') ?>
 
-<div class="main-content">
+<div class="main-content">å
 	<div class="main-content-inner">
 		<div class="breadcrumbs ace-save-state" id="breadcrumbs">
 			<ul class="breadcrumb">
@@ -16,16 +16,6 @@
 				</li>
 				<li class="active">User Profile</li>
 			</ul><!-- /.breadcrumb -->
-
-			<div class="nav-search" id="nav-search">
-				<form class="form-search">
-					<span class="input-icon">
-						<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input"
-							autocomplete="off">
-						<i class="ace-icon fa fa-search nav-search-icon"></i>
-					</span>
-				</form>
-			</div><!-- /.nav-search -->
 		</div>
 
 		<div class="page-content">
@@ -47,8 +37,7 @@
 							<div class="col-xs-12 col-sm-3 center">
 								<div>
 									<span class="profile-picture">
-										<img id="avatar" class="editable img-responsive editable-click editable-empty"
-											alt="Alex's Avatar" src="<?= esc($gravatar_url) ?>" alt="Gravatar"">
+										<img id="avatar" class="editable img-responsive" alt="Gravatar" src="<?= esc($gravatar_url) ?>" />
 									</span>
 
 									<div class="space-4"></div>
@@ -92,11 +81,8 @@
 									</div>
 								</div>
 
-								<div class="space-6"></div>
-
-								
-							</div>
-
+								<div class="space-6"></div>								
+							</div>							
 							<div class="col-xs-12 col-sm-9">
 								<div class="profile-user-info profile-user-info-striped">
 									<div class="profile-info-row">
@@ -141,295 +127,10 @@
 
 								<div class="space-20"></div>
 
-								<div class="widget-box transparent">
-									<div class="widget-header widget-header-small">
-										<h4 class="widget-title blue smaller">
-											<i class="ace-icon fa fa-rss orange"></i>
-											Recent Activities
-										</h4>
-
-										<div class="widget-toolbar action-buttons">
-											<a href="#" data-action="reload">
-												<i class="ace-icon fa fa-refresh blue"></i>
-											</a>
-											&nbsp;
-											<a href="#" class="pink">
-												<i class="ace-icon fa fa-trash-o"></i>
-											</a>
-										</div>
-									</div>
-
-									<div class="widget-body">
-										<div class="widget-main padding-8">
-											<div id="profile-feed-1" class="profile-feed ace-scroll"
-												style="position: relative;">
-												<div class="scroll-track scroll-active"
-													style="display: block; height: 200px;">
-													<div class="scroll-bar" style="height: 62px; top: 0px;"></div>
-												</div>
-												<div class="scroll-content" style="max-height: 200px;">
-													<div class="profile-activity clearfix">
-														<div>
-															<img class="pull-left" alt="Alex Doe's avatar"
-																src="assets/images/avatars/avatar5.png">
-															<a class="user" href="#"> Alex Doe </a>
-															changed his profile photo.
-															<a href="#">Take a look</a>
-
-															<div class="time">
-																<i class="ace-icon fa fa-clock-o bigger-110"></i>
-																an hour ago
-															</div>
-														</div>
-
-														<div class="tools action-buttons">
-															<a href="#" class="blue">
-																<i class="ace-icon fa fa-pencil bigger-125"></i>
-															</a>
-
-															<a href="#" class="red">
-																<i class="ace-icon fa fa-times bigger-125"></i>
-															</a>
-														</div>
-													</div>
-
-													<div class="profile-activity clearfix">
-														<div>
-															<img class="pull-left" alt="Susan Smith's avatar"
-																src="assets/images/avatars/avatar1.png">
-															<a class="user" href="#"> Susan Smith </a>
-
-															is now friends with Alex Doe.
-															<div class="time">
-																<i class="ace-icon fa fa-clock-o bigger-110"></i>
-																2 hours ago
-															</div>
-														</div>
-
-														<div class="tools action-buttons">
-															<a href="#" class="blue">
-																<i class="ace-icon fa fa-pencil bigger-125"></i>
-															</a>
-
-															<a href="#" class="red">
-																<i class="ace-icon fa fa-times bigger-125"></i>
-															</a>
-														</div>
-													</div>
-
-													<div class="profile-activity clearfix">
-														<div>
-															<i
-																class="pull-left thumbicon fa fa-check btn-success no-hover"></i>
-															<a class="user" href="#"> Alex Doe </a>
-															joined
-															<a href="#">Country Music</a>
-
-															group.
-															<div class="time">
-																<i class="ace-icon fa fa-clock-o bigger-110"></i>
-																5 hours ago
-															</div>
-														</div>
-
-														<div class="tools action-buttons">
-															<a href="#" class="blue">
-																<i class="ace-icon fa fa-pencil bigger-125"></i>
-															</a>
-
-															<a href="#" class="red">
-																<i class="ace-icon fa fa-times bigger-125"></i>
-															</a>
-														</div>
-													</div>
-
-													<div class="profile-activity clearfix">
-														<div>
-															<i
-																class="pull-left thumbicon fa fa-picture-o btn-info no-hover"></i>
-															<a class="user" href="#"> Alex Doe </a>
-															uploaded a new photo.
-															<a href="#">Take a look</a>
-
-															<div class="time">
-																<i class="ace-icon fa fa-clock-o bigger-110"></i>
-																5 hours ago
-															</div>
-														</div>
-
-														<div class="tools action-buttons">
-															<a href="#" class="blue">
-																<i class="ace-icon fa fa-pencil bigger-125"></i>
-															</a>
-
-															<a href="#" class="red">
-																<i class="ace-icon fa fa-times bigger-125"></i>
-															</a>
-														</div>
-													</div>
-
-													<div class="profile-activity clearfix">
-														<div>
-															<img class="pull-left" alt="David Palms's avatar"
-																src="assets/images/avatars/avatar4.png">
-															<a class="user" href="#"> David Palms </a>
-
-															left a comment on Alex's wall.
-															<div class="time">
-																<i class="ace-icon fa fa-clock-o bigger-110"></i>
-																8 hours ago
-															</div>
-														</div>
-
-														<div class="tools action-buttons">
-															<a href="#" class="blue">
-																<i class="ace-icon fa fa-pencil bigger-125"></i>
-															</a>
-
-															<a href="#" class="red">
-																<i class="ace-icon fa fa-times bigger-125"></i>
-															</a>
-														</div>
-													</div>
-
-													<div class="profile-activity clearfix">
-														<div>
-															<i
-																class="pull-left thumbicon fa fa-pencil-square-o btn-pink no-hover"></i>
-															<a class="user" href="#"> Alex Doe </a>
-															published a new blog post.
-															<a href="#">Read now</a>
-
-															<div class="time">
-																<i class="ace-icon fa fa-clock-o bigger-110"></i>
-																11 hours ago
-															</div>
-														</div>
-
-														<div class="tools action-buttons">
-															<a href="#" class="blue">
-																<i class="ace-icon fa fa-pencil bigger-125"></i>
-															</a>
-
-															<a href="#" class="red">
-																<i class="ace-icon fa fa-times bigger-125"></i>
-															</a>
-														</div>
-													</div>
-
-													<div class="profile-activity clearfix">
-														<div>
-															<img class="pull-left" alt="Alex Doe's avatar"
-																src="assets/images/avatars/avatar5.png">
-															<a class="user" href="#"> Alex Doe </a>
-
-															upgraded his skills.
-															<div class="time">
-																<i class="ace-icon fa fa-clock-o bigger-110"></i>
-																12 hours ago
-															</div>
-														</div>
-
-														<div class="tools action-buttons">
-															<a href="#" class="blue">
-																<i class="ace-icon fa fa-pencil bigger-125"></i>
-															</a>
-
-															<a href="#" class="red">
-																<i class="ace-icon fa fa-times bigger-125"></i>
-															</a>
-														</div>
-													</div>
-
-													<div class="profile-activity clearfix">
-														<div>
-															<i
-																class="pull-left thumbicon fa fa-key btn-info no-hover"></i>
-															<a class="user" href="#"> Alex Doe </a>
-
-															logged in.
-															<div class="time">
-																<i class="ace-icon fa fa-clock-o bigger-110"></i>
-																12 hours ago
-															</div>
-														</div>
-
-														<div class="tools action-buttons">
-															<a href="#" class="blue">
-																<i class="ace-icon fa fa-pencil bigger-125"></i>
-															</a>
-
-															<a href="#" class="red">
-																<i class="ace-icon fa fa-times bigger-125"></i>
-															</a>
-														</div>
-													</div>
-
-													<div class="profile-activity clearfix">
-														<div>
-															<i
-																class="pull-left thumbicon fa fa-power-off btn-inverse no-hover"></i>
-															<a class="user" href="#"> Alex Doe </a>
-
-															logged out.
-															<div class="time">
-																<i class="ace-icon fa fa-clock-o bigger-110"></i>
-																16 hours ago
-															</div>
-														</div>
-
-														<div class="tools action-buttons">
-															<a href="#" class="blue">
-																<i class="ace-icon fa fa-pencil bigger-125"></i>
-															</a>
-
-															<a href="#" class="red">
-																<i class="ace-icon fa fa-times bigger-125"></i>
-															</a>
-														</div>
-													</div>
-
-													<div class="profile-activity clearfix">
-														<div>
-															<i
-																class="pull-left thumbicon fa fa-key btn-info no-hover"></i>
-															<a class="user" href="#"> Alex Doe </a>
-
-															logged in.
-															<div class="time">
-																<i class="ace-icon fa fa-clock-o bigger-110"></i>
-																16 hours ago
-															</div>
-														</div>
-
-														<div class="tools action-buttons">
-															<a href="#" class="blue">
-																<i class="ace-icon fa fa-pencil bigger-125"></i>
-															</a>
-
-															<a href="#" class="red">
-																<i class="ace-icon fa fa-times bigger-125"></i>
-															</a>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-
 								<div class="hr hr2 hr-double"></div>
 
 								<div class="space-6"></div>
 
-								<div class="center">
-									<button type="button" class="btn btn-sm btn-primary btn-white btn-round">
-										<i class="ace-icon fa fa-rss bigger-150 middle orange2"></i>
-										<span class="bigger-110">View more activities</span>
-
-										<i class="icon-on-right ace-icon fa fa-arrow-right"></i>
-									</button>
-								</div>
 							</div>
 						</div>
 					</div>
@@ -474,9 +175,7 @@
 						<div id="user-profile-3" class="user-profile row">
 							<div class="col-sm-offset-1 col-sm-10">
 								<div class="well well-sm">
-									<!-- -
-		<button type="button" class="close" data-dismiss="alert">&times;</button>
-		&nbsp; -->
+									
 									<div class="inline middle blue bigger-110"> Your profile is 70% complete </div>
 
 									&nbsp; &nbsp; &nbsp;

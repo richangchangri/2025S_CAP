@@ -13,7 +13,7 @@ class Email extends BaseConfig
     /**
      * The "user agent"
      */
-    public string $userAgent = 'CodeIgniter';
+    public string $userAgent = 'BookingApps';
 
     /**
      * The mail sending protocol: mail, sendmail, smtp
@@ -28,17 +28,17 @@ class Email extends BaseConfig
     /**
      * SMTP Server Hostname
      */
-    public string $SMTPHost = 'live.smtp.mailtrap.io';
+    public string $SMTPHost = 'sandbox.smtp.mailtrap.io';
 
     /**
      * SMTP Username
      */
-    public string $SMTPUser = 'api';
+    public string $SMTPUser = '1d3e6d73a21a11';
 
     /**
      * SMTP Password
      */
-    public string $SMTPPass = '4522d1e3121e63f4239c551dbf576a8d';
+    public string $SMTPPass = 'c2f7d26b4d5695';
 
     /**
      * SMTP Port

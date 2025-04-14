@@ -12,16 +12,6 @@
                     </li>
                     <li class="active">Dashboard</li>
                 </ul><!-- /.breadcrumb -->
-
-                <div class="nav-search" id="nav-search">
-                    <form class="form-search">
-                        <span class="input-icon">
-                            <input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input"
-                                autocomplete="off" />
-                            <i class="ace-icon fa fa-search nav-search-icon"></i>
-                        </span>
-                    </form>
-                </div><!-- /.nav-search -->
             </div>
 
             <div class="page-content">
@@ -153,9 +143,6 @@
                             </div><!-- /.widget-body -->
                         </div><!-- /.widget-box -->
                     </div>
-                    <div class="col-md-12">
-                        <h3 class="header smaller lighter green">Facilities</h3>
-                    </div>
                 </div>
             </div>
         </div>
@@ -164,7 +151,7 @@
         $(document).ready(function() {
             function loadDashboardData() {
                 $.ajax({
-                    url: '/data/dashboardSummary', // pastikan ini sesuai dengan route di Routes.php
+                    url: '/data/dashboardSummary', // make sure this matches the route in Routes.php
                     method: 'GET',
                     dataType: 'json',
                     success: function (res) {
@@ -298,11 +285,11 @@
                 });
             }
 
-            // Panggil pertama kali saat halaman dimuat
+            // Call first time when page loads
             loadDashboardData();
 
-            // Set auto refresh tiap 5 menit (300000 ms)
-            setInterval(loadDashboardData, 300000); // 5 menit
+            // Set auto refresh every 5 minutes (300000 ms)
+            setInterval(loadDashboardData, 300000); // 5 minutes
 
 
             function timeAgo(dateTimeStr) {

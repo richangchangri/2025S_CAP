@@ -3,13 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verifikasi Login</title>
+    <title>Login Verification</title>
 
     <!-- bootstrap & fontawesome -->
     <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.min.css');?>" />
     <link rel="stylesheet" href="<?= base_url('assets/font-awesome/4.5.0/css/font-awesome.min.css');?>" />
-
-    <!-- page specific plugin styles -->
 
     <!-- text fonts -->
     <link rel="stylesheet" href="<?= base_url('assets/css/fonts.googleapis.com.css');?>" />
@@ -17,15 +15,8 @@
     <!-- ace styles -->
     <link rel="stylesheet" href="<?= base_url('assets/css/ace.min.css');?>" class="ace-main-stylesheet" id="main-ace-style" />
 
-    <!--[if lte IE 9]>
-        <link rel="stylesheet" href="assets/css/ace-part2.min.css" class="ace-main-stylesheet" />
-    <![endif]-->
     <link rel="stylesheet" href="<?= base_url('assets/css/ace-skins.min.css');?>" />
     <link rel="stylesheet" href="<?= base_url('assets/css/ace-rtl.min.css');?>" />
-
-    <!--[if lte IE 9]>
-        <link rel="stylesheet" href="<?= base_url('assets/css/ace-ie.min.css');?>" />
-    <![endif]-->
     
     <!-- Custom CSS -->
     <style>
@@ -176,7 +167,7 @@
         });
 
         $('#resend-otp').on('click', function (e) {
-            $('#resend-otp').text('wait...').attr('disabled', true); // Ubah teks tombol & nonaktifkan
+            $('#resend-otp').text('wait...').attr('disabled', true); // Change button text & disable
 
             $.ajax({
                 url: "<?= base_url('login/resendOTP'); ?>",
@@ -189,7 +180,7 @@
                     $('.loading').hide();
 
                     if (data.status === "success") {
-                        // Menampilkan Bootbox hanya dengan tombol OK
+                        // Show Bootbox only with OK button
                         bootbox.alert({
                             message: "OTP code successfully sent back, please check your email!",
                             buttons: {
@@ -201,7 +192,7 @@
                         });
                     }
 
-                    $('#resend-otp').text('Resend OTP').attr('disabled', false); // Aktifkan kembali tombol
+                    $('#resend-otp').text('Resend OTP').attr('disabled', false); // Re-enable button
                 },
                 error: function () {
                     $('.loading').hide();
@@ -214,10 +205,6 @@
         
     });
 
-    // document.getElementById("resend-otp").addEventListener("click", function(event) {
-    //     event.preventDefault();
-    //     alert("A new OTP code has been sent to your email!");
-    // });
 </script>
 
 </body>

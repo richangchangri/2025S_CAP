@@ -4,7 +4,7 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class ApprovalModel extends Model
+class ApprovalsModel extends Model
 {
     protected $table = 'Approvals';
     protected $primaryKey = 'approval_id';

@@ -12,16 +12,6 @@
                     </li>
                     <li class="active">Building</li>
                 </ul><!-- /.breadcrumb -->
-
-                <div class="nav-search" id="nav-search">
-                    <form class="form-search">
-                        <span class="input-icon">
-                            <input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input"
-                                autocomplete="off" />
-                            <i class="ace-icon fa fa-search nav-search-icon"></i>
-                        </span>
-                    </form>
-                </div><!-- /.nav-search -->
             </div>
 
             <div class="page-content">
@@ -37,19 +27,19 @@
                 </div><!-- /.page-header -->
                 <div class="row">
                     <div class="col-md-12">
-                        <h4 class="widget-title lighter">BUILDING</h4>
+                        <h4 class="widget-title lighter">SUMMARY</h4>
                         <span class="btn btn-app btn-sm btn-primary no-hover">
-                            <span class="line-height-1 bigger-170"> 4 </span>
-                            <br>
-                            <span class="line-height-1 smaller-90"> Used </span>
-                        </span>
-                        <span class="btn btn-app btn-sm btn-primary no-hover">
-                            <span class="line-height-1 bigger-170"> 6 </span>
+                            <span class="line-height-1 bigger-170" id="availableQty"> - </span>
                             <br>
                             <span class="line-height-1 smaller-90"> Available </span>
                         </span>
                         <span class="btn btn-app btn-sm btn-primary no-hover">
-                            <span class="line-height-1 bigger-170"> 10 </span>
+                            <span class="line-height-1 bigger-170" id="maintenanceQty"> - </span>
+                            <br>
+                            <span class="line-height-1 smaller-90"> Maintenance </span>
+                        </span>
+                        <span class="btn btn-app btn-sm btn-primary no-hover">
+                            <span class="line-height-1 bigger-170" id="totalQty"> - </span>
                             <br>
                             <span class="line-height-1 smaller-90"> Total </span>
                         </span>
@@ -160,6 +150,27 @@
     </div>
     <script type="text/javascript">
         $(document).ready(function() {
+
+            function loadDashboardData() {
+                $.ajax({
+                    url: '/data/buildingSummary', // make sure this matches the route in Routes.php
+                    method: 'GET',
+                    dataType: 'json',
+                    success: function (res) {
+                        // Building
+                        $('#availableQty').text(res.available);
+                        $('#maintenanceQty').text(res.maintenance);
+                        $('#totalQty').text(res.total);
+                    }
+                });
+            }
+
+            // First call when page loads
+            loadDashboardData();
+
+            // Set auto refresh every 5 minutes (300000 ms)
+            setInterval(loadDashboardData, 300000); // 5 minutes
+
             function initializeTable(tableId, status) {
                     var myTable = $('#' + tableId).DataTable({
                     bAutoWidth: false,
@@ -183,7 +194,7 @@
                                     <a href="<?= base_url(); ?>building/edit/${row[0]}" class="btn btn-xs btn-warning">
                                         <i class="fa fa-edit"></i>
                                     </a>
-                                    <a href="#" class="btn btn-xs btn-danger delete-user" data-id="${row[0]}">
+                                    <a href="<?= base_url(); ?>building/delete/${row[0]}" class="btn btn-xs btn-danger delete-building" data-id="${row[0]}">
                                         <i class="fa fa-trash"></i>
                                     </a>
                                 </div>`;
@@ -202,34 +213,13 @@
                         {
                             text: '<i class="fa fa-plus bigger-110 orange"></i> <span class="hidden">Add</span>',
                             className: 'btn btn-white btn-primary btn-bold addbtn'
-                        },
+                        }, 
                         {
-                            extend: 'colvis',
-                            text: '<i class="fa fa-search bigger-110 blue"></i> <span class="hidden">Show/hide columns</span>',
-                            className: 'btn btn-white btn-primary btn-bold',
-                            columns: ':not(:first):not(:last)'
-                        },
-                        {
-                            extend: 'copy',
-                            text: '<i class="fa fa-copy bigger-110 pink"></i> <span class="hidden">Copy to clipboard</span>',
-                            className: 'btn btn-white btn-primary btn-bold'
-                        },                       
-                        {
-                            extend: 'excel',
-                            text: '<i class="fa fa-file-excel-o bigger-110 green"></i> <span class="hidden">Export to Excel</span>',
-                            className: 'btn btn-white btn-primary btn-bold'
-                        },
-                        {
-                            extend: 'pdf',
-                            text: '<i class="fa fa-file-pdf-o bigger-110 red"></i> <span class="hidden">Export to PDF</span>',
-                            className: 'btn btn-white btn-primary btn-bold'
-                        },
-                        {
-                            extend: 'print',
-                            text: '<i class="fa fa-print bigger-110 grey"></i> <span class="hidden">Print</span>',
-                            className: 'btn btn-white btn-primary btn-bold',
-                            autoPrint: false,
-                            message: 'This print was produced using the Print button for DataTables'
+                            text: '<i class="fa fa-refresh bigger-110 pink"></i> <span class="hidden">Copy to clipboard</span>',
+                            className: 'btn btn-white btn-primary btn-bold btnRefresh',
+                            action: function (e, dt, node, config) {
+                                dt.ajax.reload(null, false);
+                            }
                         }
                     ]
                 });
@@ -266,32 +256,34 @@
                 return myTable;
          }
 
-            // Initialize DataTables
-            var availableTable = initializeTable('availableBuilding', 'available');
-            var maintenanceTable = initializeTable('maintenanceBuilding', 'maintenance');
-            var allTable = initializeTable('allBuilding', 'allbuilding');
+        // Initialize DataTables
+        var availableTable = initializeTable('availableBuilding', 'available');
+        var maintenanceTable = initializeTable('maintenanceBuilding', 'maintenance');
+        var allTable = initializeTable('allBuilding', 'allbuilding');
 
-            $('.delete-user').on('click',  function(e) {
+        // Delete building with confirmation using Bootbox
+        $(document).on('click', '.delete-building', function (e) {
             e.preventDefault();
+            let buildingId = $(this).data('id');
+            let url = "<?= base_url(); ?>/building/delete/" + buildingId;
 
-            let userId = $(this).data('id');
-            let url = "<?= base_url(); ?>/building/delete/" + userId;
-
-            if (confirm("Are you sure you want to delete this user?")) {
-                $.ajax({
-                    url: url,
-                    type: "DELETE",
-                    dataType: "json",
-                    success: function(response) {
-                        alert(response.message); // Show success/error message
-                        location.reload(); // Refresh table after delete
-                    },
-                    error: function() {
-                        alert("Error deleting user. Please try again.");
-                    }
-                });
-            }
-
+            bootbox.confirm("Are you sure you want to delete this building?", function (result) {
+                if (result === true) {
+                    $.ajax({
+                        url: url,
+                        type: "DELETE",
+                        dataType: "JSON",
+                        success: function (data) {
+                            bootbox.alert(data.message || "Building deleted successfully!", function () {
+                                location.reload();
+                            });
+                        },
+                        error: function () {
+                            bootbox.alert("Error deleting building. Please try again.");
+                        }
+                    });
+                }
+            });
         });
 
         $('.addbtn').on('click', function() {

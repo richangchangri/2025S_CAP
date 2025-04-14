@@ -18,21 +18,8 @@
 		<!-- ace styles -->
 		<link rel="stylesheet" href="<?= base_url('assets/css/ace.min.css'); ?>" />
 
-		<!--[if lte IE 9]>
-			<link rel="stylesheet" href="<?= base_url('assets/css/ace-part2.min.css'); ?>" />
-		<![endif]-->
 		<link rel="stylesheet" href="<?= base_url('assets/css/ace-rtl.min.css'); ?>" />
 
-		<!--[if lte IE 9]>
-		  <link rel="stylesheet" href="<?= base_url('assets/css/ace-ie.min.css'); ?>" />
-		<![endif]-->
-
-		<!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
-
-		<!--[if lte IE 8]>
-		<script src="assets/js/html5shiv.min.js"></script>
-		<script src="assets/js/respond.min.js"></script>
-		<![endif]-->
 	</head>
 
 	<body class="login-layout light-login">
@@ -125,7 +112,7 @@
 											</h4>
 
 											<div class="space-6"></div>
-											<p>
+											<p id="alert-forgotpassword">
 												Enter your email and to receive instructions
 											</p>
 
@@ -348,19 +335,7 @@
 							data: $('#forgotPasswordForm').serialize(),
 							dataType: "JSON",
 							success: function(data) {
-								if(data.status == "success"){									
-									let emailEncoded = encodeURIComponent(data.email);
-									window.location.href = "<?= base_url('login/verify'); ?>" + "?email=" + emailEncoded;
-								} else {
-									$('#alert').html('<div class="alert alert-danger">' +
-												'<button type="button" class="close" data-dismiss="alert">' +
-												'<i class="ace-icon fa fa-times"></i>' +
-												'</button>' +
-												'<strong>' +
-												'Oh Sorry! ' +
-												'</strong>' + data.message + '.' + '<br>' +
-												'</div>');
-								}
+								$('#alert-forgotpassword').html(data.message);
 								$('#btnForgotPassword').text('Login'); //change button text
 								$('#btnForgotPassword').attr('disabled', false); //set button enable 
 							},

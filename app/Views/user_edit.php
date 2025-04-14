@@ -45,7 +45,7 @@
                             <label class="col-sm-3 control-label no-padding-right" for="email"> Email </label>
 
                             <div class="col-sm-9">
-                                <input type="text" id="email" name="email" placeholder="Text Field" class="form-control" value="<?= esc($user['email']); ?>">
+                                <input type="text" id="email" name="email" placeholder="Text Field" class="form-control" value="<?= esc($user['email']); ?>" <?= $readonly; ?>>
                             </div>
                         </div>
 
@@ -53,7 +53,7 @@
                             <label class="col-sm-3 control-label no-padding-right" for="department"> Department </label>
 
                             <div class="col-sm-9">
-                                <select class="form-control" id="department" name="department" class="form-control">
+                                <select class="form-control" id="department" name="department" class="form-control" <?= $readonly; ?>>
                                     <option value="">- Choose -</option>
                                     <?php foreach($department as $row){
                                         if($row['department_id'] == $user['department_id']){
@@ -75,13 +75,13 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="col-sm-3 control-label no-padding-right" for="level"> Level </label>
+                            <label class="col-sm-3 control-label no-padding-right" for="level"> Role </label>
 
                             <div class="col-sm-9">
-                            <select class="form-control" id="userRole" name="userRole" class="form-control">
+                            <select class="form-control" id="userRole" name="userRole" class="form-control" <?= $readonly; ?>>
                                                     <option value="">- Choose -</option>
                                                     <?php 
-                                                        $roles = array('Admin','Facility Manager','Regular User');
+                                                        $roles = array('Admin','Facility Manager','Regular User', 'Super Admin');
                                                         foreach($roles as $role){    
                                                             if($role == $user['role']){
                                                                 echo '<option value="'. $role .'" selected>'. $role.'</option>';
@@ -98,7 +98,7 @@
 
                             <div class="col-sm-9">
                                 <label>
-                                    <input name="status" class="ace ace-switch ace-switch-5" <?php if($user['status'] == "active")  echo "checked"; ?> type="checkbox" value="active">
+                                    <input name="status" class="ace ace-switch ace-switch-5" <?php $readonly; if($user['status'] == "active")  echo "checked"; ?> type="checkbox" value="active" >
                                     <span class="lbl"></span>
                                 </label>          
                             </div>

@@ -10,20 +10,35 @@ class Building extends Controller
 {
     public function index()
     {
-        return view('building', ['title' => 'Building']);
+        $session = session();
+        if (!$session->get('login')) {
+            return redirect()->to('/login');
+        }
+        $buildingModel = new BuildingModel();
+        $availableCount = $buildingModel->where('status', 'available')->countAllResults();
+        $maintenanceCount = $buildingModel->where('status', 'under maintenance')->countAllResults();
+        $totalCount = $buildingModel->countAll();
+        $data = [
+            'availableCount' => $availableCount, 
+            'maintenanceCount' => $maintenanceCount,
+            'totalCount' => $totalCount,
+        ];
+        return view('building', $data);
     }
 
     public function detail(){
+        $session = session();
+        if (!$session->get('login')) {
+            return redirect()->to('/login');
+        }
         $id = $this->request->getUri()->getSegment(3);
-        // echo $userid;
         $buildingModel = new BuildingModel();
-        $building = $buildingModel->select('Buildings.*, Buildings.name as building_name,FacilitiesType.name as facilities_type_name')
+        $building = $buildingModel->select('Buildings.*, Buildings.name as building_name')
                         ->join('Facilities', 'Facilities.building_id = Buildings.building_id', 'left')
                         ->join('FacilitiesType', 'FacilitiesType.facility_type_id = Facilities.facility_type_id', 'left')
-                        ->where('Facilities.building_id', $id)
+                        ->where('Buildings.building_id', $id)
                         ->first();
 
-        // echo $buildingModel->db->getLastQuery();
         if(!$building){
             throw new PageNotFoundException("Page not found");
         } 
@@ -34,8 +49,11 @@ class Building extends Controller
     }
 
     public function add(){
+        $session = session();
+        if (!$session->get('login')) {
+            return redirect()->to('/login');
+        }
         $buildingId = $this->request->getUri()->getSegment(3);
-        // echo $userid;
         $buildingModel = new BuildingModel(); 
         $building = $buildingModel->select('Buildings.*')
                         ->first();
@@ -47,8 +65,11 @@ class Building extends Controller
     }
 
     public function edit(){
+        $session = session();
+        if (!$session->get('login')) {
+            return redirect()->to('/login');
+        }
         $buildingId = $this->request->getUri()->getSegment(3);
-        // echo $userid;
         $buildingModel = new BuildingModel(); 
         $building = $buildingModel->select('Buildings.*')
                         ->where('Buildings.building_id', $buildingId)
@@ -118,13 +139,12 @@ class Building extends Controller
     public function delete($building_id)
     {
         $model = new BuildingModel();
-
         // Check if building exists
         $building = $model->where('building_id', $building_id)->first();
         if (!$building) {
             return $this->response->setJSON([
                 "status" => "error",
-                "message" => '<div class="alert alert-danger"><strong>Error!</strong> Building not found.</div>'
+                "message" => 'Error! Building not found.'
             ]);
         }
 
@@ -133,13 +153,13 @@ class Building extends Controller
         if (!$deleted) {
             return $this->response->setJSON([
                 "status" => "error",
-                "message" => '<div class="alert alert-danger"><strong>Error!</strong> Failed to delete building.</div>'
+                "message" => 'Failed to delete building.'
             ]);
         }
 
         return $this->response->setJSON([
             "status" => "success",
-            "message" => '<div class="alert alert-success"><strong>Success!</strong> Building deleted successfully.</div>'
+            "message" => 'Success!</strong> Building deleted successfully.'
         ]);
     }
 }

@@ -153,7 +153,7 @@
                                     <a href="<?= base_url(); ?>facilities_type/edit/${row[0]}" class="btn btn-xs btn-warning">
                                         <i class="fa fa-edit"></i>
                                     </a>
-                                    <a href="#" class="btn btn-xs btn-danger delete" data-id="${row[0]}">
+                                    <a href="<?= base_url(); ?>facilities_type/delete/${row[0]}" class="btn btn-xs btn-danger delete-facilities-type" data-id="${row[0]}">
                                         <i class="fa fa-trash"></i>
                                     </a>
                                 </div>`;
@@ -174,28 +174,13 @@
                         {
                             text: '<i class="fa fa-plus bigger-110 orange"></i> <span class="hidden">Add</span>',
                             className: 'btn btn-white btn-primary btn-bold addbtn'
-                        },
+                        }, 
                         {
-                            extend: 'copy',
-                            text: '<i class="fa fa-copy bigger-110 pink"></i> <span class="hidden">Copy to clipboard</span>',
-                            className: 'btn btn-white btn-primary btn-bold'
-                        },                       
-                        {
-                            extend: 'csv',
-                            text: '<i class="fa fa-file-excel-o bigger-110 green"></i> <span class="hidden">Export to Excel</span>',
-                            className: 'btn btn-white btn-primary btn-bold'
-                        },
-                        {
-                            extend: 'pdf',
-                            text: '<i class="fa fa-file-pdf-o bigger-110 red"></i> <span class="hidden">Export to PDF</span>',
-                            className: 'btn btn-white btn-primary btn-bold'
-                        },
-                        {
-                            extend: 'print',
-                            text: '<i class="fa fa-print bigger-110 grey"></i> <span class="hidden">Print</span>',
-                            className: 'btn btn-white btn-primary btn-bold',
-                            autoPrint: false,
-                            message: 'This print was produced using the Print button for DataTables'
+                            text: '<i class="fa fa-refresh bigger-110 pink"></i> <span class="hidden">Copy to clipboard</span>',
+                            className: 'btn btn-white btn-primary btn-bold btnRefresh',
+                            action: function (e, dt, node, config) {
+                                dt.ajax.reload(null, false);
+                            }
                         }
                     ]
                 });
@@ -225,31 +210,35 @@
                 return myTable;
             }
 
-            // Initialize DataTables
-            var activeTable = initializeTable('availableFacilitiesType', 'available');
-            var inactiveTable = initializeTable('maintenanceFacilitiesType', 'maintenance');
-            var pendingTable = initializeTable('allFacilitiesType', 'all');
+        // Initialize DataTables
+        var activeTable = initializeTable('availableFacilitiesType', 'available');
+        var inactiveTable = initializeTable('maintenanceFacilitiesType', 'maintenance');
+        var pendingTable = initializeTable('allFacilitiesType', 'all');
 
-            $('.delete').on('click',  function(e) {
+
+        // Delete facilities type with confirmation using Bootbox
+        $(document).on('click', '.delete-facilities-type', function (e) {
             e.preventDefault();
+            let facilityId = $(this).data('id');
+            let url = "<?= base_url(); ?>/facilities_type/delete/" + facilityId;
 
-            let id = $(this).data('id');
-            let url = "<?= base_url(); ?>/facilities_type/delete/" + id;
-
-            if (confirm("Are you sure you want to delete this user?")) {
-                $.ajax({
-                    url: url,
-                    type: "DELETE",
-                    dataType: "json",
-                    success: function(response) {
-                        alert(response.message); // Show success/error message
-                        location.reload(); // Refresh table after delete
-                    },
-                    error: function() {
-                        alert("Error deleting user. Please try again.");
-                    }
-                });
-            }
+            bootbox.confirm("Are you sure you want to delete this facilities type?", function (result) {
+                if (result === true) {
+                    $.ajax({
+                        url: url,
+                        type: "DELETE",
+                        dataType: "JSON",
+                        success: function (data) {
+                            bootbox.alert(data.message || "Facilities Type deleted successfully!", function () {
+                                location.reload();
+                            });
+                        },
+                        error: function () {
+                            bootbox.alert("Error deleting facilities type. Please try again.");
+                        }
+                    });
+                }
+            });
         });
 
         $('.addbtn').on('click', function() {

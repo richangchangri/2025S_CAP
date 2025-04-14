@@ -28,15 +28,6 @@ class DataModel extends Model{
         return $query->num_rows();
     }
 
-    function count_all($tipe) {
-
-    }
-
-    //GET DETAIL
-    function get_detail($tipe, $xid) {
-    
-    }
-
     //GET LIST
     function getList($table, $field, $where)
     {

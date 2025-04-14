@@ -8,10 +8,11 @@ use App\Models\UserModel;
 use App\Models\BuildingModel;
 use App\Models\FacilityModel;
 use App\Models\FeedbackModel;
-use App\Models\ApprovalModel;
+use App\Models\ApprovalsModel;
 use App\Models\ActivityModel;
 use App\Models\FacilitiesTypeModel;
 use App\Models\ReservationModel;
+use App\Models\SchedulesModel;
 
 class Data extends Controller
 {
@@ -38,7 +39,7 @@ class Data extends Controller
         $feedbackTotal = $feedbackModel->countAll();
 
         // New user approvals
-        $approvalModel = new ApprovalModel();
+        $approvalModel = new ApprovalsModel();
         $pending = $approvalModel->where('decision', 'Pending')->countAllResults();
         $approved = $approvalModel->where('decision', 'Approved')->countAllResults();
         $rejected = $approvalModel->where('decision', 'Rejected')->countAllResults();
@@ -89,12 +90,12 @@ class Data extends Controller
             'lastUsers' => $lastUsers
         ]);
     }
+    
     //Get Data User
     public function userManagement() {
         $userModel = new UserModel();
         $db = \Config\Database::connect(); 
         $status = $this->request->getUri()->getSegment(3); 
-        // echo $status;
         if ($status === "active") {
             $statusFilter = "active";
         } elseif ($status === "inactive") {
@@ -110,7 +111,7 @@ class Data extends Controller
             ->orderBy('Users.name', 'ASC');
     
         // show query for debugging
-        echo $db->getLastQuery();
+        // echo $db->getLastQuery();
         // return output format DataTable JSON
         return DataTable::of($userModel)->toJson();
     }
@@ -119,7 +120,6 @@ class Data extends Controller
 
         $buildingModel = new BuildingModel();
         $status = $this->request->getUri()->getSegment(3); 
-        // echo $status;
         if ($status === "available") {
             $statusFilter = "available";
         } elseif ($status === "maintenance") {
@@ -131,7 +131,7 @@ class Data extends Controller
         // Query builder with filter status
         $builder = $buildingModel->select('Buildings.building_id, Buildings.name, Buildings.address, Buildings.floors, Buildings.contact_person');
     
-        // Jika ada status filter, tambahkan
+        // If there is a filter status, add it.
         if ($statusFilter !== null) {
             $builder->where('status', $statusFilter);
         }
@@ -144,12 +144,12 @@ class Data extends Controller
         return DataTable::of($buildingModel)->toJson();
     }
 
-    public function facility()
+    public function building_detail($buildingId, $status)
     {
-        $facilityModel = new FacilityModel();
-        $status = $this->request->getUri()->getSegment(3); 
-    
-        // Tentukan status filter
+        // echo $buildingId;
+        $facilityModel = new FacilityModel();    
+      
+        // Determine the filter status
         if ($status === "available") {
             $statusFilter = "available";
         } elseif ($status === "maintenance") {
@@ -157,29 +157,130 @@ class Data extends Controller
         } else {
             $statusFilter = null; // semua data
         }
-    
-        // Gunakan Query Builder
-        $builder = $facilityModel->select('facility_id, name, description, capacity, location, status');
-    
-        // Jika ada status filter, tambahkan
-        if ($statusFilter !== null) {
-            $builder->where('status', $statusFilter);
-        }
+        
+        // Use Query Builder
+        $builder = $facilityModel->select('facility_id, name, description, capacity, location, status')
+                                ->where('status', $statusFilter)
+                                ->where('building_id', $buildingId);
+
     
         $builder->orderBy('name', 'ASC');    
-        // Tampilkan query SQL untuk debugging (opsional)
-        // echo $builder->getCompiledSelect(); exit;
+        // Show SQL query for debugging (optional)
+        // $results = $builder->get()->getResult();
+        // echo $builder->getLastQuery();   
+    
+        // Return in DataTables JSON format
+        return DataTable::of($builder)->toJson();
+    }
+
+    //Get Data Summary User
+    public function userSummary(){
+        // User data
+        $userModel = new UserModel();
+        $active = $userModel->where('status', 'active')->countAllResults();
+        $inactive = $userModel->where('status', 'inactive')->countAllResults();
+        $pending = $userModel->where('status', 'pending')->countAllResults();
+        $total = $userModel->countAll();
+        return $this->response->setJSON([
+            'active' => $active,
+            'inactive' => $inactive,  
+            'pending' => $pending,          
+            'total' => $total
+        ]);
+    }
+
+    //Get Data Summary Building
+    public function buildingSummary(){
+        // Building data
+        $buildingModel = new BuildingModel();
+        $available = $buildingModel->where('status', 'available')->countAllResults();
+        $maintenance = $buildingModel->where('status', 'under maintenance')->countAllResults();
+        $total = $buildingModel->countAll();
+        return $this->response->setJSON([
+            'available' => $available,       
+            'maintenance' => $maintenance,    
+            'total' => $total
+        ]);
+    }
+
+    //Get Data Summary Facilities
+    public function facilitySummary(){
+        // Facility data
+        $facilityModel = new FacilityModel();
+        $maintenance = $facilityModel->where('status', 'under maintenance')->countAllResults();
+        $available = $facilityModel->where('status', 'available')->countAllResults();
+        $total = $facilityModel->countAll();
+        return $this->response->setJSON([
+            'maintenance' => $maintenance,
+            'available' => $available,           
+            'total' => $total
+        ]);
+    }
+
+    public function facility()
+    {
+        $facilityModel = new FacilityModel();
+        $status = $this->request->getUri()->getSegment(3);   
+    
+      
+            // Determine the filter status
+            if ($status === "available") {
+                $statusFilter = "available";
+            } elseif ($status === "maintenance") {
+                $statusFilter = "under maintenance";
+            } else {
+                $statusFilter = null; // semua data
+            }
+        
+            // Use Query Builder
+            $builder = $facilityModel->select('facility_id, name, description, capacity, location, status');
+        
+            // If there is a filter status, add it.
+            if ($statusFilter !== null) {
+                $builder->where('status', $statusFilter);
+            }
+        
+            $builder->orderBy('name', 'ASC');    
+            // Show SQL query for debugging (optional)
+            // echo $builder->getCompiledSelect(); exit;
     
         // Kembalikan dalam format DataTables JSON
         return DataTable::of($builder)->toJson();
     }
+
+    public function getFeedback() {
+        $session = session();
+        $feedbackModel = new FeedbackModel(); 
+        $db = \Config\Database::connect();
+        
+        // Use Query Builder
+        $builder = $feedbackModel->select('Feedbacks.feedback_id, Facilities.name as facilities_name, Buildings.address as location, Feedbacks.rating, Feedbacks.comment, DATE_FORMAT(Feedbacks.submitted_at, "%Y/%m/%d %H:%i") as submitted_at, Users.name as requester')
+                                    ->join('Reservations', 'Reservations.reservation_id = Feedbacks.reservation_id','left')
+                                    ->join('Users', 'Users.user_id = Feedbacks.user_id','left')
+                                    ->join('Facilities', 'Facilities.facility_id = Reservations.facility_id','left')
+                                    ->join('Buildings', 'Buildings.building_id = Facilities.building_id','left');
+    
+        if ($session->get('role') == 'Regular User') {
+            $builder->where('Feedbacks.user_id',  $session->get('user_id'));
+        }
+        $builder->orderBy('Feedbacks.submitted_at', 'DESC');    
+      
+        // show query for debugging
+        // $results = $builder->get()->getResult();
+        // echo $db->getLastQuery();
+        // return output format DataTable JSON
+        return DataTable::of($builder)->toJson(); 
+    }
+
 
     public function facilities_type()
     {
         $facilitiesTypeModel = new FacilitiesTypeModel();
         $status = $this->request->getUri()->getSegment(3); 
     
-        // Tentukan status filter
+        // Show SQL query for debugging (optional)
+
+        // Define filter status
         if ($status === "available") {
             $statusFilter = "available";
         } elseif ($status === "maintenance") {
@@ -188,46 +289,151 @@ class Data extends Controller
             $statusFilter = null; // semua data
         }
     
-        // Gunakan Query Builder
+        // Use Query Builder
         $builder = $facilitiesTypeModel->select('facility_type_id, name, description, created_at');
     
-        // Jika ada status filter, tambahkan
+        // If there is a filter status, add it
         if ($statusFilter !== null) {
             $builder->where('status', $statusFilter);
         }
     
         $builder->orderBy('name', 'ASC');    
-        // Tampilkan query SQL untuk debugging (opsional)
+        // Show query SQL for debugging
         // echo $builder->getCompiledSelect(); exit;
     
-        // Kembalikan dalam format DataTables JSON
+        // Return in DataTables JSON format
         return DataTable::of($builder)->toJson();
+    }
+
+    //Get Summary Reservation
+    public function reservationSummary(){
+        $reservationModel = new ReservationModel();
+        $pending = $reservationModel->where('status', 'Pending')->countAllResults();
+        $approved = $reservationModel->where('status', 'Approved')->countAllResults();
+        $rejected = $reservationModel->where('status', 'Rejected')->countAllResults();
+        $cancel = $reservationModel->where('status', 'Cancelled')->countAllResults();
+        $total = $reservationModel->countAllResults();
+        return $this->response->setJSON([
+            'pending' => $pending,
+            'approved' => $approved,
+            'cancel' => $cancel,
+            'rejected' => $rejected,            
+            'total' => $total
+        ]);
     }
 
     //Get Data Reservation
     public function reservation() {
+        $session = session();
         $reservationModel = new ReservationModel();
-        $db = \Config\Database::connect(); 
         $status = $this->request->getUri()->getSegment(3); 
-        // echo $status;
-        if ($status === "pending") {
+        $db = \Config\Database::connect();
+        if ($status === "Pending") {
             $statusFilter = "pending";
-        } elseif ($status === "approved") {
+        } elseif ($status === "Approved") {
             $statusFilter = "approved";
-        } elseif ($status === "rejected") {
+        } elseif ($status === "Rejected") {
             $statusFilter = "rejected";
+        } elseif ($status === "Completed") {
+            $statusFilter = "completed";
+        } elseif ($status === "Cancelled") {
+            $statusFilter = "cancelled";
         } else {
-            $statusFilter = "all";
+            $statusFilter = null;
         }
     
-        // Query builder with filter status
-        $reservationModel->select('room_id','reservation_start', 'user_id', 'reservation_id')
-        ->where('status', $statusFilter)
-        ->orderBy('reservation_id', 'ASC');
+        // Use Query Builder
+        $builder = $reservationModel->select('Reservations.reservation_id, Facilities.name as facilities_name, Reservations.purpose, DATE_FORMAT(Reservations.start_time, "%Y/%m/%d %H:%i") as start_time, DATE_FORMAT(Reservations.end_time, "%Y/%m/%d %H:%i") as end_time, Users.name as requester, DATE_FORMAT(Reservations.created_at, "%Y/%m/%d %H:%i") as created_at')
+                                    ->join('Users', 'Users.user_id = Reservations.user_id','left')
+                                    ->join('Facilities', 'Facilities.facility_id = Reservations.facility_id','left');
     
+        // filter
+        if ($statusFilter !== null) {
+            $builder->where('Reservations.status', $statusFilter);
+        }
+        if ($session->get('role') == 'Regular User') {
+            $builder->where('Reservations.user_id', $session->get('user_id'));
+        }
+        
+        $builder->orderBy('Reservations.created_at', 'DESC');    
+      
         // show query for debugging
+        // $results = $builder->get()->getResult();
         // echo $db->getLastQuery();
         // return output format DataTable JSON
-        return DataTable::of($reservationModel)->toJson();
+        return DataTable::of($builder)->toJson(); 
     }
+
+    //Agenda Load
+    public function loadAgenda() {
+        $db = \Config\Database::connect();
+        $facilityId = $this->request->getUri()->getSegment(3); 
+        $request = service('request');
+        $start = $request->getGet('start');
+        $end = $request->getGet('end');
+        
+        $schedulesModel = new SchedulesModel();
+        $bookingload = $schedulesModel->select('Schedules.*,r.start_time as schedule_date_start, r.end_time as schedule_date_end,r.purpose, au.name as facility_name,vp.name as created_by_name')
+                        ->join('Reservations r', 'r.reservation_id = Schedules.reservation_id', 'left')
+                        ->join('Facilities au', 'au.facility_id = r.facility_id', 'left')
+                        ->join('Users vp', 'r.user_id = vp.user_id', 'left')
+                        ->where("r.facility_id",$facilityId)
+                        ->where("DATE(r.start_time) >= '" . $start . "' AND DATE(r.end_time) <= '" . $end . "'")
+                        ->get()->getResult();
+        $resp = [];
+        $i = 0;
+    
+        foreach ($bookingload as $r) {
+            $i++;
+            $startDate = date("Y-m-d H:i:s", strtotime($r->schedule_date_start));
+            $timestamp_start = strtotime($startDate);
+            $endDate = date("Y-m-d H:i:s", strtotime($r->schedule_date_end));
+            $timestamp_end = strtotime($endDate);
+            $diff = abs($timestamp_end - $timestamp_start);
+    
+            $days = floor($diff / (60 * 60 * 24)) + 1;
+    
+            // Color by duration
+            if ($days == 1) {
+                $color = '#525452';
+            } elseif ($days > 1 && $days <= 15) {
+                $color = '#6a00ff';
+            } elseif ($days > 15 && $days <= 30) {
+                $color = '#C0C0C0';
+            } elseif ($days > 30 && $days <= 60) {
+                $color = '#fa6800';
+            } else {
+                $color = '#f0a30a';
+            }
+    
+            if (!empty($r->purpose)) {
+                for ($j = 1; $j <= $days; $j++) {
+                    $add_day = $j - 1;
+                    $start = date('Y-m-d', strtotime("+{$add_day} day", $timestamp_start));
+                    $created = $r->created_by_name;
+                    $start_time = date("H:i", strtotime($r->schedule_date_start)); 
+                    $end_time = date("H:i", strtotime($r->schedule_date_end));                    
+                    $time = $start_time . ' - ' . $end_time;
+                    $event_short_name = $r->purpose;
+                    $start_time_full = $time . ' (' . $event_short_name . ')';
+                    $place = $r->facility_name;
+    
+                    $resp[$start . '_' . $r->schedule_id . '_' . $j] = [
+                        'id'      => $r->schedule_id,
+                        'title'   => $event_short_name,
+                        'desc'    => $start_time_full,
+                        'start'   => $startDate,
+                        'end'     => $endDate,
+                        'fullday' => false,
+                        'place'   => $place,
+                        'created' => $created,
+                        'color'   => $color,
+                    ];
+                }
+            }
+        }
+    
+        return $this->response->setJSON(array_values($resp));
+    }
+
 }
