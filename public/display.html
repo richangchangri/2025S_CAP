@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Room Display</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/font-awesome/4.5.0/css/font-awesome.min.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <style>
+    body {
+      font-family: "Segoe UI", Roboto, sans-serif;
+      background-color: #3a0ca3;
+      color: #333;
+      padding: 20px;
+    }
+
+    .top-bar {
+      background: #4361ee;
+      color: #f1f9ff;
+      padding: 15px;
+      font-size: 20px;
+      font-weight: bold;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .content-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .left-panel {
+      flex: 1 1 50%;
+    }
+
+    .right-panel {
+      flex: 1 1 40%;
+    }
+
+    .card {
+      background-color: #4361ee;
+      /* border: 1px solid #E1EEBC; */
+      border-radius: 8px;
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      padding: 20px;
+      min-height: 400px; 
+      overflow-y: auto;
+    }
+
+    .status {
+      font-size: 2.5em;
+      font-weight: bold;
+      color: #007bff;
+    }
+
+    .next-meeting {
+      font-size: 1.2em;
+      margin-top: 10px;
+    }
+
+    .start-button {
+      background: #007bff;
+      color: white;
+      padding: 12px 25px;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      margin-top: 25px;
+      cursor: pointer;
+    }
+
+    .start-button:hover {
+      background-color: #0056b3;
+    }
+
+    .schedule{
+      max-height: 300px;
+      overflow-y: scroll;
+    }
+
+    .schedule .slot {
+      margin-bottom: 10px;
+      background-color: #d8eff7;
+      padding: 15px;
+      color: #000;
+      border-left: 5px solid #7209b7;
+      border-radius: 5px;
+    }
+
+    .slot strong {
+      color: #7209b7;
+    }
+
+    @media (max-width: 768px) {
+      .left-panel, .right-panel {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <span id="clock">Loading...</span>
+  </div>
+
+  <div class="content-wrapper">
+    <!-- Left Panel -->
+    <div class="left-panel">
+      <div class="card">
+        <h2 id="facility_name">Loading...</h2>
+        <div class="status" id="room-status">Loading...</div>
+        <div class="next-meeting" id="next-meeting-info"></div>
+        <div class="btnAction"></div>
+      </div>
+    </div>
+
+    <!-- Right Panel -->
+    <div class="right-panel">
+      <div class="card">
+        <h4>Upcoming Schedule</h4>
+        <div class="schedule" id="schedule"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/jquery-2.1.4.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const facility = urlParams.get('facility');
+    
+    function fetchReservations() {
+      $.getJSON(`api/reservations/facility/${facility}`, function(response) {
+        const reservations = response.data || [];
+        const now = new Date();
+        let nextMeeting = null;
+        let currentMeeting = null;
+        $("#schedule").empty();
+
+        reservations.forEach(item => {
+          const start = new Date(item.start_time.replace(" ", "T"));
+          const end = new Date(item.end_time.replace(" ", "T"));
+          // check if meeting on started
+          if (start <= now && end > now) {
+            currentMeeting = item;
+          }
+          
+          // check if a new meeting on next time
+          if (start > now && (!nextMeeting || start < new Date(nextMeeting.start_time))) {
+            nextMeeting = item;
+          }
+          // alert(currentMeeting);
+          $("#schedule").append(`
+            <div class="slot">
+              <strong>${start.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})} - ${end.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</strong>
+              <br>${item.purpose}
+            </div>
+          `);
+        });
+
+        if (currentMeeting) {
+          $("#room-status").text("Occupied");
+          $("#next-meeting-info").text(`Currently: ${currentMeeting.purpose}`);
+          // $(".btnAction").html('<button class="start-button" onclick="startMeetingNow()">Start Meeting Now</button>');
+          $("body").css("background-color", "#c40c5f");              
+          $(".top-bar").css("background-color", "#f72585");      
+          $("#room-status").css("color","#fff");
+          $(".slot").css("background-color","#ffcad4");
+          $(".card").css("background-color"," #f72585");
+        } else if (nextMeeting) {
+          const start = new Date(nextMeeting.start_time.replace(" ", "T"));
+          const diffMinutes = Math.round((start - now) / 60000);
+          $("#room-status").text("Available");
+          $("#next-meeting-info").text(`The upcoming meeting will start in ${Math.floor(diffMinutes/60)} hour(s) and ${diffMinutes%60} minute(s)`);
+          $("body").css("background-color", "#3a0ca3");                 
+          $(".card").css("background-color"," #4361ee");          
+          $(".top-bar").css("background-color", "#4361ee");
+          $(".slot").css("background-color","#d8eff7");
+          $("#room-status").css("color","#fff");
+          $(".btnAction").empty();
+        } else {
+          $("#room-status").text("Available");
+          $("#next-meeting-info").text("No upcoming meetings");
+          $("body").css("background-color", "#3a0ca3");      
+          $(".card").css("background-color"," #4361ee");          
+          $(".top-bar").css("background-color", "#4361ee");
+          $(".slot").css("background-color","#d8eff7");
+          $("#room-status").css("color","#fff");
+          $(".btnAction").empty();
+        }
+      });
+    }
+
+    //Get Facility Name
+    function fetchFacility() {
+        $.getJSON(`api/facility/${facility}`, function(response) {
+            $("#facility_name").empty();
+            $("#facility_name").append(`${response.data.name}`);
+
+            
+        });
+    }
+
+    function startMeetingNow() {
+      alert("Starting meeting...");
+    }
+
+    function updateClock() {
+        const now = new Date();
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        const dateFormatted = now.toLocaleDateString('en-US', options);
+        const hour = now.getHours().toString().padStart(2, '0');
+        const minute = now.getMinutes().toString().padStart(2, '0');
+        $('#clock').text(`Now ${dateFormatted} ${hour}:${minute}`);
+    }
+
+    console.log(facility); // output: "1"
+
+    updateClock();
+    fetchReservations();
+    fetchFacility();
+    // running every 5 seconds
+    setInterval(() => {
+        fetchReservations();
+        updateClock();
+    }, 5000);
+
+    // running every 60 seconds
+    setInterval(() => {
+        fetchFacility();
+    }, 60000);
+  </script>
+</body>
+</html>

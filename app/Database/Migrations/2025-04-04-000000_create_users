@@ -1,0 +1,96 @@
+<?php
+
+namespace App\Database\Migrations;
+
+use CodeIgniter\Database\Migration;
+
+class Users extends Migration
+{
+    public function up()
+    {
+        // $this->forge->addField([
+        //     'user_id' => [
+        //         'type'           => 'INT',
+        //         'constraint'     => 11,
+        //         'unsigned'       => true,
+        //         'auto_increment' => true
+        //     ],
+		// 	'username' => [
+        //         'type'           => 'VARCHAR',
+        //         'constraint'     => '40',
+        //     ],
+        //     'name' => [
+        //         'type'           => 'VARCHAR',
+        //         'constraint'     => '40'
+        //     ],
+        //     'department_id' => [
+        //         'type'           => 'INT',
+        //         'constraint'     => '11',
+        //         'unsigned'       => true, // Ensure this matches with the department table's department_id
+        //     ],
+        //     'user_role_id' => [
+        //         'type'           => 'INT',
+        //         'constraint'     => '11',
+        //         'unsigned'       => true, // Ensure this matches with the user_roles table's user_role_id
+        //     ],
+        //     'email' => [
+        //         'type'           => 'VARCHAR',
+        //         'constraint'     => '255',
+        //     ],
+        //     'password' => [
+        //         'type'           => 'VARCHAR',
+        //         'constraint'     => '255',
+        //     ],
+        //     'created_at' => [
+        //         'type'           => 'TIMESTAMP',
+        //         'null'           => true,
+        //     ],
+        //     'updated_at' => [
+        //         'type'           => 'TIMESTAMP',
+        //         'null'           => true,
+        //     ],
+        // ]);
+
+        // // Add Primary Key
+        // $this->forge->addKey('user_id', true);
+
+        // // Create the 'users' table
+        // $this->forge->createTable('users', true);
+
+        // Add foreign key constraints
+		// $this->db->query('ALTER TABLE users ADD CONSTRAINT fk_users_role_id FOREIGN KEY (user_role_id) REFERENCES user_role(user_role_id)'); // Ensure you reference the correct table
+        // $this->db->query('ALTER TABLE users ADD CONSTRAINT fk_users_department_id FOREIGN KEY (department_id) REFERENCES department(department_id)');
+
+        // Insert an admin user with hashed password
+        $this->db->table('users')->insert([
+            'name'          => 'Super Administrator',
+	        'email'         => 'jane@gmail.com', // Add a valid email
+            'password'      => password_hash('1234567890', PASSWORD_DEFAULT), // Hash password
+            'role' => 'Admin', // Ensure department ID exists in the department table
+            'department_id'  => 1, // Ensure user_role ID exists in the user_roles table
+            'created_at'    => date('Y-m-d H:i:s'),
+            'updated_at'    => date('Y-m-d H:i:s'),
+        ]);
+
+        $this->db->table('users')->insert([
+            'name'          => 'Manager Divisi',
+	        'email'         => 'jhon@gmail.com', // Add a valid email
+            'password'      => password_hash('1234567890', PASSWORD_DEFAULT), // Hash password
+            'department_id' => 2, // Ensure department ID exists in the department table
+            'role'  => 'Facility Manager', // Ensure user_role ID exists in the user_roles table
+            'phone_number' => '',
+            'created_at'    => date('Y-m-d H:i:s'),
+            'updated_at'    => date('Y-m-d H:i:s'),
+        ]);
+    }
+
+    public function down()
+    {
+        // Drop foreign key constraints
+        // $this->db->query('ALTER TABLE users DROP FOREIGN KEY fk_users_role_id');
+        // $this->db->query('ALTER TABLE users DROP FOREIGN KEY fk_users_department_id');
+
+        // Drop the 'users' table
+        $this->forge->dropTable('users');
+    }
+}
